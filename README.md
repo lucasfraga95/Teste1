@@ -23,7 +23,15 @@ Projeto pessoal: um jogo 2D de plataforma com a cara do **MapleStory** e as regr
 
 4. Abra no navegador o endereço que aparecer (normalmente http://localhost:5173).
 
-### Jogar no celular ou tablet
+### Instalar no Android (APK)
+
+A cada envio para o GitHub, o GitHub Actions gera um APK novo e publica em **Releases**.
+No tablet, entre no GitHub (logado), abra este repositório → **Releases** → a versão mais
+recente → baixe **RO-Maple.apk** e toque para instalar. Na primeira vez o Android pede para
+permitir instalar apps do navegador. O app funciona offline, e as versões novas instalam
+por cima mantendo o save.
+
+### Jogar no celular pelo navegador
 
 Com o jogo rodando no PC (`npm run dev`), o terminal mostra um endereço **Network**
 (por exemplo `http://192.168.0.15:5173`). No celular, conectado ao **mesmo Wi-Fi**, abra esse
