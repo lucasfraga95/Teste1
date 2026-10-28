@@ -8,6 +8,7 @@ import { statCost, StatName, STAT_NAMES } from '../ro/rules';
 import { SKILLS } from '../ro/skills';
 import { MAP_NAMES } from '../world/names';
 import { NpcRole, TAXI_DESTINATIONS } from '../world/npcs';
+import { isTouchDevice, TouchControls } from '../ui/TouchControls';
 import type { Game } from './Game';
 
 const FONT = 'Verdana, Tahoma, sans-serif';
@@ -131,6 +132,10 @@ export class UI extends Phaser.Scene {
       .setOrigin(0.5)
       .setAlpha(0);
     this.banner = this.add.container(width / 2, 40).setAlpha(0);
+    if (isTouchDevice()) {
+      this.registry.set('touch', new TouchControls(this));
+      this.buildFullscreenButton(width);
+    }
     this.buildDeathBox(width, height);
     this.buildHelp(width, height);
 
@@ -442,7 +447,7 @@ export class UI extends Phaser.Scene {
         text =
           'Para escolher uma classe você precisa de:\n' +
           `• Nível de classe 10 (você tem ${c.data.jobLevel})\n` +
-          `• Habilidades Básicas nível 9 (você tem ${c.skillLevel('basic')}) — aperte K para aprender.`;
+          `• Habilidades Básicas nível 9 (você tem ${c.skillLevel('basic')}) — abra Habilidades (K) para aprender.`;
       } else {
         text = 'Você está pronto! Escolha seu caminho:';
         for (const id of FIRST_CLASSES) {
@@ -498,6 +503,21 @@ export class UI extends Phaser.Scene {
     p.add(this.button(w - 70, h - 32, 'Sair', () => this.close('npc'), true, '#7a4a4a'));
   }
 
+  /** Tela cheia e orientação horizontal (celular/tablet). */
+  private buildFullscreenButton(width: number) {
+    this.button(width - 96, 6, 'Tela cheia', () => {
+      if (this.scale.isFullscreen) {
+        this.scale.stopFullscreen();
+        return;
+      }
+      this.scale.startFullscreen();
+      const orientation = screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> };
+      orientation.lock?.('landscape').catch(() => {
+        /* nem todo navegador permite travar a orientação */
+      });
+    }).setAlpha(0.8);
+  }
+
   // ------------------------------------------------------------ morte / ajuda
 
   private buildDeathBox(width: number, height: number) {
@@ -519,7 +539,19 @@ export class UI extends Phaser.Scene {
     g.lineStyle(1, 0x6b7bb0).strokeRoundedRect(-250, -175, 500, 350, 8);
     c.add(g);
     c.add(this.txt(0, -162, 'Como jogar', 16, '#ffe680', { fontStyle: 'bold' }).setOrigin(0.5, 0));
-    const lines = [
+    const touchLines = [
+      ['Direcional', 'andar (toque no canto inferior esquerdo)'],
+      ['Direcional ↑', 'entrar em portais, falar com NPCs, subir escadas'],
+      ['Direcional ↓', 'descer escadas e cordas, deitar'],
+      ['PULAR', 'pular  (↓ + PULAR desce de plataformas)'],
+      ['ATACAR', 'atacar (segure para atacar sem parar)'],
+      ['Q W E R', 'toque nos ícones para usar habilidades'],
+      ['1 2 3 4', 'toque nas poções para usá-las'],
+      ['Menus', 'Atributos, Habilidades, Itens na barra de baixo'],
+      ['Tela cheia', 'botão no canto superior direito'],
+      ['Ajuda', 'toque em Ajuda para ver esta tela de novo'],
+    ];
+    const keyLines = [
       ['← →', 'andar'],
       ['Espaço / Alt', 'pular  (↓ + Espaço desce de plataformas)'],
       ['↑ / ↓', 'subir/descer escadas e cordas'],
@@ -531,6 +563,7 @@ export class UI extends Phaser.Scene {
       ['M', 'ligar/desligar o som'],
       ['H', 'mostrar/esconder esta ajuda'],
     ];
+    const lines = isTouchDevice() ? touchLines : keyLines;
     lines.forEach(([k, v], i) => {
       c.add(this.txt(-225, -128 + i * 22, k, 12, '#9ac4ff', { fontStyle: 'bold' }));
       c.add(this.txt(-100, -128 + i * 22, v, 12, '#e8f0ff'));

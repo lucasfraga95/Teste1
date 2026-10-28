@@ -8,6 +8,7 @@ import { CLASSES, JobId } from '../ro/classes';
 import { ITEMS, POTION_SLOTS, rollDrops } from '../ro/items';
 import { HitResult, hpRegen, mobAttack, MOBS, spRegen } from '../ro/rules';
 import { showDamage } from '../ui/damage';
+import type { TouchControls } from '../ui/TouchControls';
 import { Drops } from '../world/Drops';
 import { Footholds } from '../world/footholds';
 import { MapView } from '../world/MapView';
@@ -88,7 +89,7 @@ export class Game extends Phaser.Scene implements CombatHost {
     this.game.events.emit('map-enter', data);
     if (this.char.data.statPoints > 0 && !this.target.mapId) {
       this.time.delayedCall(800, () =>
-        this.notice(`Você tem ${this.char.data.statPoints} pontos de atributo. Aperte S para distribuí-los.`, true),
+        this.notice(`Você tem ${this.char.data.statPoints} pontos de atributo. Abra Atributos (S) para distribuí-los.`, true),
       );
     }
     this.char.save();
@@ -147,7 +148,9 @@ export class Game extends Phaser.Scene implements CombatHost {
   update(time: number, deltaMs: number) {
     const dt = Math.min(deltaMs, 50) / 1000;
     const JD = Phaser.Input.Keyboard.JustDown;
-    const c = this.readControls();
+    const touch = this.registry.get('touch') as TouchControls | undefined;
+    const c = this.readControls(touch);
+    const upPressed = JD(this.cursors.up) || !!touch?.consumeUp();
 
     if (this.player.dead) {
       if (JD(this.keys.enter)) this.respawn();
@@ -156,7 +159,7 @@ export class Game extends Phaser.Scene implements CombatHost {
         if (c.attack) this.combat.basicAttack();
         SKILL_KEYS.forEach((k, i) => JD(this.keys[k]) && this.useSkillSlot(i));
         POTION_KEYS.forEach((k, i) => JD(this.keys[k]) && this.usePotionSlot(i));
-        if (JD(this.cursors.up) && this.player.grounded && !this.tryPortal()) this.tryNpc();
+        if (upPressed && this.player.grounded && !this.tryPortal()) this.tryNpc();
       }
       this.player.update(dt, this.dialogOpen ? { left: false, right: false, up: false, down: false, jump: false, attack: false } : c);
       if (this.player.y > this.map.bounds.bottom + 300) this.teleportToSpawn();
@@ -169,15 +172,18 @@ export class Game extends Phaser.Scene implements CombatHost {
     this.tickRegen(time);
   }
 
-  private readControls(): Controls {
+  /** Junta teclado e controles de toque. */
+  private readControls(t?: TouchControls): Controls {
     const k = this.keys;
+    const JD = Phaser.Input.Keyboard.JustDown;
+    const jumpKey = JD(this.cursors.space) || JD(k.alt);
     return {
-      left: this.cursors.left.isDown,
-      right: this.cursors.right.isDown,
-      up: this.cursors.up.isDown,
-      down: this.cursors.down.isDown,
-      jump: Phaser.Input.Keyboard.JustDown(this.cursors.space) || Phaser.Input.Keyboard.JustDown(k.alt),
-      attack: k.z.isDown || k.x.isDown || k.ctrl.isDown,
+      left: this.cursors.left.isDown || !!t?.left,
+      right: this.cursors.right.isDown || !!t?.right,
+      up: this.cursors.up.isDown || !!t?.up,
+      down: this.cursors.down.isDown || !!t?.down,
+      jump: jumpKey || !!t?.consumeJump(),
+      attack: k.z.isDown || k.x.isDown || k.ctrl.isDown || !!t?.attack,
     };
   }
 
@@ -225,11 +231,11 @@ export class Game extends Phaser.Scene implements CombatHost {
     const notices: string[] = [];
     if (ev.baseLevelUps) {
       notices.push(`Nível de base ${this.char.data.baseLevel}!`);
-      this.notice('Você recebeu pontos de atributo. Aperte S para distribuí-los.', true);
+      this.notice('Você recebeu pontos de atributo. Abra Atributos (S) para distribuí-los.', true);
     }
     if (ev.jobLevelUps) {
       notices.push(`Nível de classe ${this.char.data.jobLevel}!`);
-      this.notice('Você recebeu um ponto de habilidade. Aperte K para usá-lo.', true);
+      this.notice('Você recebeu um ponto de habilidade. Abra Habilidades (K) para usá-lo.', true);
       if (this.char.canChangeJob) this.notice('Você já pode mudar de classe! Fale com Cody em Henesys.', true);
     }
     if (notices.length) {
@@ -329,7 +335,7 @@ export class Game extends Phaser.Scene implements CombatHost {
     this.char.fullHeal();
     this.levelUpEffect();
     this.notice(`Parabéns! Agora você é ${CLASSES[job].name}!`);
-    this.notice('Aperte K para ver suas novas habilidades.', true);
+    this.notice('Abra Habilidades (K) para ver suas novas habilidades.', true);
     this.char.save();
   }
 

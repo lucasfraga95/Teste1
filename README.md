@@ -23,6 +23,18 @@ Projeto pessoal: um jogo 2D de plataforma com a cara do **MapleStory** e as regr
 
 4. Abra no navegador o endereço que aparecer (normalmente http://localhost:5173).
 
+### Jogar no celular ou tablet
+
+Com o jogo rodando no PC (`npm run dev`), o terminal mostra um endereço **Network**
+(por exemplo `http://192.168.0.15:5173`). No celular, conectado ao **mesmo Wi-Fi**, abra esse
+endereço no Chrome, vire a tela na horizontal e toque em **Tela cheia**. Se o Windows perguntar
+sobre o firewall, permita o acesso em redes privadas.
+
+Em telas de toque aparecem um direcional (canto inferior esquerdo) e os botões **ATACAR** e
+**PULAR**. Empurre o direcional para cima para entrar em portais e falar com NPCs. Habilidades,
+poções e menus são tocados direto na barra de baixo. Para ver os controles de toque no PC,
+abra o endereço com `?touch=1` no final.
+
 ### Controles
 
 | Tecla | Ação |
