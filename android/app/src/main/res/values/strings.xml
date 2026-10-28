@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RO Maple</string>
+    <string name="title_activity_main">RO Maple</string>
+    <string name="package_name">com.lucasfraga.romaple</string>
+    <string name="custom_url_scheme">com.lucasfraga.romaple</string>
+</resources>

@@ -1,0 +1,58 @@
+# Gera o APK do jogo a cada envio e publica em Releases.
+name: APK Android
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Compilar o jogo
+        run: |
+          npm ci
+          npm run build
+          npx cap sync android
+
+      - name: Gerar o APK
+        working-directory: android
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+          cp app/build/outputs/apk/release/app-release.apk ../RO-Maple.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RO-Maple-apk
+          path: RO-Maple.apk
+
+      - name: Publicar em Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: RO Maple (versão ${{ github.run_number }})
+          target_commitish: ${{ github.sha }}
+          make_latest: true
+          files: RO-Maple.apk
+          body: |
+            Baixe **RO-Maple.apk** no tablet e toque para instalar.
+            Na primeira vez o Android pede para permitir instalar apps desta fonte.

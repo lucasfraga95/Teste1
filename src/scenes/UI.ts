@@ -1,4 +1,5 @@
 // Interface: barras, atalhos, janelas (atributos, habilidades, itens) e NPCs.
+import { Capacitor } from '@capacitor/core';
 import Phaser from 'phaser';
 import { MapData } from '../data/types';
 import { Character } from '../ro/character';
@@ -134,7 +135,8 @@ export class UI extends Phaser.Scene {
     this.banner = this.add.container(width / 2, 40).setAlpha(0);
     if (isTouchDevice()) {
       this.registry.set('touch', new TouchControls(this));
-      this.buildFullscreenButton(width);
+      // No app Android ele já abre em tela cheia.
+      if (!Capacitor.isNativePlatform()) this.buildFullscreenButton(width);
     }
     this.buildDeathBox(width, height);
     this.buildHelp(width, height);
