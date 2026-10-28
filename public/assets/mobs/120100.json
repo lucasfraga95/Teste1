@@ -1,0 +1,1 @@
+{"frameWidth":76,"frameHeight":37,"originX":23,"originY":37,"anims":{"stand":{"start":0,"count":3,"delays":[180,100,180]},"move":{"start":4,"count":4,"delays":[180,180,180,180]},"hit1":{"start":8,"count":1,"delays":[600]},"die1":{"start":12,"count":4,"delays":[120,120,120,300]}},"id":120100,"name":"Shroom","speed":-30,"maple":{"level":2,"hp":20,"exp":5}}
