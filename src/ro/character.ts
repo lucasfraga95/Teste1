@@ -1,14 +1,19 @@
 // Estado e progressão do personagem no estilo RO.
+import { CLASSES, ClassDef, JobId } from './classes';
+import { ITEMS } from './items';
 import {
-  baseExpToNext, derive, Derived, INITIAL_STAT_POINTS, jobBonus, jobExpToNext,
-  JOBS, MAX_STAT, RATES, statCost, StatName, statPointsGained, Stats, STAT_NAMES,
+  baseExpToNext, derive, Derived, emptyStats, INITIAL_STAT_POINTS, jobBonus, jobExpToNext,
+  JOBS, MAX_STAT, PassiveBonus, RATES, statCost, StatName, statPointsGained, Stats, STAT_NAMES,
 } from './rules';
+import { SKILLS } from './skills';
 
 const SAVE_KEY = 'ro-maple-save-v1';
+const SAVE_VERSION = 2;
 
 export interface SaveData {
+  version: number;
   name: string;
-  job: string;
+  job: JobId;
   baseLevel: number;
   baseExp: number;
   jobLevel: number;
@@ -16,6 +21,9 @@ export interface SaveData {
   statPoints: number;
   skillPoints: number;
   stats: Stats;
+  skills: Record<string, number>;
+  inventory: Record<number, number>;
+  zeny: number;
   hp: number;
   sp: number;
   mapId: number;
@@ -26,45 +34,69 @@ export interface ExpEvents {
   jobLevelUps: number;
 }
 
+function newSave(): SaveData {
+  return {
+    version: SAVE_VERSION,
+    name: 'Aventureiro',
+    job: 'Novice',
+    baseLevel: 1,
+    baseExp: 0,
+    jobLevel: 1,
+    jobExp: 0,
+    statPoints: INITIAL_STAT_POINTS,
+    skillPoints: 0,
+    stats: { str: 1, agi: 1, vit: 1, int: 1, dex: 1, luk: 1 },
+    skills: {},
+    // Kit inicial: algumas poções e um pouco de zeny.
+    inventory: { 2000000: 5, 2010000: 5 },
+    zeny: 200,
+    hp: 0,
+    sp: 0,
+    mapId: 100000000,
+  };
+}
+
 export class Character {
   data: SaveData;
   derived!: Derived;
+  totalStats!: Stats;
 
-  constructor(data?: SaveData) {
-    this.data = data ?? {
-      name: 'Aprendiz',
-      job: 'Novice',
-      baseLevel: 1,
-      baseExp: 0,
-      jobLevel: 1,
-      jobExp: 0,
-      statPoints: INITIAL_STAT_POINTS,
-      skillPoints: 0,
-      stats: { str: 1, agi: 1, vit: 1, int: 1, dex: 1, luk: 1 },
-      hp: 0,
-      sp: 0,
-      mapId: 100000000,
-    };
+  constructor(data?: Partial<SaveData>) {
+    const fresh = !data;
+    this.data = { ...newSave(), ...data, version: SAVE_VERSION };
+    if (!CLASSES[this.data.job]) this.data.job = 'Novice';
     this.recalc();
-    if (!data) this.fullHeal();
+    if (fresh) this.fullHeal();
   }
 
-  /** Atributos com bônus de classe. */
-  get totalStats(): Stats {
-    const b = jobBonus(this.data.job, this.data.jobLevel);
-    const t = { ...this.data.stats };
-    for (const s of STAT_NAMES) t[s] += b[s];
-    return t;
+  get cls(): ClassDef {
+    return CLASSES[this.data.job];
+  }
+
+  skillLevel(id: string) {
+    return this.data.skills[id] ?? 0;
   }
 
   bonusOf(stat: StatName): number {
-    return jobBonus(this.data.job, this.data.jobLevel)[stat];
+    return this.totalStats[stat] - this.data.stats[stat];
   }
 
   recalc() {
-    this.derived = derive(this.data.job, this.data.baseLevel, this.totalStats);
-    this.data.hp = Math.min(this.data.hp, this.derived.maxHp);
-    this.data.sp = Math.min(this.data.sp, this.derived.maxSp);
+    const d = this.data;
+    const b = jobBonus(d.job, d.jobLevel);
+    const t = emptyStats();
+    for (const s of STAT_NAMES) t[s] = d.stats[s] + b[s];
+    t.dex += this.skillLevel('owlseye');
+    this.totalStats = t;
+
+    const w = this.cls.weapon;
+    const p: PassiveBonus = { atk: 0, hit: 0, flee: 0 };
+    if (w.type === '1hSword' || w.type === 'Dagger') p.atk += 4 * this.skillLevel('swordmastery');
+    if (w.type === 'Bow') p.hit += this.skillLevel('vultureseye');
+    p.flee += 3 * this.skillLevel('improvedodge');
+    this.derived = derive(d.job, d.baseLevel, t, w, p);
+    d.hp = Math.min(d.hp, this.derived.maxHp);
+    d.sp = Math.min(d.sp, this.derived.maxSp);
   }
 
   fullHeal() {
@@ -84,6 +116,8 @@ export class Character {
     return this.data.jobLevel >= JOBS[this.data.job].maxJobLevel;
   }
 
+  // ------------------------------------------------------------ atributos
+
   canRaise(stat: StatName) {
     const v = this.data.stats[stat];
     return v < MAX_STAT && this.data.statPoints >= statCost(v);
@@ -96,6 +130,99 @@ export class Character {
     this.recalc();
     return true;
   }
+
+  // ------------------------------------------------------------ habilidades
+
+  /** Habilidades visíveis na janela (a classe atual). */
+  get skillList(): string[] {
+    return this.cls.skills;
+  }
+
+  canLearn(id: string) {
+    const s = SKILLS[id];
+    if (!s || this.data.skillPoints <= 0 || this.skillLevel(id) >= s.maxLevel) return false;
+    return (s.req ?? []).every((r) => this.skillLevel(r.skill) >= r.level);
+  }
+
+  learn(id: string): boolean {
+    if (!this.canLearn(id)) return false;
+    this.data.skills[id] = this.skillLevel(id) + 1;
+    this.data.skillPoints--;
+    this.recalc();
+    return true;
+  }
+
+  /** Habilidades ativas aprendidas (para a barra de atalhos). */
+  get activeSkills(): string[] {
+    return this.skillList.filter((id) => SKILLS[id].kind !== 'passive' && this.skillLevel(id) > 0);
+  }
+
+  get canChangeJob() {
+    return this.data.job === 'Novice' && this.data.jobLevel >= 10 && this.skillLevel('basic') >= 9;
+  }
+
+  changeJob(job: JobId) {
+    const d = this.data;
+    d.job = job;
+    d.jobLevel = 1;
+    d.jobExp = 0;
+    d.skillPoints = 0;
+    this.recalc();
+  }
+
+  // ------------------------------------------------------------ itens
+
+  count(id: number) {
+    return this.data.inventory[id] ?? 0;
+  }
+
+  addItem(id: number, n = 1) {
+    this.data.inventory[id] = this.count(id) + n;
+  }
+
+  removeItem(id: number, n = 1): boolean {
+    if (this.count(id) < n) return false;
+    this.data.inventory[id] = this.count(id) - n;
+    if (!this.data.inventory[id]) delete this.data.inventory[id];
+    return true;
+  }
+
+  /** Usa um consumível. Retorna o quanto curou, ou null se não pôde usar. */
+  useItem(id: number): { hp: number; sp: number } | null {
+    const it = ITEMS[id];
+    if (!it || it.type !== 'consume' || this.count(id) <= 0) return null;
+    const d = this.data;
+    if ((it.hp && d.hp >= this.derived.maxHp && !it.sp) || (it.sp && d.sp >= this.derived.maxSp && !it.hp)) return null;
+    this.removeItem(id);
+    const hp = Math.min(it.hp ?? 0, this.derived.maxHp - d.hp);
+    const sp = Math.min(it.sp ?? 0, this.derived.maxSp - d.sp);
+    d.hp += hp;
+    d.sp += sp;
+    return { hp, sp };
+  }
+
+  buy(id: number, n = 1): boolean {
+    const price = (ITEMS[id]?.price ?? 0) * n;
+    if (!price || this.data.zeny < price) return false;
+    this.data.zeny -= price;
+    this.addItem(id, n);
+    return true;
+  }
+
+  /** Vende todos os saques (itens etc). Retorna o zeny ganho. */
+  sellLoot(): number {
+    let total = 0;
+    for (const [k, n] of Object.entries(this.data.inventory)) {
+      const it = ITEMS[Number(k)];
+      if (it?.type !== 'etc') continue;
+      total += it.sell * n;
+      delete this.data.inventory[Number(k)];
+    }
+    this.data.zeny += total;
+    return total;
+  }
+
+  // ------------------------------------------------------------ experiência
 
   gainExp(base: number, job: number): ExpEvents {
     const ev: ExpEvents = { baseLevelUps: 0, jobLevelUps: 0 };
@@ -162,13 +289,3 @@ export class Character {
     }
   }
 }
-
-export const JOB_NAMES: Record<string, string> = {
-  Novice: 'Aprendiz',
-  Swordman: 'Espadachim',
-  Mage: 'Mago',
-  Archer: 'Arqueiro',
-  Acolyte: 'Noviço',
-  Merchant: 'Mercador',
-  Thief: 'Gatuno',
-};

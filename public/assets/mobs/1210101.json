@@ -1,0 +1,1 @@
+{"frameWidth":78,"frameHeight":59,"originX":43,"originY":56,"anims":{"stand":{"start":0,"count":3,"delays":[180,150,180]},"move":{"start":3,"count":3,"delays":[100,100,300]},"hit1":{"start":6,"count":1,"delays":[600]},"die1":{"start":9,"count":3,"delays":[180,180,300]}},"id":1210101,"name":"Ribbon Pig","speed":5,"maple":{"level":10,"hp":120,"exp":20}}

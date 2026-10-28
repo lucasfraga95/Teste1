@@ -88,4 +88,7 @@ export interface MapData {
 export interface AssetIndex {
   maps: number[];
   mobs: number[];
+  classes: string[];
+  skillFx: string[];
+  items: number[];
 }

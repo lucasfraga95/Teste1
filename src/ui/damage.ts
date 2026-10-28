@@ -1,7 +1,9 @@
 // Números de dano com os dígitos do MapleStory.
 import Phaser from 'phaser';
 
-export type DamageStyle = 'NoRed1' | 'NoCri1' | 'NoViolet1';
+export type DamageStyle = 'NoRed1' | 'NoCri1' | 'NoViolet1' | 'heal' | 'sp';
+
+const TEXT_COLORS: Partial<Record<DamageStyle, string>> = { heal: '#7dff8a', sp: '#8ac4ff' };
 
 export function showDamage(
   scene: Phaser.Scene,
@@ -12,7 +14,20 @@ export function showDamage(
   stack = 0,
 ) {
   const c = scene.add.container(x, y - stack * 28).setDepth(9000);
-  if (value === 'MISS') {
+  if (TEXT_COLORS[style]) {
+    c.add(
+      scene.add
+        .text(0, 0, `+${value}`, {
+          fontFamily: 'Verdana, sans-serif',
+          fontSize: '18px',
+          fontStyle: 'bold',
+          color: TEXT_COLORS[style],
+          stroke: '#003010',
+          strokeThickness: 4,
+        })
+        .setOrigin(0.5),
+    );
+  } else if (value === 'MISS') {
     c.add(
       scene.add
         .text(0, 0, 'MISS', {

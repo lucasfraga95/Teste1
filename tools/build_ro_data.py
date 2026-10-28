@@ -21,11 +21,20 @@ JOBS = ["Novice", "Swordman", "Mage", "Archer", "Acolyte", "Merchant",
 
 # Monstro do Maple -> monstro do RO cujos atributos ele usa.
 MOB_TEMPLATES = {
-    100101: "PORING",       # Blue Snail
-    120100: "FABRE",        # Shroom
-    130101: "LUNATIC",      # Red Snail
-    1210100: "SAVAGE_BABE",  # Pig
+    100101: "PORING",         # Blue Snail
+    130101: "LUNATIC",        # Red Snail
+    120100: "FABRE",          # Shroom
+    210100: "DROPS",          # Slime
+    1210100: "SAVAGE_BABE",   # Pig
+    1210102: "ROCKER",        # Orange Mushroom
+    1210101: "POPORING",      # Ribbon Pig
+    1110100: "SPORE",         # Green Mushroom
+    2220100: "POISON_SPORE",  # Blue Mushroom
+    2110200: "HORN",          # Horny Mushroom
 }
+
+# Monstros agressivos no rAthena (atacam ao ver o jogador).
+AGGRESSIVE_AI = {4, 5, 7, 9, 10, 13, 19, 20, 21, 24, 25, 26, 27}
 
 
 def ensure_rathena():
@@ -103,8 +112,13 @@ def main():
             "element": m.get("Element", "Neutral"),
             "walkSpeed": m.get("WalkSpeed", 200),
             "attackDelay": m.get("AttackDelay", 1500),
-            "aggressive": m.get("Ai") in ("04", "21", 4, 21),
+            "elementLevel": m.get("ElementLevel", 1),
+            "aggressive": int(m.get("Ai") or 6) in AGGRESSIVE_AI,
         }
+
+    # Elementos: attr[nível][elemento do ataque][elemento do alvo] = %.
+    out["attr"] = {str(e["Level"]): {k: v for k, v in e.items() if k != "Level"}
+                   for e in body("attr_fix.yml")}
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w") as f:

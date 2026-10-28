@@ -4,11 +4,13 @@ import { MobMeta } from '../data/types';
 import { MobRules, MOBS } from '../ro/rules';
 import { Foothold, Footholds } from '../world/footholds';
 import { depthFor, MapView } from '../world/MapView';
+import { MOB_NAMES } from '../world/names';
 
 type State = 'stand' | 'move' | 'hit' | 'die' | 'dead';
 
 const RESPAWN_MS = 7000;
 const AGGRO_TIMEOUT = 12000;
+const SIGHT = 260;
 
 export class Mob {
   readonly sprite: Phaser.GameObjects.Sprite;
@@ -25,6 +27,10 @@ export class Mob {
   nextAttackAt = 0;
   private stateUntil = 0;
   private speed: number;
+  poisonUntil = 0;
+  private nextPoisonTick = 0;
+  /** Chamado quando o veneno causa dano (para mostrar o número). */
+  onPoison?: (mob: Mob, dmg: number) => void;
 
   constructor(
     private scene: Phaser.Scene,
@@ -53,7 +59,7 @@ export class Mob {
   }
 
   get name() {
-    return this.meta.name;
+    return MOB_NAMES[this.id] ?? this.meta.name;
   }
 
   /** Caixa de colisão (a partir do tamanho do quadro e da origem). */
@@ -70,6 +76,8 @@ export class Mob {
     this.y = this.fh ? Footholds.yAt(this.fh, this.x) : this.spawnY;
     this.state = 'stand';
     this.aggroUntil = 0;
+    this.poisonUntil = 0;
+    this.sprite.clearTint();
     this.dir = Math.random() < 0.5 ? -1 : 1;
     this.sprite.setVisible(true).setAlpha(0);
     this.scene.tweens.add({ targets: this.sprite, alpha: 1, duration: 400 });
@@ -88,7 +96,12 @@ export class Mob {
       this.draw();
       return;
     }
+    // Monstros agressivos do RO atacam quem chega perto.
+    if (this.rules.aggressive && !target.dead && now >= this.aggroUntil) {
+      if (Math.abs(target.x - this.x) < SIGHT && Math.abs(target.y - this.y) < 60) this.aggroUntil = now + AGGRO_TIMEOUT;
+    }
     const aggro = now < this.aggroUntil && !target.dead;
+    this.tickPoison(now);
 
     if (this.state === 'hit') {
       if (now >= this.stateUntil) this.state = 'stand';
@@ -140,8 +153,29 @@ export class Mob {
     }
   }
 
+  poison(now: number) {
+    this.poisonUntil = now + 8000;
+    this.sprite.setTint(0xb07cff);
+  }
+
+  private tickPoison(now: number) {
+    if (!this.poisonUntil) return;
+    if (now >= this.poisonUntil) {
+      this.poisonUntil = 0;
+      this.sprite.clearTint();
+      return;
+    }
+    if (now < this.nextPoisonTick) return;
+    this.nextPoisonTick = now + 1000;
+    // Como no RO, o veneno não mata: para em 1 de HP.
+    const dmg = Math.min(this.hp - 1, Math.max(1, Math.floor(this.rules.hp * 0.03)));
+    if (dmg <= 0) return;
+    this.hp -= dmg;
+    this.onPoison?.(this, dmg);
+  }
+
   /** Recebe dano. Retorna true se morreu. */
-  takeHit(damage: number, fromX: number, now: number): boolean {
+  takeHit(damage: number, fromX: number, now: number, push = 12): boolean {
     if (!this.alive) return false;
     this.aggroUntil = now + AGGRO_TIMEOUT;
     this.nextAttackAt = Math.max(this.nextAttackAt, now + 400);
@@ -157,7 +191,7 @@ export class Mob {
     this.stateUntil = now + 450;
     this.play('hit1', true);
     if (this.fh) {
-      const m = this.map.fh.walk(this.fh, this.x - this.dir * 12);
+      const m = this.map.fh.walk(this.fh, this.x - this.dir * push);
       if (m.fh && !m.blocked) {
         this.x = m.x;
         this.y = m.y;
@@ -169,6 +203,8 @@ export class Mob {
 
   private die() {
     this.state = 'die';
+    this.poisonUntil = 0;
+    this.sprite.clearTint();
     this.hpBar.clear();
     this.scene.sound.play(`mob${this.id}-die`, { volume: 0.4 });
     this.play('die1', true);

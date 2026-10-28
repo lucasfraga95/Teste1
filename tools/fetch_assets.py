@@ -25,15 +25,54 @@ API = "https://maplestory.io/api"
 REGION, VERSION = "GMS", "83"
 UA = "Mozilla/5.0 (RO-Maple fan project)"
 
-# Mapas do protótipo. "links" conecta portais que o v83 não liga entre si.
-MAPS = [100000000, 100010000]
+# Mapas do jogo: Henesys e os campos de caça ao redor.
+MAPS = [
+    100000000,  # Henesys
+    100010000,  # Colina a Leste de Henesys
+    100020000,  # Floresta Tropical a Leste de Henesys
+    104040000,  # Campo de Caça de Henesys I
+    104040001,  # Campo de Caça de Henesys II
+    104040002,  # Campo de Caça de Henesys III
+    104030000,  # Colina a Oeste de Henesys
+    106010000,  # Estrada para o Calabouço
+]
 
-# Visual do personagem (pele, rosto, cabelo, camisa, calça, sapato, arma).
+# Visual de cada classe: rosto, cabelo, roupas e, por último, a arma.
 SKIN = 2000
-CHAR_ITEMS = [20000, 30030, 1040002, 1060002, 1072001]
-WEAPON = 1302000
+HEAD = [20000, 30030]
+CLASS_LOOKS = {
+    "Novice": [1040002, 1060002, 1072001, 1332007],
+    "Swordman": [1002002, 1040015, 1060008, 1072009, 1092005, 1302005],
+    "Mage": [1002017, 1050009, 1072006, 1382000],
+    "Archer": [1002010, 1040008, 1060006, 1072015, 1082012, 1452002],
+    "Thief": [1002019, 1040031, 1060021, 1072030, 1082030, 1332000],
+}
 CHAR_ANIMS = ["stand1", "walk1", "jump", "alert", "swingO1", "swingO2",
-              "swingO3", "stabO1", "prone", "proneStab", "ladder", "rope"]
+              "swingO3", "stabO1", "stabO2", "swingT1", "shoot1", "prone",
+              "proneStab", "ladder", "rope"]
+
+# Efeitos visuais do Maple usados nas habilidades do RO: (id da skill, partes).
+SKILL_FX = {
+    "bash": (1001004, ["effect", "hit/0"]),
+    "magnum": (1001005, ["effect", "hit/0"]),
+    "firebolt": (2101004, ["ball", "hit/0"]),
+    "coldbolt": (2201004, ["effect", "hit/0"]),
+    "lightning": (2201005, ["effect", "hit/0"]),
+    "doublestrafe": (3001005, ["hit/0"]),
+    "arrowshower": (3111004, ["effect", "hit/0"]),
+    "envenom": (4201005, ["effect", "hit/0"]),
+}
+# Ícones do Maple para as habilidades do RO.
+SKILL_ICONS = {
+    "basic": 1000, "bash": 1001004, "magnum": 1001005, "hprecovery": 1000000,
+    "swordmastery": 1100000, "firebolt": 2101004, "coldbolt": 2201004,
+    "lightning": 2201005, "sprecovery": 2000000, "doublestrafe": 3001005,
+    "arrowshower": 3111004, "owlseye": 3000000, "vultureseye": 3000002,
+    "doubleattack": 4001334, "envenom": 4201005, "improvedodge": 4000000,
+}
+ITEMS = [2000000, 2000001, 2000002, 2000003, 2010000,
+         4000000, 4000001, 4000002, 4000009, 4000010, 4000011, 4000012,
+         4000015, 4000016, 4000017]
 
 MOB_ANIMS = ["stand", "move", "hit1", "die1"]
 TILE = 1024  # tamanho máximo de cada pedaço de camada de mapa
@@ -206,9 +245,9 @@ def fetch_map(mid):
                 "rx1": wz_val(p + "/rx1", 0), "f": wz_val(p + "/f", 0),
                 "hide": wz_val(p + "/hide", 0)}
     lifes = pmap(life, wz_children(base + "/life"))
-    # Ids 93xxxxx são monstros de evento; ficam de fora.
+    # Ids 9xxxxxx são monstros de evento; ficam de fora.
     mobs = [l for l in lifes if l["type"] == "m" and not l["hide"]
-            and l["id"] // 100000 != 93]
+            and l["id"] < 9000000]
     npcs = [l for l in lifes if l["type"] == "n" and not l["hide"]]
 
     # Fundos (parallax).
@@ -391,15 +430,16 @@ def char_frames(items):
     return frames
 
 
-def fetch_character():
-    print("[personagem]")
-    armed = char_frames(CHAR_ITEMS + [WEAPON])
-    unarmed = char_frames(CHAR_ITEMS)
+def fetch_character(job, items):
+    if os.path.exists(os.path.join(OUT, "char", f"{job}.json")):
+        return
+    print(f"[personagem {job}]")
+    armed = char_frames(HEAD + items)
+    unarmed = char_frames(HEAD + items[:-1])
     anims = {}
     for a in CHAR_ANIMS:
         src = armed if a in armed else unarmed
         if a not in src:
-            print("  sem animação", a)
             continue
         fs = []
         for i in sorted(src[a]):
@@ -409,8 +449,55 @@ def fetch_character():
             fs.append((im, im.width // 2, im.height // 2, abs(delay or 150)))
         anims[a] = fs
     sheet, meta = pack_anims(anims)
-    save_png("char/novice.png", sheet)
-    save_json("char/novice.json", meta)
+    save_png(f"char/{job}.png", sheet)
+    save_json(f"char/{job}.json", meta)
+
+
+def fetch_skills():
+    print("[habilidades]")
+    for name, (sid, parts) in SKILL_FX.items():
+        base = f"Skill/{sid // 10000:03d}.img/skill/{sid:07d}"
+        for part in parts:
+            parent, leaf = f"{base}/{part}".rsplit("/", 1)
+            fs = anim_frames(parent, leaf)
+            if not fs:
+                print("  sem efeito", name, part)
+                continue
+            sheet, meta = pack_anims({"play": fs})
+            key = f"skill_{name}_{part.split('/')[0]}"
+            save_png(f"fx/{key}.png", sheet)
+            save_json(f"fx/{key}.json", meta)
+    for name, sid in SKILL_ICONS.items():
+        im = wz_img(f"Skill/{sid // 10000:03d}.img/skill/{sid:07d}/icon")
+        if im is None:
+            print("  sem ícone", name)
+            continue
+        save_png(f"icons/skill_{name}.png", im)
+
+
+def item_path(iid):
+    group = {2: "Consume", 4: "Etc"}[iid // 1000000]
+    return f"Item/{group}/{iid // 10000:04d}.img/{iid:08d}"
+
+
+def fetch_items():
+    print("[itens]")
+    names = {}
+    for iid in ITEMS:
+        im = wz_img(item_path(iid) + "/info/icon")
+        if im is not None:
+            save_png(f"icons/item_{iid}.png", im)
+        n = fetch(f"{API}/{REGION}/{VERSION}/item/{iid}/name") or {}
+        names[iid] = n.get("name", str(iid))
+    save_json("icons/items.json", names)
+    meso = wz_img("Item/Special/0900.img/09000000/iconRaw/0")
+    if meso is not None:
+        save_png("icons/meso.png", meso)
+    fs = anim_frames("Item/Consume/0206.img/02060000", "bullet")
+    if fs:
+        sheet, meta = pack_anims({"fly": fs})
+        save_png("fx/arrow.png", sheet)
+        save_json("fx/arrow.json", meta)
 
 
 # --------------------------------------------------------------------- efeitos
@@ -451,9 +538,17 @@ def main():
         mob_ids |= fetch_map(mid)
     for m in sorted(mob_ids):
         fetch_mob(m)
-    fetch_character()
+    for job, items in CLASS_LOOKS.items():
+        fetch_character(job, items)
     fetch_effects()
-    save_json("index.json", {"maps": MAPS, "mobs": sorted(mob_ids)})
+    fetch_skills()
+    fetch_items()
+    save_json("index.json", {"maps": MAPS, "mobs": sorted(mob_ids),
+                             "classes": list(CLASS_LOOKS),
+                             "skillFx": [f"skill_{n}_{p.split('/')[0]}"
+                                         for n, (_, ps) in SKILL_FX.items()
+                                         for p in ps],
+                             "items": ITEMS})
     print("ok")
 
 

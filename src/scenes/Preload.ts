@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { AssetIndex, MapData, SheetMeta } from '../data/types';
+import { SKILLS } from '../ro/skills';
 
 const A = 'assets/';
 
@@ -26,16 +27,18 @@ export class Preload extends Phaser.Scene {
   preload() {
     this.drawProgress();
     this.load.json('index', A + 'index.json');
-    this.load.json('char', A + 'char/novice.json');
     this.load.json('digits', A + 'fx/digits.json');
     this.load.json('fx-portal', A + 'fx/portal.json');
     this.load.json('fx-levelup', A + 'fx/levelup.json');
+    this.load.json('fx-arrow', A + 'fx/arrow.json');
   }
 
   create() {
     const index = this.cache.json.get('index') as AssetIndex;
     for (const id of index.maps) this.load.json(`map${id}`, `${A}maps/${id}/map.json`);
     for (const id of index.mobs) this.load.json(`mob${id}`, `${A}mobs/${id}.json`);
+    for (const job of index.classes) this.load.json(`char-${job}`, `${A}char/${job}.json`);
+    for (const key of index.skillFx) this.load.json(key, `${A}fx/${key}.json`);
     this.load.once('complete', () => this.loadMedia(index));
     this.load.start();
   }
@@ -44,7 +47,12 @@ export class Preload extends Phaser.Scene {
     const sheet = (key: string, url: string, meta: SheetMeta) =>
       this.load.spritesheet(key, url, { frameWidth: meta.frameWidth, frameHeight: meta.frameHeight });
 
-    sheet('char', A + 'char/novice.png', this.cache.json.get('char'));
+    for (const job of index.classes) sheet(`char-${job}`, `${A}char/${job}.png`, this.cache.json.get(`char-${job}`));
+    for (const key of index.skillFx) sheet(key, `${A}fx/${key}.png`, this.cache.json.get(key));
+    sheet('fx-arrow', A + 'fx/arrow.png', this.cache.json.get('fx-arrow'));
+    for (const id of index.items) this.load.image(`icon-item-${id}`, `${A}icons/item_${id}.png`);
+    for (const id of Object.keys(SKILLS)) this.load.image(`icon-skill-${id}`, `${A}icons/skill_${id}.png`);
+    this.load.image('icon-meso', A + 'icons/meso.png');
     sheet('fx-portal', A + 'fx/portal.png', this.cache.json.get('fx-portal'));
     sheet('fx-levelup', A + 'fx/levelup.png', this.cache.json.get('fx-levelup'));
     const digits = this.cache.json.get('digits') as Record<string, { frameWidth: number; frameHeight: number }>;
@@ -85,7 +93,8 @@ export class Preload extends Phaser.Scene {
   }
 
   private finish(index: AssetIndex, npcs: Set<number>) {
-    createSheetAnims(this, 'char', this.cache.json.get('char'));
+    for (const job of index.classes) createSheetAnims(this, `char-${job}`, this.cache.json.get(`char-${job}`));
+    for (const key of [...index.skillFx, 'fx-arrow']) createSheetAnims(this, key, this.cache.json.get(key));
     createSheetAnims(this, 'fx-portal', this.cache.json.get('fx-portal'));
     createSheetAnims(this, 'fx-levelup', this.cache.json.get('fx-levelup'));
     for (const id of index.mobs) createSheetAnims(this, `mob${id}`, this.cache.json.get(`mob${id}`));

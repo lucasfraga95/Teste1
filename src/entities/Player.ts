@@ -20,8 +20,6 @@ export interface Controls {
   attack: boolean; // segurando
 }
 
-const ATTACK_ANIMS = ['swingO1', 'swingO2', 'swingO3', 'stabO1'];
-
 export class Player {
   readonly sprite: Phaser.GameObjects.Sprite;
   x: number;
@@ -38,16 +36,16 @@ export class Player {
   private alertUntil = 0;
   private dropIgnore: Foothold | null = null;
   private dropUntil = 0;
-  private meta: SheetMeta;
+  private meta!: SheetMeta;
+  private sheet = '';
   private layer = 0;
+  private castUntil = 0;
+  private castTotal = 0;
+  private onCastDone: (() => void) | null = null;
 
-  /** Chamado no meio do golpe para resolver o acerto. */
-  onAttackHit?: () => void;
-
-  constructor(private scene: Phaser.Scene, private map: MapView, x: number, y: number) {
-    this.meta = scene.cache.json.get('char');
-    this.sprite = scene.add.sprite(x, y, 'char');
-    this.sprite.setOrigin(this.meta.originX / this.meta.frameWidth, this.meta.originY / this.meta.frameHeight);
+  constructor(private scene: Phaser.Scene, private map: MapView, x: number, y: number, job: string) {
+    this.sprite = scene.add.sprite(x, y, `char-${job}`);
+    this.setJob(job);
     this.x = x;
     this.y = y;
     const below = map.fh.below(x, y - 20, 2000);
@@ -71,8 +69,21 @@ export class Player {
     return new Phaser.Geom.Rectangle(this.x - 14, this.y - 60, 28, 60);
   }
 
+  /** Troca o visual para o de outra classe. */
+  setJob(job: string) {
+    this.sheet = `char-${job}`;
+    this.meta = this.scene.cache.json.get(this.sheet);
+    this.sprite.setTexture(this.sheet);
+    this.sprite.setOrigin(this.meta.originX / this.meta.frameWidth, this.meta.originY / this.meta.frameHeight);
+    this.sprite.anims.stop();
+  }
+
+  hasAnim(anim: string) {
+    return anim in this.meta.anims;
+  }
+
   private play(anim: string, once = false) {
-    const key = `char:${anim}`;
+    const key = `${this.sheet}:${anim}`;
     if (once) {
       this.sprite.play({ key, repeat: 0 });
     } else if (this.sprite.anims.currentAnim?.key !== key || !this.sprite.anims.isPlaying) {
@@ -84,18 +95,52 @@ export class Player {
     return this.meta.anims[anim].delays.reduce((a, b) => a + b, 0);
   }
 
-  /** Inicia um ataque básico se possível. `delay` vem do ASPD do RO. */
-  tryAttack(aspdDelay: number): boolean {
+  /** Pode começar uma ação (ataque ou habilidade) agora? */
+  get ready() {
+    return !this.dead && !this.ladder && !this.casting && this.scene.time.now >= this.nextAttackAt;
+  }
+
+  get casting() {
+    return this.onCastDone !== null;
+  }
+
+  /** Progresso da conjuração (0 a 1), ou null se não está conjurando. */
+  get castProgress(): number | null {
+    if (!this.casting) return null;
+    return 1 - Math.max(0, this.castUntil - this.scene.time.now) / this.castTotal;
+  }
+
+  /**
+   * Executa uma animação de ação. `onHit` é chamado no meio do golpe;
+   * `cooldown` vem do ASPD do RO ou do tempo de recarga da habilidade.
+   */
+  act(anims: string[], cooldown: number, onHit: () => void): boolean {
+    if (!this.ready) return false;
     const now = this.scene.time.now;
-    if (this.dead || this.ladder || now < this.nextAttackAt) return false;
-    const anim = this.fh && this.isProne ? 'proneStab' : Phaser.Utils.Array.GetRandom(ATTACK_ANIMS);
+    let anim = Phaser.Utils.Array.GetRandom(anims.filter((a) => this.hasAnim(a))) ?? 'stand1';
+    if (this.fh && this.isProne && this.hasAnim('proneStab') && !anims.includes('shoot1')) anim = 'proneStab';
     const dur = this.animDuration(anim);
     this.attackUntil = now + dur;
-    this.nextAttackAt = now + Math.max(dur, aspdDelay);
+    this.nextAttackAt = now + Math.max(dur, cooldown);
     this.alertUntil = now + 2500;
     this.play(anim, true);
-    this.scene.time.delayedCall(Math.min(dur * 0.45, 250), () => this.onAttackHit?.());
+    this.scene.time.delayedCall(Math.min(dur * 0.45, 250), onHit);
     return true;
+  }
+
+  /** Começa a conjurar; o personagem fica parado até terminar. */
+  cast(ms: number, onDone: () => void): boolean {
+    if (!this.ready || !this.fh) return false;
+    this.castTotal = Math.max(1, ms);
+    this.castUntil = this.scene.time.now + ms;
+    this.onCastDone = onDone;
+    this.vx = 0;
+    return true;
+  }
+
+  /** Interrompe a conjuração (ao levar dano, como no RO). */
+  interruptCast() {
+    this.onCastDone = null;
   }
 
   private isProne = false;
@@ -104,6 +149,18 @@ export class Player {
     const now = this.scene.time.now;
     if (this.dead) return;
     const fh = this.map.fh;
+
+    if (this.casting) {
+      if (now >= this.castUntil) {
+        const done = this.onCastDone!;
+        this.onCastDone = null;
+        done();
+      } else {
+        this.play('alert');
+        this.updateSprite(now, true);
+        return;
+      }
+    }
 
     if (this.ladder) {
       this.updateLadder(dt, c);
@@ -229,7 +286,7 @@ export class Player {
     }
   }
 
-  private updateSprite(now: number) {
+  private updateSprite(now: number, skipAnim = false) {
     this.sprite.setPosition(Math.round(this.x), Math.round(this.y));
     this.sprite.setFlipX(this.facing === 1);
     const layer = this.fh?.layer ?? this.layer;
@@ -239,7 +296,7 @@ export class Player {
     const blink = now < this.invincibleUntil && Math.floor(now / 80) % 2 === 0;
     this.sprite.setAlpha(blink ? 0.4 : 1);
 
-    if (this.ladder || this.attacking) return;
+    if (skipAnim || this.ladder || this.attacking) return;
     if (!this.fh) this.play('jump');
     else if (this.isProne) this.play('prone');
     else if (this.vx !== 0) this.play('walk1');
@@ -248,7 +305,7 @@ export class Player {
 
   /** Empurrão ao levar dano. */
   knockback(fromX: number) {
-    if (this.ladder) return;
+    if (this.ladder || this.casting) return;
     const dir = this.x < fromX ? -1 : 1;
     this.fh = null;
     this.vx = dir * 140;
@@ -258,7 +315,8 @@ export class Player {
   die() {
     this.dead = true;
     this.ladder = null;
-    this.sprite.play('char:prone');
+    this.interruptCast();
+    this.sprite.play(`${this.sheet}:prone`);
     this.sprite.anims.pause();
     this.sprite.setTint(0x777777);
   }

@@ -1,0 +1,1 @@
+{"frameWidth":70,"frameHeight":67,"originX":34,"originY":67,"anims":{"stand":{"start":0,"count":2,"delays":[180,180]},"move":{"start":3,"count":3,"delays":[180,120,180]},"hit1":{"start":6,"count":1,"delays":[600]},"die1":{"start":9,"count":3,"delays":[180,180,300]}},"id":2220100,"name":"Blue Mushroom","speed":5,"maple":{"level":20,"hp":350,"exp":32}}

@@ -31,24 +31,32 @@ Projeto pessoal: um jogo 2D de plataforma com a cara do **MapleStory** e as regr
 | Espaço / Alt | pular |
 | ↓ + Espaço | descer de uma plataforma |
 | ↑ / ↓ | subir/descer escadas e cordas |
-| ↑ em cima de um portal | trocar de mapa |
+| ↑ | entrar em portais e falar com NPCs |
 | Z, X ou Ctrl | atacar (segure para continuar atacando) |
-| S | janela de atributos |
+| Q W E R | habilidades |
+| 1 2 3 4 | poções |
+| S / K / I | atributos / habilidades / itens |
 | M | ligar/desligar o som |
 | H | ajuda |
 
 O progresso é salvo automaticamente no navegador.
 
-## O que já existe (versão 0.1)
+## O que já existe (versão 0.2)
 
-- Henesys (cidade) e A Colina a Leste de Henesys (caça), ligadas por portal.
-- Física de plataformas do Maple: rampas, paredes, escadas, cordas, descer de plataformas.
-- Fundos com parallax, NPCs, música e efeitos sonoros originais.
-- Aprendiz (Novice) com nível de base/classe, tabela de EXP do RO, 48 pontos iniciais,
-  custo de atributo do RO, HP/SP por nível, bônus de classe, ASPD, HIT/FLEE, crítico.
-- Monstros com visual do Maple e atributos do RO: Caracol Azul (Poring), Cogumelo (Fabre),
-  Caracol Vermelho (Lunatic), Porco (Savage Babe). Só atacam depois de provocados, como no RO.
-- Morte com penalidade de 1% da EXP e retorno à cidade.
+- **8 mapas:** Henesys e 7 campos de caça ao redor (níveis 1 a 20), ligados por portais.
+- **Classes:** Aprendiz → Espadachim, Mago, Arqueiro ou Gatuno (nível de classe 10 +
+  Habilidades Básicas 9, falando com Cody em Henesys). Cada classe tem visual e arma próprios.
+- **Habilidades (números do RO Pré-Renewal):**
+  - Espadachim: Golpe Fulminante, Impacto Explosivo, Recuperação de HP, Perícia com Espada
+  - Mago: Lanças de Fogo, Lanças de Gelo, Relâmpago (com conjuração), Recuperação de SP
+  - Arqueiro: Rajada de Flechas, Chuva de Flechas, Olhos de Coruja, Olhos de Águia
+  - Gatuno: Ataque Duplo, Envenenar, Perícia em Esquiva
+- **Regras do RO:** tabela de EXP, atributos, HP/SP por classe, ASPD, HIT/FLEE, crítico,
+  tabela de elementos, tamanho do alvo, penalidade de morte.
+- **10 monstros** com visual do Maple e atributos de monstros do RO (Poring, Fabre, Lunatic,
+  Drops, Savage Babe, Rocker, Poporing, Spore, Poison Spore, Horn). O Cogumelo Azul é agressivo.
+- **Itens:** saques e poções caem dos monstros; loja de poções (Rina), curandeira (Nana) e
+  táxi para os campos de caça (Regular Cab) em Henesys.
 
 ## Estrutura
 
