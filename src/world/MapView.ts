@@ -3,8 +3,13 @@ import Phaser from 'phaser';
 import { MapBack, MapData, NpcMeta, Portal } from '../data/types';
 import { Footholds } from './footholds';
 
-/** Profundidade de desenho de algo que está sobre a camada `layer`. */
-export const depthFor = (layer: number) => layer * 100 + 50;
+/**
+ * Profundidade de personagens, monstros, NPCs e itens. No Maple eles ficam junto
+ * da camada da plataforma (e árvores de camadas acima os cobrem); aqui ficam
+ * sempre na frente do cenário, que é o que se espera num jogo 2D.
+ */
+const ENTITY_DEPTH = 8 * 100 + 50;
+export const depthFor = (_layer?: number) => ENTITY_DEPTH;
 const BACK_DEPTH = -1000;
 const FRONT_DEPTH = 5000;
 const HUD_HEIGHT = 62;
