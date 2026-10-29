@@ -4,7 +4,7 @@ import Phaser from 'phaser';
 import { MapData } from '../data/types';
 import { Character } from '../ro/character';
 import { CLASSES, FIRST_CLASSES } from '../ro/classes';
-import { ITEMS, POTION_SLOTS, SHOP_ITEMS } from '../ro/items';
+import { EquipSlot, EQUIP_SHOP, ITEMS, ItemDef, POTION_SLOTS, SHOP_ITEMS, SLOT_NAMES } from '../ro/items';
 import { statCost, StatName, STAT_NAMES } from '../ro/rules';
 import { SKILLS } from '../ro/skills';
 import { MAP_NAMES } from '../world/names';
@@ -52,6 +52,7 @@ export class UI extends Phaser.Scene {
     npc: null,
   };
   private npcTalk: NpcTalk | null = null;
+  private equipTab: EquipSlot = 'weapon';
   private lastSig = '';
 
   constructor() {
@@ -186,7 +187,7 @@ export class UI extends Phaser.Scene {
 
     // Redesenha janelas abertas quando os dados mudam.
     const d = c.data;
-    const sig = JSON.stringify([d.stats, d.statPoints, d.skillPoints, d.skills, d.inventory, d.zeny, d.job, d.jobLevel, d.baseLevel]);
+    const sig = JSON.stringify([d.stats, d.statPoints, d.skillPoints, d.skills, d.inventory, d.equip, d.zeny, d.job, d.jobLevel, d.baseLevel]);
     if (sig !== this.lastSig) {
       this.lastSig = sig;
       (Object.keys(this.windows) as (keyof UI['windows'])[]).forEach((n) => this.windows[n] && this.render(n));
@@ -346,7 +347,7 @@ export class UI extends Phaser.Scene {
       p.add(this.txt(140, y, `custo ${statCost(c.data.stats[s])}`, 10, '#7a7f95'));
     });
     const d = c.derived;
-    const w_ = c.cls.weapon;
+    const w_ = c.weapon;
     p.add(
       this.txt(
         190,
@@ -416,22 +417,54 @@ export class UI extends Phaser.Scene {
       .sort((a, b) => a[0] - b[0]);
     const rows = Math.max(1, Math.ceil(entries.length / 2));
     const w = 400;
-    const h = 70 + rows * 40;
-    const p = this.panel('items', this.scale.width / 2 - w / 2, 40, w, h, 'Itens');
+    const top = 140;
+    const h = top + 10 + rows * 40;
+    const p = this.panel('items', this.scale.width / 2 - w / 2, 30, w, h, 'Itens');
     p.add(this.add.image(20, 41, 'icon-meso').setDisplaySize(20, 20));
     p.add(this.txt(34, 34, `${c.data.zeny.toLocaleString('pt-BR')} zeny`, 12, INK, { fontStyle: 'bold' }));
-    if (!entries.length) p.add(this.txt(12, 64, 'Inventário vazio.', 11, '#5b6075'));
+    p.add(this.txt(210, 34, `ATK ${c.weapon.atk}   DEF ${c.derived.def}`, 12, '#5a6fa8', { fontStyle: 'bold' }));
+
+    // Equipamentos em uso.
+    (Object.keys(SLOT_NAMES) as EquipSlot[]).forEach((slot, i) => {
+      const x = 10 + (i % 2) * 195;
+      const y = 56 + Math.floor(i / 2) * 38;
+      const id = c.data.equip[slot];
+      p.add(this.txt(x, y, SLOT_NAMES[slot], 10, '#7a7f95'));
+      if (id) {
+        p.add(this.add.image(x + 14, y + 25, `icon-item-${id}`).setDisplaySize(24, 24));
+        p.add(this.txt(x + 30, y + 15, ITEMS[id].name, 11, INK));
+        p.add(this.button(x + 140, y + 12, 'Tirar', () => {
+          c.unequip(slot);
+          c.save();
+        }, true, '#7a4a4a'));
+      } else {
+        p.add(this.txt(x + 30, y + 15, slot === 'weapon' ? `${c.cls.weapon.name} (inicial)` : '—', 11, '#5b6075'));
+      }
+    });
+    const g = this.add.graphics().lineStyle(1, 0xc9c3b0).lineBetween(10, top - 6, w - 10, top - 6);
+    p.add(g);
+
+    if (!entries.length) p.add(this.txt(12, top, 'Inventário vazio.', 11, '#5b6075'));
     entries.forEach(([id, n], i) => {
       const it = ITEMS[id];
       const x = 10 + (i % 2) * 195;
-      const y = 60 + Math.floor(i / 2) * 40;
-      p.add(this.add.image(x + 16, y + 16, `icon-item-${id}`));
+      const y = top + Math.floor(i / 2) * 40;
+      p.add(this.add.image(x + 16, y + 16, `icon-item-${id}`).setDisplaySize(30, 30));
       p.add(this.txt(x + 36, y + 2, it.name, 11, INK, { wordWrap: { width: 110 } }));
-      p.add(this.txt(x + 36, y + 17, `x${n}`, 10, '#5b6075'));
+      p.add(this.txt(x + 36, y + 17, it.type === 'equip' ? this.equipStats(it) : `x${n}`, 10, '#5b6075'));
       if (it.type === 'consume') {
         p.add(this.button(x + 140, y + 4, 'Usar', () => this.game_.useItem(id), true, '#4a8a5a'));
+      } else if (it.type === 'equip') {
+        p.add(this.button(x + 126, y + 4, 'Equipar', () => {
+          if (c.equip(id)) c.save();
+        }, c.canEquip(id), '#4a8a5a'));
       }
     });
+  }
+
+  private equipStats(it: ItemDef) {
+    if (it.slot === 'weapon') return `ATK ${it.atk}${it.matkPct ? ` · MATK +${it.matkPct}%` : ''}`;
+    return `DEF ${it.def}`;
   }
 
   // ------------------------------------------------------------ NPCs
@@ -480,6 +513,20 @@ export class UI extends Phaser.Scene {
         c.save();
         this.showNotice(`Vendido por ${got} zeny.`);
       }, loot > 0]);
+    } else if (t.role === 'equip') {
+      text = `Seu zeny: ${c.data.zeny.toLocaleString('pt-BR')}   ·   comprar já equipa o item`;
+      for (const id of EQUIP_SHOP[this.equipTab]) {
+        const it = ITEMS[id];
+        const usable = c.canEquip(id);
+        const worn = Object.values(c.data.equip).includes(id);
+        const label = `${it.name} (${this.equipStats(it)}) — ${it.price} z${worn ? '  ✓ equipado' : usable ? '' : '  (outra classe)'}`;
+        lines.push([label, () => {
+          if (!c.buy(id)) return this.showNotice('Zeny insuficiente.');
+          c.equip(id);
+          c.save();
+          this.showNotice(`${it.name} equipado!`);
+        }, usable && !worn && c.data.zeny >= it.price!, `icon-item-${id}`]);
+      }
     } else if (t.role === 'taxi') {
       text = `Para onde vamos? Seu zeny: ${c.data.zeny.toLocaleString('pt-BR')}`;
       for (const dst of TAXI_DESTINATIONS) {
@@ -492,7 +539,8 @@ export class UI extends Phaser.Scene {
       }
     }
 
-    const textH = 18 * (text.split('\n').length + 1);
+    const tabsH = t.role === 'equip' ? 34 : 0;
+    const textH = 18 * (text.split('\n').length + 1) + tabsH;
     const h = 70 + textH + lines.length * 30 + 10;
     const p = this.panel('npc', this.scale.width / 2 - w / 2, Math.max(20, this.scale.height - BAR_H - h - 20), w, h, `${t.name} · ${t.title}`);
     if (this.textures.exists(`npc${t.id}`)) {
@@ -500,6 +548,18 @@ export class UI extends Phaser.Scene {
       p.add(portrait);
     }
     p.add(this.txt(14, 34, text, 12, INK, { lineSpacing: 4, wordWrap: { width: w - 110 } }));
+    if (t.role === 'equip') {
+      let tx = 14;
+      (Object.keys(EQUIP_SHOP) as EquipSlot[]).forEach((slot) => {
+        const active = slot === this.equipTab;
+        const b = this.button(tx, 58, SLOT_NAMES[slot], () => {
+          this.equipTab = slot;
+          this.renderNpc(t);
+        }, true, active ? '#c08a2a' : '#3c4a78');
+        p.add(b);
+        tx += b.width + 8;
+      });
+    }
     lines.forEach((l, i) => {
       if (typeof l === 'string') return;
       const [label, cb, enabled = true, icon] = l;

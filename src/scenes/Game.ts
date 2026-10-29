@@ -5,11 +5,11 @@ import { Mob } from '../entities/Mob';
 import { Controls, Player } from '../entities/Player';
 import { Character } from '../ro/character';
 import { CLASSES, JobId } from '../ro/classes';
-import { ITEMS, POTION_SLOTS, rollDrops } from '../ro/items';
+import { ITEMS, POTION_SLOTS, rollDrops, rollZeny } from '../ro/items';
 import { HitResult, hpRegen, mobAttack, MOBS, spRegen } from '../ro/rules';
 import { showDamage } from '../ui/damage';
 import type { TouchControls } from '../ui/TouchControls';
-import { Drops } from '../world/Drops';
+import { Drops, Pickup, ZENY } from '../world/Drops';
 import { Footholds } from '../world/footholds';
 import { MapView } from '../world/MapView';
 import { NPC_ROLES } from '../world/npcs';
@@ -198,7 +198,7 @@ export class Game extends Phaser.Scene implements CombatHost {
       }
       this.player.update(dt, this.dialogOpen ? { left: false, right: false, up: false, down: false, jump: false, attack: false } : c);
       if (this.player.y > this.map.bounds.bottom + 300) this.teleportToSpawn();
-      for (const id of this.drops.update(this.player.x, this.player.y, time)) this.pickUp(id);
+      for (const got of this.drops.update(this.player.x, this.player.y, time)) this.pickUp(got);
     }
 
     this.updateInteractHint(touch);
@@ -263,7 +263,7 @@ export class Game extends Phaser.Scene implements CombatHost {
   private onMobKilled(m: Mob) {
     const ev = this.char.gainExp(m.rules.baseExp, m.rules.jobExp);
     this.notice(`${m.name}: +${m.rules.baseExp} EXP de base, +${m.rules.jobExp} EXP de classe`, true);
-    this.drops.spawn(rollDrops(m.id), m.x, m.y);
+    this.drops.spawn(rollDrops(m.id), m.x, m.y, rollZeny(m.rules.level));
     const notices: string[] = [];
     if (ev.baseLevelUps) {
       notices.push(`Nível de base ${this.char.data.baseLevel}!`);
@@ -281,8 +281,13 @@ export class Game extends Phaser.Scene implements CombatHost {
     }
   }
 
-  private pickUp(id: number) {
-    this.char.addItem(id);
+  private pickUp({ id, amount }: Pickup) {
+    if (id === ZENY) {
+      this.char.data.zeny += amount;
+      this.notice(`+${amount} zeny`, true);
+      return;
+    }
+    this.char.addItem(id, amount);
     this.notice(`Você obteve: ${ITEMS[id]?.name ?? id}`, true);
   }
 

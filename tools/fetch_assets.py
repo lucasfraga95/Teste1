@@ -70,6 +70,11 @@ SKILL_ICONS = {
     "arrowshower": 3111004, "owlseye": 3000000, "vultureseye": 3000002,
     "doubleattack": 4001334, "envenom": 4201005, "improvedodge": 4000000,
 }
+# Equipamentos vendidos no jogo (só o ícone; o visual do personagem é o da classe).
+EQUIP_ITEMS = [1332005, 1332006, 1332067, 1302007, 1302005, 1302001,
+               1372005, 1382003, 1382005, 1452003, 1452054, 1452062,
+               1040010, 1040013, 1040014, 1002014, 1002019, 1002008,
+               1072005, 1072004, 1072037]
 ITEMS = [2000000, 2000001, 2000002, 2000003, 2010000,
          4000000, 4000001, 4000002, 4000009, 4000010, 4000011, 4000012,
          4000015, 4000016, 4000017]
@@ -485,6 +490,10 @@ def fetch_skills():
 
 
 def item_path(iid):
+    if iid // 1000000 == 1:
+        kind = {100: "Cap", 104: "Coat", 105: "Longcoat", 107: "Shoes"}.get(
+            iid // 10000, "Weapon")
+        return f"Character/{kind}/{iid:08d}.img"
     group = {2: "Consume", 4: "Etc"}[iid // 1000000]
     return f"Item/{group}/{iid // 10000:04d}.img/{iid:08d}"
 
@@ -492,7 +501,7 @@ def item_path(iid):
 def fetch_items():
     print("[itens]")
     names = {}
-    for iid in ITEMS:
+    for iid in ITEMS + EQUIP_ITEMS:
         im = wz_img(item_path(iid) + "/info/icon")
         if im is not None:
             save_png(f"icons/item_{iid}.png", im)
@@ -557,7 +566,7 @@ def main():
                              "skillFx": [f"skill_{n}_{p.split('/')[0]}"
                                          for n, (_, ps) in SKILL_FX.items()
                                          for p in ps],
-                             "items": ITEMS})
+                             "items": ITEMS + EQUIP_ITEMS})
     print("ok")
 
 

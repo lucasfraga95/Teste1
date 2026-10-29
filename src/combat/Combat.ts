@@ -121,7 +121,7 @@ export class Combat {
 
   private hitPhysical(m: Mob, o: PhysicalOpts, push = 12, stack = 0) {
     if (!m.alive) return false;
-    const r = physicalAttack(this.c.totalStats, this.c.derived, this.c.cls.weapon, m.rules, o);
+    const r = physicalAttack(this.c.totalStats, this.c.derived, this.c.weapon, m.rules, o);
     return this.host.applyHit(m, r, push, stack);
   }
 
@@ -146,7 +146,7 @@ export class Combat {
       const died = this.hitPhysical(target, {});
       // Ataque Duplo do Gatuno: chance de um segundo golpe com adagas.
       const da = this.c.skillLevel('doubleattack');
-      if (!died && da && cls.weapon.type === 'Dagger' && Math.random() * 100 < 5 * da) {
+      if (!died && da && this.c.weapon.type === 'Dagger' && Math.random() * 100 < 5 * da) {
         this.scene.time.delayedCall(90, () => this.hitPhysical(target, {}, 4, 1));
       }
     });

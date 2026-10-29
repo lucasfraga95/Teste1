@@ -1,9 +1,9 @@
 // Estado e progressão do personagem no estilo RO.
 import { CLASSES, ClassDef, JobId } from './classes';
-import { ITEMS } from './items';
+import { EquipSlot, ITEMS } from './items';
 import {
   baseExpToNext, derive, Derived, emptyStats, INITIAL_STAT_POINTS, jobBonus, jobExpToNext,
-  JOBS, MAX_STAT, PassiveBonus, RATES, statCost, StatName, statPointsGained, Stats, STAT_NAMES,
+  JOBS, MAX_STAT, PassiveBonus, RATES, statCost, StatName, statPointsGained, Stats, STAT_NAMES, Weapon,
 } from './rules';
 import { SKILLS } from './skills';
 
@@ -23,6 +23,7 @@ export interface SaveData {
   stats: Stats;
   skills: Record<string, number>;
   inventory: Record<number, number>;
+  equip: Partial<Record<EquipSlot, number>>;
   zeny: number;
   hp: number;
   sp: number;
@@ -49,6 +50,7 @@ function newSave(): SaveData {
     skills: {},
     // Kit inicial: algumas poções e um pouco de zeny.
     inventory: { 2000000: 5, 2010000: 5 },
+    equip: {},
     zeny: 200,
     hp: 0,
     sp: 0,
@@ -73,6 +75,7 @@ export class Character {
   constructor(data?: Partial<SaveData>) {
     const fresh = !data;
     this.data = { ...newSave(), ...data, version: SAVE_VERSION };
+    this.data.equip ??= {};
     if (!CLASSES[this.data.job]) this.data.job = 'Novice';
     this.recalc();
     if (fresh) this.fullHeal();
@@ -98,12 +101,13 @@ export class Character {
     t.dex += this.skillLevel('owlseye');
     this.totalStats = t;
 
-    const w = this.cls.weapon;
+    const w = this.weapon;
     const p: PassiveBonus = { atk: 0, hit: 0, flee: 0 };
     if (w.type === '1hSword' || w.type === 'Dagger') p.atk += 4 * this.skillLevel('swordmastery');
     if (w.type === 'Bow') p.hit += this.skillLevel('vultureseye');
     p.flee += 3 * this.skillLevel('improvedodge');
     this.derived = derive(d.job, d.baseLevel, t, w, p);
+    this.derived.def = Object.values(d.equip).reduce((sum, id) => sum + (ITEMS[id!]?.def ?? 0), 0);
     d.hp = Math.min(d.hp, this.derived.maxHp);
     d.sp = Math.min(d.sp, this.derived.maxSp);
   }
@@ -190,9 +194,46 @@ export class Character {
   changeJob(job: JobId) {
     const d = this.data;
     d.job = job;
+    // Arma que a nova classe não usa volta para o inventário.
+    const w = ITEMS[d.equip.weapon ?? 0];
+    if (w && !CLASSES[job].weapons.includes(w.weaponType!)) this.unequip('weapon');
     d.jobLevel = 1;
     d.jobExp = 0;
     d.skillPoints = 0;
+    this.recalc();
+  }
+
+  // ------------------------------------------------------------ equipamentos
+
+  /** Arma em uso: a equipada, ou a arma inicial da classe. */
+  get weapon(): Weapon {
+    const it = ITEMS[this.data.equip.weapon ?? 0];
+    if (!it?.weaponType) return this.cls.weapon;
+    return { name: it.name, atk: it.atk ?? 0, level: 1, type: it.weaponType, matkPct: it.matkPct };
+  }
+
+  canEquip(id: number) {
+    const it = ITEMS[id];
+    if (it?.type !== 'equip') return false;
+    return it.slot !== 'weapon' || this.cls.weapons.includes(it.weaponType!);
+  }
+
+  /** Equipa um item do inventário; o que estava no espaço volta para o inventário. */
+  equip(id: number): boolean {
+    if (!this.canEquip(id) || !this.removeItem(id)) return false;
+    const slot = ITEMS[id].slot!;
+    const old = this.data.equip[slot];
+    if (old) this.addItem(old);
+    this.data.equip[slot] = id;
+    this.recalc();
+    return true;
+  }
+
+  unequip(slot: EquipSlot) {
+    const old = this.data.equip[slot];
+    if (!old) return;
+    delete this.data.equip[slot];
+    this.addItem(old);
     this.recalc();
   }
 

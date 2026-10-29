@@ -1,5 +1,5 @@
 // Classes jogáveis nesta versão: Aprendiz e as quatro primeiras classes do RO.
-import { Weapon } from './rules';
+import { Weapon, WeaponType } from './rules';
 
 export type JobId = 'Novice' | 'Swordman' | 'Mage' | 'Archer' | 'Thief';
 
@@ -7,7 +7,10 @@ export interface ClassDef {
   id: JobId;
   name: string;
   desc: string;
+  /** Arma inicial (usada quando nenhuma arma comprada está equipada). */
   weapon: Weapon;
+  /** Tipos de arma que a classe pode equipar. */
+  weapons: WeaponType[];
   /** Animações de ataque básico (sorteadas). */
   attackAnims: string[];
   /** Ataque básico à distância (flechas). */
@@ -22,6 +25,7 @@ export const CLASSES: Record<JobId, ClassDef> = {
     name: 'Aprendiz',
     desc: 'Todo aventureiro começa aqui.',
     weapon: { name: 'Faca', atk: 17, level: 1, type: 'Dagger' },
+    weapons: ['Dagger'],
     attackAnims: ['swingO1', 'swingO2', 'swingO3', 'stabO1'],
     ranged: false,
     skills: ['basic'],
@@ -31,6 +35,7 @@ export const CLASSES: Record<JobId, ClassDef> = {
     name: 'Espadachim',
     desc: 'Combate corpo a corpo, muito HP e golpes poderosos.',
     weapon: { name: 'Espada', atk: 25, level: 1, type: '1hSword' },
+    weapons: ['Dagger', '1hSword'],
     attackAnims: ['swingO1', 'swingO2', 'swingO3', 'stabO1'],
     ranged: false,
     skills: ['bash', 'magnum', 'hprecovery', 'swordmastery'],
@@ -40,6 +45,7 @@ export const CLASSES: Record<JobId, ClassDef> = {
     name: 'Mago',
     desc: 'Magias elementais de longe. Pouco HP, muito dano.',
     weapon: { name: 'Cajado', atk: 15, level: 1, type: 'Staff', matkPct: 15 },
+    weapons: ['Staff'],
     attackAnims: ['swingO1', 'swingO2', 'swingO3'],
     ranged: false,
     skills: ['firebolt', 'coldbolt', 'lightning', 'sprecovery'],
@@ -49,6 +55,7 @@ export const CLASSES: Record<JobId, ClassDef> = {
     name: 'Arqueiro',
     desc: 'Ataca à distância com arco. Usa DEX como força.',
     weapon: { name: 'Arco', atk: 15, level: 1, type: 'Bow' },
+    weapons: ['Bow'],
     attackAnims: ['shoot1'],
     ranged: true,
     skills: ['doublestrafe', 'arrowshower', 'owlseye', 'vultureseye'],
@@ -58,6 +65,7 @@ export const CLASSES: Record<JobId, ClassDef> = {
     name: 'Gatuno',
     desc: 'Ágil, esquiva muito e ataca duas vezes com adagas.',
     weapon: { name: 'Adaga', atk: 30, level: 1, type: 'Dagger' },
+    weapons: ['Dagger'],
     attackAnims: ['stabO1', 'stabO2', 'swingO1'],
     ranged: false,
     skills: ['doubleattack', 'envenom', 'improvedodge'],

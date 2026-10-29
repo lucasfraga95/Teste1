@@ -1,10 +1,12 @@
 // Papéis dos NPCs de Henesys neste jogo.
 
-export type NpcRole = 'job' | 'shop' | 'heal' | 'taxi';
+export type NpcRole = 'job' | 'shop' | 'equip' | 'heal' | 'taxi';
 
 export const NPC_ROLES: Record<number, { role: NpcRole; title: string }> = {
   9200000: { role: 'job', title: 'Instrutor de Classes' },
   1010100: { role: 'shop', title: 'Loja de Poções' },
+  9201088: { role: 'shop', title: 'Loja 7-Eleven' },
+  1012109: { role: 'equip', title: 'Loja de Equipamentos' },
   9201001: { role: 'heal', title: 'Curandeira' },
   1012000: { role: 'taxi', title: 'Transporte' },
 };
