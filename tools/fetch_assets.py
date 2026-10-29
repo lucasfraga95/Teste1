@@ -39,9 +39,10 @@ MAPS = [
 
 # Visual de cada classe: rosto, cabelo, roupas e, por último, a arma.
 SKIN = 2000
-HEAD = [20000, 30030]
+HEAD = [20000, 30921]  # rosto e cabelo ruivo arrepiado (Short Top Tail)
 CLASS_LOOKS = {
-    "Novice": [1040002, 1060002, 1072001, 1332007],
+    # Aprendiz: blusa clara, calça bege larga, botas avermelhadas e luvas marrons.
+    "Novice": [1040017, 1060013, 1072069, 1082149, 1332005],
     "Swordman": [1002002, 1040015, 1060008, 1072009, 1092005, 1302005],
     "Mage": [1002017, 1050009, 1072006, 1382000],
     "Archer": [1002010, 1040008, 1060006, 1072015, 1082012, 1452002],
