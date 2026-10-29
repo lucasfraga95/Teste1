@@ -56,6 +56,15 @@ function newSave(): SaveData {
   };
 }
 
+/** Pesos da distribuição automática de atributos por classe. */
+const AUTO_BUILDS: Record<JobId, Stats> = {
+  Novice: { str: 3, agi: 1, vit: 2, int: 0, dex: 2, luk: 0 },
+  Swordman: { str: 3, agi: 1, vit: 2, int: 0, dex: 2, luk: 0 },
+  Mage: { str: 0, agi: 0, vit: 1, int: 4, dex: 2, luk: 0 },
+  Archer: { str: 1, agi: 2, vit: 1, int: 0, dex: 4, luk: 0 },
+  Thief: { str: 2, agi: 4, vit: 1, int: 0, dex: 2, luk: 0 },
+};
+
 export class Character {
   data: SaveData;
   derived!: Derived;
@@ -129,6 +138,23 @@ export class Character {
     this.data.stats[stat]++;
     this.recalc();
     return true;
+  }
+
+  /**
+   * Gasta os pontos livres numa distribuição sugerida para a classe atual.
+   * Cada atributo tem um peso; sobe sempre o que está mais abaixo da sua meta.
+   */
+  autoDistribute(): number {
+    const weights = AUTO_BUILDS[this.data.job];
+    let spent = 0;
+    for (;;) {
+      const options = STAT_NAMES.filter((s) => weights[s] > 0 && this.canRaise(s));
+      if (!options.length) break;
+      const next = options.reduce((a, b) => (this.data.stats[a] / weights[a] <= this.data.stats[b] / weights[b] ? a : b));
+      this.raise(next);
+      spent++;
+    }
+    return spent;
   }
 
   // ------------------------------------------------------------ habilidades

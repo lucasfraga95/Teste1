@@ -367,6 +367,11 @@ export class UI extends Phaser.Scene {
       ),
     );
     p.add(this.txt(12, 200, `Pontos de atributo: ${c.data.statPoints}`, 12, '#2b3150', { fontStyle: 'bold' }));
+    p.add(
+      this.button(190, 196, 'Distribuir automaticamente', () => {
+        if (c.autoDistribute()) c.save();
+      }, c.data.statPoints >= 2, '#4a8a5a'),
+    );
     p.add(this.txt(12, 222, `Arma: ${w_.name} (ATK ${w_.atk})`, 11, '#5b6075'));
   }
 

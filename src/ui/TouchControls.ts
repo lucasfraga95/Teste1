@@ -20,6 +20,8 @@ export class TouchControls {
   attack = false;
   private jumpQueued = false;
   private upQueued = false;
+  private actionQueued = false;
+  private actionBtn!: { circle: Phaser.GameObjects.Arc; label: Phaser.GameObjects.Text };
 
   private stickId: number | null = null;
   private stickBase: Phaser.GameObjects.Arc;
@@ -40,6 +42,11 @@ export class TouchControls {
     const by = height - BAR_H - 70;
     this.addButton(width - 80, by - 10, 46, 'ATACAR', 0xd94848, () => (this.attack = true), () => (this.attack = false));
     this.addButton(width - 190, by + 20, 36, 'PULAR', 0x3f7fe0, () => (this.jumpQueued = true));
+    // Botão de ação: só aparece perto de NPCs ("FALAR") e portais ("ENTRAR").
+    this.actionBtn = this.addButton(width - 80, by - 112, 38, 'FALAR', 0x3f9f5a, () => {
+      if (this.actionBtn.circle.visible) this.actionQueued = true;
+    });
+    this.setAction(null);
 
     scene.input.on('pointerdown', this.onDown, this);
     scene.input.on('pointermove', this.onMove, this);
@@ -49,11 +56,26 @@ export class TouchControls {
 
   private addButton(x: number, y: number, r: number, label: string, color: number, onDown: () => void, onUp?: () => void) {
     const circle = this.scene.add.circle(x, y, r, color, 0.45).setStrokeStyle(2, 0xffffff, 0.5);
-    this.scene.add
+    const text = this.scene.add
       .text(x, y, label, { fontFamily: 'Verdana, sans-serif', fontSize: '12px', fontStyle: 'bold', color: '#ffffff' })
       .setOrigin(0.5)
       .setAlpha(0.9);
     this.buttons.push({ circle, ids: new Set(), onDown, onUp });
+    return { circle, label: text };
+  }
+
+  /** Mostra o botão de ação com o texto dado, ou esconde (null). */
+  setAction(label: string | null) {
+    this.actionBtn.circle.setVisible(!!label);
+    this.actionBtn.label.setVisible(!!label);
+    if (label && this.actionBtn.label.text !== label) this.actionBtn.label.setText(label);
+  }
+
+  /** Botão de ação tocado desde a última leitura. */
+  consumeAction() {
+    const a = this.actionQueued;
+    this.actionQueued = false;
+    return a;
   }
 
   /** Pulo apertado desde a última leitura. */
@@ -72,6 +94,7 @@ export class TouchControls {
 
   private onDown(p: Phaser.Input.Pointer, over: Phaser.GameObjects.GameObject[]) {
     for (const b of this.buttons) {
+      if (!b.circle.visible) continue;
       if (Phaser.Math.Distance.Between(p.x, p.y, b.circle.x, b.circle.y) <= b.circle.radius + 10) {
         b.ids.add(p.id);
         b.circle.setFillStyle(b.circle.fillColor, 0.8);

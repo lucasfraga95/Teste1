@@ -50,7 +50,8 @@ export interface Weapon {
   matkPct?: number;
 }
 
-export const RATES = { baseExp: 1, jobExp: 1 };
+// mobDamage: multiplicador do dano que os monstros causam (ajuste de equilíbrio).
+export const RATES = { baseExp: 1, jobExp: 1, mobDamage: 0.5 };
 export const MAX_BASE_LEVEL = 99;
 export const MAX_STAT = 99;
 
@@ -212,7 +213,7 @@ export function mobAttack(mob: MobRules, d: Derived, s: Stats): HitResult {
   if (!chance(hitRate)) return { damage: 0, miss: true, crit: false };
   const raw = rand(mob.atk[0], mob.atk[1]);
   const soft = d.softDef + rand(0, Math.floor(s.vit * 0.3));
-  const damage = Math.floor((raw * (100 - d.def)) / 100) - soft;
+  const damage = Math.floor(((raw * (100 - d.def)) / 100 - soft) * RATES.mobDamage);
   return { damage: Math.max(1, damage), miss: false, crit: false };
 }
 

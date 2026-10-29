@@ -22,6 +22,8 @@ interface GameInit {
 const INVINCIBLE_MS = 1500;
 const SAVE_EVERY_MS = 5000;
 const SKILL_KEYS = ['Q', 'W', 'E', 'R'];
+const NPC_RANGE = 70;
+const TAP_TALK_RANGE = 280;
 const POTION_KEYS = ['ONE', 'TWO', 'THREE', 'FOUR'];
 
 export class Game extends Phaser.Scene implements CombatHost {
@@ -39,6 +41,7 @@ export class Game extends Phaser.Scene implements CombatHost {
   private nextSpRegen = 0;
   private nextSkillRegen = 0;
   private nextSave = 0;
+  private talkHint!: Phaser.GameObjects.Text;
   /** Diálogo aberto: bloqueia os controles do personagem. */
   dialogOpen = false;
 
@@ -109,6 +112,12 @@ export class Game extends Phaser.Scene implements CombatHost {
     cam.fadeIn(300);
 
     this.setupInput();
+    this.talkHint = this.add
+      .text(0, 0, '', { fontFamily: 'Verdana, sans-serif', fontSize: '12px', fontStyle: 'bold', color: '#1a1200', backgroundColor: '#ffe680', padding: { x: 6, y: 3 } })
+      .setOrigin(0.5, 1)
+      .setDepth(8500)
+      .setVisible(false);
+    this.events.on('npc-tap', (id: number) => this.talkTo(id));
     this.playBgm(data);
     this.game.events.emit('map-enter', data);
     if (this.char.data.statPoints > 0 && !this.target.mapId) {
@@ -176,7 +185,7 @@ export class Game extends Phaser.Scene implements CombatHost {
     const JD = Phaser.Input.Keyboard.JustDown;
     const touch = this.registry.get('touch') as TouchControls | undefined;
     const c = this.readControls(touch);
-    const upPressed = JD(this.cursors.up) || !!touch?.consumeUp();
+    const upPressed = JD(this.cursors.up) || !!touch?.consumeUp() || !!touch?.consumeAction();
 
     if (this.player.dead) {
       if (JD(this.keys.enter)) this.respawn();
@@ -192,6 +201,7 @@ export class Game extends Phaser.Scene implements CombatHost {
       for (const id of this.drops.update(this.player.x, this.player.y, time)) this.pickUp(id);
     }
 
+    this.updateInteractHint(touch);
     for (const m of this.mobs) m.update(dt, time, this.player);
     this.resolveMobAttacks(time);
     this.map.update(this.cameras.main, dt);
@@ -340,14 +350,51 @@ export class Game extends Phaser.Scene implements CombatHost {
 
   // ------------------------------------------------------------- NPCs
 
-  private tryNpc(): boolean {
+  /** NPC com função mais próximo do personagem, dentro de `range`. */
+  private nearNpc(range = NPC_RANGE) {
     const p = this.player;
-    const npc = this.map.data.npcs.find((n) => NPC_ROLES[n.id] && Math.abs(n.x - p.x) < 60 && Math.abs(n.y - p.y) < 70);
+    return this.map.data.npcs.find((n) => NPC_ROLES[n.id] && Math.abs(n.x - p.x) < range && Math.abs(n.y - p.y) < 90);
+  }
+
+  private nearPortal() {
+    const p = this.player;
+    return this.map.data.portals.find(
+      (o) => (o.type === 2 || o.type === 10) && Math.abs(o.x - p.x) < 30 && Math.abs(o.y - p.y) < 60,
+    );
+  }
+
+  private tryNpc(): boolean {
+    const npc = this.nearNpc();
     if (!npc) return false;
-    const meta = this.cache.json.get(`npc${npc.id}`);
-    this.dialogOpen = true;
-    this.game.events.emit('npc-talk', { id: npc.id, name: meta?.name ?? '', ...NPC_ROLES[npc.id] });
+    this.talkTo(npc.id);
     return true;
+  }
+
+  private talkTo(id: number) {
+    if (this.dialogOpen || this.player.dead || !NPC_ROLES[id]) return;
+    const npc = this.map.data.npcs.find((n) => n.id === id);
+    if (!npc) return;
+    if (Math.abs(npc.x - this.player.x) > TAP_TALK_RANGE || Math.abs(npc.y - this.player.y) > 150) {
+      this.notice('Chegue mais perto para conversar.');
+      return;
+    }
+    const meta = this.cache.json.get(`npc${id}`);
+    this.dialogOpen = true;
+    this.game.events.emit('npc-talk', { id, name: meta?.name ?? '', ...NPC_ROLES[id] });
+  }
+
+  /** Mostra o aviso "Falar" sobre o NPC próximo e o botão de ação no toque. */
+  private updateInteractHint(touch?: TouchControls) {
+    const npc = this.dialogOpen || this.player.dead ? undefined : this.nearNpc();
+    const portal = npc || this.dialogOpen ? undefined : this.nearPortal();
+    touch?.setAction(npc ? 'FALAR' : portal ? 'ENTRAR' : null);
+    if (npc) {
+      const meta = this.cache.json.get(`npc${npc.id}`);
+      const top = npc.y - (meta?.originY ?? 80) - 18;
+      this.talkHint.setText(touch ? 'Toque para falar' : '↑ Falar').setPosition(npc.x, top + Math.sin(this.time.now / 200) * 3).setVisible(true);
+    } else {
+      this.talkHint.setVisible(false);
+    }
   }
 
   closeDialog() {
@@ -373,10 +420,7 @@ export class Game extends Phaser.Scene implements CombatHost {
   // ------------------------------------------------------------- mapas
 
   private tryPortal(): boolean {
-    const p = this.player;
-    const portal = this.map.data.portals.find(
-      (o) => (o.type === 2 || o.type === 10) && Math.abs(o.x - p.x) < 30 && Math.abs(o.y - p.y) < 60,
-    );
+    const portal = this.nearPortal();
     if (!portal) return false;
     const index = this.cache.json.get('index') as AssetIndex;
     if (portal.toMap === this.map.data.id) {

@@ -201,9 +201,11 @@ def pack_anims(anims):
     células do mesmo tamanho e com a mesma origem. Os quadros seguem em ordem
     (esquerda para a direita, de cima para baixo), como o Phaser numera."""
     allf = [f for fs in anims.values() for f in fs]
-    left = max(f[1] for f in allf)
+    # A célula é simétrica em volta da origem: ao espelhar o sprite (virar
+    # para o outro lado) o Phaser espelha em torno do centro da célula.
+    left = right = max(max(f[1] for f in allf),
+                       max(f[0].width - f[1] for f in allf))
     up = max(f[2] for f in allf)
-    right = max(f[0].width - f[1] for f in allf)
     down = max(f[0].height - f[2] for f in allf)
     w, h = left + right, up + down
     cols = max(1, min(len(allf), MAX_SHEET_W // w))

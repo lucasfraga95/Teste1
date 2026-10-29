@@ -124,6 +124,8 @@ export class MapView {
     const s = this.scene.add.sprite(x, y, key).play(`${key}:stand`);
     s.setOrigin(meta.originX / meta.frameWidth, meta.originY / meta.frameHeight);
     s.setFlipX(!!flip).setDepth(depthFor(layer) - 2);
+    // Tocar/clicar no NPC também inicia a conversa.
+    s.setInteractive({ useHandCursor: true }).on('pointerdown', () => this.scene.events.emit('npc-tap', id));
     if (meta.name) {
       this.scene.add
         .text(x, y + 4, meta.name, {
