@@ -53,15 +53,39 @@ export class Game extends Phaser.Scene implements CombatHost {
     this.mobs = [];
   }
 
-  create() {
+  /** Mapa a carregar: o pedido, ou o do save. */
+  private resolveMap(): MapData {
     if (!this.registry.get('char')) this.registry.set('char', Character.load());
     this.char = this.registry.get('char');
-
     const index = this.cache.json.get('index') as AssetIndex;
     let mapId = this.target.mapId ?? this.char.data.mapId;
     if (!index.maps.includes(mapId)) mapId = index.maps[0];
     this.char.data.mapId = mapId;
-    const data = this.cache.json.get(`map${mapId}`) as MapData;
+    return this.cache.json.get(`map${mapId}`) as MapData;
+  }
+
+  /**
+   * Carrega só as imagens e a música deste mapa e libera as do anterior,
+   * para caber na memória de vídeo de celulares e tablets.
+   */
+  preload() {
+    const data = this.resolveMap();
+    const keep = new Set([...data.pieces.map((p) => p.key), ...data.backs.map((b) => `back-${b.key}`)]);
+    const prev = this.registry.get('loadedTextures') as string[] | undefined;
+    for (const key of prev ?? []) if (!keep.has(key) && this.textures.exists(key)) this.textures.remove(key);
+    this.registry.set('loadedTextures', [...keep]);
+
+    for (const p of data.pieces) {
+      if (!this.textures.exists(p.key)) this.load.image(p.key, `assets/maps/${data.id}/${p.key}.png`);
+    }
+    for (const b of data.backs) {
+      if (!this.textures.exists(`back-${b.key}`)) this.load.image(`back-${b.key}`, `assets/backs/${b.key}.png`);
+    }
+    if (data.bgm && !this.cache.audio.exists(`bgm${data.bgm}`)) this.load.audio(`bgm${data.bgm}`, `assets/bgm/${data.bgm}.mp3`);
+  }
+
+  create() {
+    const data = this.resolveMap();
     this.map = new MapView(this, data);
     this.addNpcTitles(data);
 
@@ -127,6 +151,8 @@ export class Game extends Phaser.Scene implements CombatHost {
     if (current && current.key === key) return;
     current?.stop();
     current?.destroy();
+    // Libera a música do mapa anterior.
+    if (current && current.key !== key) this.cache.audio.remove(current.key);
     if (!key) return;
     const music = this.sound.add(key, { loop: true, volume: 0.3 });
     music.play();

@@ -208,7 +208,7 @@ export class Player {
     if (!this.fh && !this.ladder) this.updateAir(dt, now);
 
     // Limites horizontais do mapa.
-    this.x = Phaser.Math.Clamp(this.x, fh.left + 10, fh.right - 10);
+    this.x = Phaser.Math.Clamp(this.x, fh.left + 25, fh.right - 25);
     this.updateSprite(now);
   }
 

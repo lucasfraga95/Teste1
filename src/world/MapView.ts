@@ -25,10 +25,10 @@ export class MapView {
 
   constructor(private scene: Phaser.Scene, readonly data: MapData) {
     this.fh = new Footholds(data.footholds);
-    // Câmera: limita ao trecho com cenário desenhado e deixa espaço para a barra inferior.
-    let left = Math.max(this.fh.left, data.bounds.left);
-    let right = Math.min(this.fh.right, data.bounds.right);
-    if (right - left < scene.scale.width) [left, right] = [this.fh.left, this.fh.right];
+    // Câmera: vai até onde o personagem pode andar (as plataformas), para ele
+    // nunca sair da tela; embaixo deixa espaço para a barra inferior.
+    const left = this.fh.left;
+    const right = this.fh.right;
     const top = Math.min(data.bounds.top, this.fh.top - 300);
     const bottom = Math.max(this.fh.bottom + 80, Math.min(data.bounds.bottom, this.fh.bottom + 200)) + HUD_HEIGHT;
     this.bounds = new Phaser.Geom.Rectangle(left, top, right - left, bottom - top);

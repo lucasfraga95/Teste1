@@ -76,6 +76,7 @@ ITEMS = [2000000, 2000001, 2000002, 2000003, 2010000,
 
 MOB_ANIMS = ["stand", "move", "hit1", "die1"]
 TILE = 1024  # tamanho máximo de cada pedaço de camada de mapa
+MAX_SHEET_W = 2048  # largura máxima das folhas de animação
 
 
 # ---------------------------------------------------------------- HTTP / cache
@@ -196,22 +197,27 @@ def pack_frames(frames):
 
 
 def pack_anims(anims):
-    """anims: {nome: [(img, ox, oy, delay)]} -> uma folha com uma linha por
-    animação, todas com a mesma célula e origem."""
+    """anims: {nome: [(img, ox, oy, delay)]} -> uma folha em grade, todas as
+    células do mesmo tamanho e com a mesma origem. Os quadros seguem em ordem
+    (esquerda para a direita, de cima para baixo), como o Phaser numera."""
     allf = [f for fs in anims.values() for f in fs]
     left = max(f[1] for f in allf)
     up = max(f[2] for f in allf)
     right = max(f[0].width - f[1] for f in allf)
     down = max(f[0].height - f[2] for f in allf)
     w, h = left + right, up + down
-    cols = max(len(fs) for fs in anims.values())
-    sheet = Image.new("RGBA", (w * cols, h * len(anims)))
+    cols = max(1, min(len(allf), MAX_SHEET_W // w))
+    rows = (len(allf) + cols - 1) // cols
+    sheet = Image.new("RGBA", (w * cols, h * rows))
     meta = {}
-    for row, (name, fs) in enumerate(anims.items()):
-        for i, (im, ox, oy, _) in enumerate(fs):
-            sheet.paste(im, (i * w + left - ox, row * h + up - oy), im)
-        meta[name] = {"start": row * cols, "count": len(fs),
+    i = 0
+    for name, fs in anims.items():
+        meta[name] = {"start": i, "count": len(fs),
                       "delays": [f[3] for f in fs]}
+        for im, ox, oy, _ in fs:
+            x, y = (i % cols) * w, (i // cols) * h
+            sheet.paste(im, (x + left - ox, y + up - oy), im)
+            i += 1
     return sheet, {"frameWidth": w, "frameHeight": h, "originX": left,
                    "originY": up, "anims": meta}
 
@@ -282,24 +288,24 @@ def fetch_map(mid):
     def layer_url(n, extra=""):
         return f"{API}/{REGION}/{VERSION}/map/{mid}/render/layer/{n}{extra}"
 
-    probe = None
-    for n in range(16):
-        data = fetch(layer_url(n), binary=True)
-        if data:
-            probe = n
-            nat = Image.open(io.BytesIO(data))
-            break
-    zero = Image.open(io.BytesIO(fetch(layer_url(probe, "?minX=0&minY=0"),
-                                       binary=True)))
-    min_x = zero.width - nat.width
-    min_y = zero.height - nat.height
+    # Todas as camadas são pedidas com a mesma origem (minX/minY), escolhida
+    # com folga a partir das plataformas; assim a posição de cada pixel é exata.
+    fhs = list(info["footholds"].values())
+    min_x = min(min(f["x1"], f["x2"]) for f in fhs) - 1500
+    min_y = min(min(f["y1"], f["y2"]) for f in fhs) - 1500
+    extra = f"?minX={min_x}&minY={min_y}"
+    max_x, max_y = min_x, min_y
 
     pieces = []
     for n in range(16):
-        data = fetch(layer_url(n), binary=True)
+        data = fetch(layer_url(n, extra), binary=True)
         if not data:
             continue
         im = Image.open(io.BytesIO(data)).convert("RGBA")
+        box = im.getbbox()
+        if box:
+            max_x = max(max_x, min_x + box[2])
+            max_y = max(max_y, min_y + box[3])
         for ty in range(0, im.height, TILE):
             for tx in range(0, im.width, TILE):
                 part = im.crop((tx, ty, min(tx + TILE, im.width),
@@ -335,8 +341,9 @@ def fetch_map(mid):
         "id": mid, "name": info["name"], "street": info["streetName"],
         "town": bool(info.get("isTown")), "bgm": f"{mid}" if bgm else None,
         "returnMap": info.get("returnMap"),
-        "bounds": {"left": min_x, "top": min_y, "right": zero.width,
-                   "bottom": zero.height},
+        "bounds": {"left": min(p["x"] for p in pieces),
+                   "top": min(p["y"] for p in pieces), "right": max_x,
+                   "bottom": max_y},
         "pieces": pieces, "backs": back_out, "footholds": footholds,
         "ladders": ladders, "portals": portals,
         "mobs": [{k: m[k] for k in ("id", "x", "y", "fh", "rx0", "rx1", "f")}

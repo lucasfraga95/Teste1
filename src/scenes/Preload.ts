@@ -61,15 +61,11 @@ export class Preload extends Phaser.Scene {
     }
 
     const npcs = new Set<number>();
-    const backs = new Set<string>();
+    // Camadas, fundos e música de cada mapa são carregados só ao entrar nele (Game.preload).
     for (const id of index.maps) {
       const m = this.cache.json.get(`map${id}`) as MapData;
-      for (const p of m.pieces) this.load.image(p.key, `${A}maps/${id}/${p.key}.png`);
-      for (const b of m.backs) backs.add(b.key);
       for (const n of m.npcs) npcs.add(n.id);
-      if (m.bgm) this.load.audio(`bgm${m.bgm}`, `${A}bgm/${m.bgm}.mp3`);
     }
-    for (const b of backs) this.load.image(`back-${b}`, `${A}backs/${b}.png`);
     for (const id of npcs) this.load.json(`npc${id}`, `${A}npcs/${id}.json`);
     for (const id of index.mobs) {
       sheet(`mob${id}`, `${A}mobs/${id}.png`, this.cache.json.get(`mob${id}`));
