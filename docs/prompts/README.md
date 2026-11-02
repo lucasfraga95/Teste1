@@ -18,3 +18,4 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | 07-cafe-mesa.txt | não | sem texto |
 | 08-lousa-keeki.txt | não | lousa: ケーキ (sem pistas visuais) |
 | 09-escola-chegada.txt | não | sem texto |
+| 10-yoroshiku.txt | sim | どうぞ よろしく おねがいします / よろしく！ |

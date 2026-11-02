@@ -1,0 +1,18 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas dentro da escola de japonês, com paredes claras, janelas para um jardim tropical e plantas em vasos.
+
+CENA DA ESQUERDA (formal): a viajante faz uma reverência educada, com o corpo levemente inclinado e as mãos à frente do corpo, diante da professora, que responde com uma leve reverência. Clima respeitoso. Um balão de fala sai da viajante.
+CENA DA DIREITA (casual): a viajante e o rapaz jovem, de pé e descontraídos, acenam um para o outro sorrindo, como colegas da mesma idade. Um balão de fala sai do rapaz.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara.
+- A professora: mulher japonesa de cerca de 40 anos, cabelo preto preso num coque baixo, óculos de armação fina, cardigã verde-claro sobre blusa branca.
+- O rapaz: japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, camiseta listrada azul e branca.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de manhã entrando pelas janelas.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em quadros, cartazes e livros. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: どうぞ よろしく おねがいします
+- balão da direita: よろしく！
