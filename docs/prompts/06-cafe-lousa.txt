@@ -1,0 +1,14 @@
+CENA:
+Balcão de um pequeno café aconchegante dentro do aeroporto de Naha, em Okinawa, com madeira clara, plantas em vasos e uma vitrine de doces. Atrás do balcão, pendurada na parede, uma lousa verde de cardápio com aparência de giz escrito à mão. A lousa tem apenas duas linhas de texto, cada uma acompanhada de um pequeno desenho em giz: um bolo ao lado da primeira palavra e uma xícara fumegante ao lado da segunda. Diante do balcão, a viajante e o senhor japonês olham para a lousa: ela com expressão curiosa, tentando ler as letras; ele sorrindo, como quem espera ela descobrir sozinha. Ao fundo, janelas amplas com céu tropical e palmeiras.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena e mala de rodinhas cor terracota ao lado dela.
+- O senhor: japonês de cerca de 50 anos, cabelo curto grisalho, sorriso gentil, camisa kariyushi azul-clara com estampa floral discreta.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de fim de tarde. Clima de pausa tranquila depois da chegada.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em embalagens, preços, xícaras e letreiros do aeroporto. Sem balões de fala. EXCEÇÃO ÚNICA: a lousa do cardápio deve conter exatamente estas duas palavras, uma em cada linha, escritas a giz em letras grandes, de forma limpa e legível:
+- ケーキ
+- ココア

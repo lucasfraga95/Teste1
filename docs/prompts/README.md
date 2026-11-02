@@ -14,3 +14,4 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | 03-sumimasen.txt | sim | あのう、すみません / すみません |
 | 04-maria-desu.txt | sim | わたしは マリアです / マリアです |
 | 05-tanaka-san.txt | não | たなか (plaquinha), たなかさんですか？ / はい、たなかです！ |
+| 06-cafe-lousa.txt | não | lousa: ケーキ / ココア |

@@ -6,6 +6,7 @@ Ilustração digital no estilo de livro ilustrado japonês contemporâneo, com a
 - Luz: suave, difusa e brilhante, com um leve brilho (glow) nas áreas iluminadas e sombras claras e coloridas (nunca sombras pretas pesadas).
 - Personagens: traços de ilustração japonesa contemporânea; rostos simples e expressivos, olhos pequenos, sorrisos suaves, bochechas levemente rosadas; proporções realistas de adulto (nada de chibi ou cabeças grandes).
 - Cenários: ricos em detalhes, com profundidade e perspectiva bem construídas, plantas e objetos do cotidiano japonês.
+- Textos permitidos na imagem (lousas, plaquinhas etc.): sempre GRANDES e bem legíveis, em tamanho suficiente para serem lidos com facilidade na tela de um celular.
 - Balões de fala: brancos, de formas arredondadas, com contorno fino marrom-escuro e o texto japonês em fonte limpa, sem serifa, em marrom-escuro. O texto dos balões deve ser GRANDE e bem legível, ocupando boa parte do balão, em tamanho suficiente para ser lido com facilidade na tela de um celular; balões proporcionalmente maiores.
 - Atmosfera: acolhedora, calma e levemente nostálgica.
 - Formato: 16:9 (horizontal, panorâmico).
