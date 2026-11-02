@@ -20,3 +20,4 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | 09-escola-chegada.txt | não | sem texto |
 | 10-yoroshiku.txt | sim | どうぞ よろしく おねがいします / よろしく！ |
 | 11-sala-yamada-sensei.txt | não | やまだせんせい、おはようございます！ |
+| 12-corredor-informal.txt | não | sem texto |
