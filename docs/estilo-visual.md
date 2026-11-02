@@ -12,6 +12,8 @@ Ilustração digital no estilo de livro ilustrado japonês contemporâneo, com a
 - **Cenários:** ricos em detalhes, com profundidade e perspectiva bem construídas, plantas e objetos do cotidiano japonês.
 - **Atmosfera:** acolhedora, calma e levemente nostálgica.
 - **Formato:** 16:9 (horizontal, panorâmico).
+- **Balões de fala:** brancos, de formas arredondadas, com contorno fino marrom-escuro e o texto japonês em fonte limpa, sem serifa, em marrom-escuro. O texto deve ser **grande** e bem legível, ocupando boa parte do balão, para ser lido com facilidade na tela de um celular; balões proporcionalmente maiores.
+- **Imagens divididas em duas ou mais cenas:** separar os quadros por um único traço reto, fino e contínuo, em marrom-escuro, de ponta a ponta da imagem. Sem efeito de fade, sem degradê, sem mistura entre as cenas, sem faixa branca, sem moldura. (Referência: a cena わたしは マリアです / マリアです.)
 
 ## Não usar
 
