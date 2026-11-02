@@ -1,0 +1,14 @@
+CENA:
+Interior de uma sala de aula pequena e aconchegante na escola de japonês, com poucas carteiras de madeira, plantas no parapeito e janelas grandes mostrando céu tropical e palmeiras. A professora está à frente da sala, ao lado de uma lousa verde, sorrindo para os alunos. A viajante e o rapaz jovem estão sentados lado a lado nas carteiras. A viajante levanta levemente a mão, cumprimentando a professora com alegria. Um balão de fala sai da viajante.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena pendurada na cadeira.
+- A professora: mulher japonesa de cerca de 40 anos, cabelo preto preso num coque baixo, óculos de armação fina, cardigã verde-claro sobre blusa branca.
+- O rapaz: japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, camiseta listrada azul e branca, com um caderno aberto na carteira.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e dourada de manhã entrando pelas janelas. Clima acolhedor de primeiro dia de aula.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem. A lousa deve estar completamente vazia, assim como cadernos, livros e cartazes. EXCEÇÃO ÚNICA: o balão de fala da viajante, com exatamente estes caracteres, em fonte grande:
+やまだせんせい、おはようございます！
