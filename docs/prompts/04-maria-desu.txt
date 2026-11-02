@@ -1,0 +1,17 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas no saguão do aeroporto, com janelas amplas e plantas tropicais ao fundo.
+
+CENA DA ESQUERDA (frase completa): a viajante se apresenta ao senhor japonês, de pé, em postura educada, com a mão aberta tocando o próprio peito, como quem diz "eu sou". O senhor escuta com atenção e um sorriso gentil. Um balão de fala sai da viajante.
+CENA DA DIREITA (frase curta): a mesma viajante, agora mais descontraída, sorri e acena levemente com uma das mãos para o mesmo senhor, num momento leve e natural. Um balão de fala sai da viajante.
+
+PERSONAGENS (iguais nas duas metades):
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena e mala de rodinhas cor terracota.
+- O senhor: japonês de cerca de 50 anos, cabelo curto grisalho, camisa kariyushi azul-clara com estampa floral discreta.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de fim de tarde. Clima de primeiro encontro simpático.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis e letreiros. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: わたしは マリアです
+- balão da direita: マリアです

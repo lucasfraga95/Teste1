@@ -1,0 +1,15 @@
+CENA:
+Saguão de desembarque do aeroporto de Naha, em Okinawa. A viajante, de mala na mão, se aproxima do senhor que segura uma plaquinha branca com o nome dele à altura do peito. Ela inclina levemente o corpo para a frente, com expressão curiosa e esperançosa, como quem confirma algo. Ele responde com um sorriso largo e acolhedor. Ao fundo, outras pessoas desfocadas no saguão e janelas amplas com céu tropical e palmeiras. Sem placas nem painéis de aeroporto no fundo.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena e mala de rodinhas cor terracota.
+- O senhor: japonês de cerca de 50 anos, cabelo curto grisalho, camisa kariyushi azul-clara com estampa floral discreta.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de fim de tarde. Clima de alívio e alegria por ter encontrado a pessoa certa.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas e letreiros de fundo. EXCEÇÃO ÚNICA, com exatamente estes caracteres:
+- plaquinha do senhor: たなか
+- balão de fala da viajante, em fonte grande: たなかさんですか？
+- balão de fala do senhor, em fonte grande: はい、たなかです！

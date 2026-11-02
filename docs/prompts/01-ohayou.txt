@@ -1,0 +1,19 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas de manhã cedo.
+
+CENA DA ESQUERDA (formal): no saguão claro de um aeroporto, com aviões brancos estacionados atrás de grandes janelas de vidro, a viajante faz uma reverência educada para o senhor japonês, que acabou de conhecer. Ele retribui com uma leve reverência e um sorriso gentil. A mala dela está ao lado. Outros viajantes passam ao fundo. Um balão de fala sai da viajante.
+
+CENA DA DIREITA (casual): numa praia de Okinawa ao nascer do sol, com mar calmo, areia clara e vegetação rasteira nas dunas, dois rapazes japoneses amigos se encontram. O rapaz de mochila acena animado com o braço erguido; o outro, sem mochila, sorri e acena de volta com a mão mais baixa. Um balão de fala sai do rapaz de mochila, que está com o braço erguido.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena e mala de rodinhas cor terracota.
+- O senhor: japonês de cerca de 50 anos, cabelo curto grisalho, camisa kariyushi azul-clara com estampa floral discreta.
+- Os amigos: dois rapazes japoneses de cerca de 20 anos, de camiseta e bermuda, chinelos; um deles com mochila.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e dourada da manhã nas duas cenas: mais fria e luminosa no aeroporto, rosada e quente na praia.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, aviões e malas. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: おはようございます
+- balão da direita: おはよう

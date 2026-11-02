@@ -1,0 +1,19 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas à noite.
+
+CENA DA ESQUERDA (ao encontrar alguém): interior aconchegante de um pequeno restaurante japonês tradicional, com lanternas de papel vermelhas acesas, paredes e mesas de madeira, pratinhos e copos sobre as mesas. Um homem acaba de entrar pela porta de correr, tirando o casaco, e cumprimenta sorridente uma mulher que se levanta da mesa para recebê-lo. Outros clientes conversam ao fundo. Um balão de fala sai do homem.
+
+CENA DA DIREITA (ao ir dormir): corredor de uma casa tradicional japonesa, com portas de papel (shoji), piso de tatame e uma luminária de papel pendurada no teto. A viajante, de pijama, faz uma leve reverência para o senhor japonês antes de ir dormir; ele, de roupa de casa, sorri e acena levemente. Pela janela, o céu noturno azul-escuro. Um balão de fala sai da viajante.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, pijama claro de estampa discreta.
+- O senhor: japonês de cerca de 50 anos, cabelo curto grisalho, roupa de casa confortável.
+- O casal do restaurante: homem e mulher japoneses de cerca de 30 anos, roupas casuais.
+
+ILUMINAÇÃO E ATMOSFERA:
+À esquerda, luz quente e alaranjada das lanternas; à direita, luz suave e amarelada da luminária contrastando com o azul da noite. Clima acolhedor e tranquilo.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em cardápios, lanternas, cortinas e placas. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: こんばんは
+- balão da direita: おやすみなさい

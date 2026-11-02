@@ -1,0 +1,19 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas de dia.
+
+CENA DA ESQUERDA (chamar a atenção): interior claro de uma loja de conveniência japonesa, com prateleiras organizadas cheias de produtos coloridos e uma grande janela ao fundo. A viajante, de mochila, levanta timidamente a mão em direção a uma atendente de avental azul, que arruma produtos no balcão. A expressão da viajante é educada e um pouco tímida. Um balão de fala sai da viajante.
+
+CENA DA DIREITA (pedir desculpas): rua residencial japonesa, com postes e fios elétricos, casas baixas, toldos coloridos e árvores. A viajante acaba de esbarrar sem querer numa mulher japonesa que caminhava com uma bolsa. As duas levantam as mãos num gesto de surpresa; a viajante faz uma leve reverência, com expressão de quem pede desculpas. Pedestres passam ao fundo. Um balão de fala sai da viajante.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- A atendente: japonesa de cerca de 25 anos, cabelo preso, uniforme de loja com avental azul.
+- A mulher na rua: japonesa de cerca de 35 anos, casaco rosado, bolsa de tecido a tiracolo.
+
+ILUMINAÇÃO E ATMOSFERA:
+À esquerda, luz clara de loja somada à luz natural da janela; à direita, luz natural e suave de dia. Clima leve e cotidiano.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em embalagens, etiquetas de preço, placas, toldos e postes. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: あのう、すみません
+- balão da direita: すみません
