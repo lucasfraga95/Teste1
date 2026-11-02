@@ -16,3 +16,4 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | 05-tanaka-san.txt | não | たなか (plaquinha), たなかさんですか？ / はい、たなかです！ |
 | 06-cafe-lousa.txt | não | lousa: ケーキ / ココア |
 | 07-cafe-mesa.txt | não | sem texto |
+| 08-lousa-keeki.txt | não | lousa: ケーキ (sem pistas visuais) |
