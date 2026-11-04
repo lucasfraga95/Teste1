@@ -1,0 +1,11 @@
+CENA:
+Mesa junto à janela de um café de Kagoshima, de manhã. A viajante toma um café da manhã tranquilo: uma xícara de café, uma torrada e um pequeno prato de frutas. Ela olha pela janela, sorrindo, para o Sakurajima do outro lado da baía.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e dourada da manhã. Clima calmo e agradável.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala.

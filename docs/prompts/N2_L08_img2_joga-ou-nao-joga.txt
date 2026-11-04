@@ -1,0 +1,17 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas na sala comum do dormitório.
+
+CENA DA ESQUERDA (sim): a Haru, sentada no sofá com um controle de videogame nas mãos, sorri animada e assente com a cabeça. Um balão de fala sai dela.
+CENA DA DIREITA (não): a viajante, sentada numa poltrona com um livro no colo, sorri e faz o gesto japonês para "não": a mão aberta levantada na vertical, dedos apontando para cima, posicionada bem na frente do rosto, cobrindo o nariz e o centro do rosto, com a borda da mão (lado do dedo mindinho) virada para quem está à frente e a palma virada para o lado, não para a frente. Pequenos arcos de movimento dos dois lados da mão indicam que ela balança de um lado para o outro. A mão NÃO fica embaixo do queixo e NÃO parece um aceno de tchau ou olá. Um balão de fala sai dela.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- Haru: japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado e cheio de energia.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz quente e amarelada de luminária, à noite.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive na tela da TV e na capa do livro. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: はい、します！
+- balão da direita: いいえ、しません。

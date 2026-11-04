@@ -1,0 +1,16 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado.
+
+CENA DA ESQUERDA (para onde): do lado de fora, a viajante caminha com a mochila por um caminho arborizado em direção à entrada de um prédio de biblioteca moderno e claro, com grandes janelas de vidro. Ela está a caminho, ainda do lado de fora. Um balão de fala sai dela.
+CENA DA DIREITA (onde): dentro da biblioteca, a viajante está sentada a uma mesa comprida de madeira, estudando com livros e caderno abertos, cercada por estantes. Um balão de fala sai dela.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara de dia lá fora; luz suave e dourada dentro da biblioteca.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive na fachada, nas lombadas dos livros e nos cadernos. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: としょかんに いきます
+- balão da direita: としょかんで べんきょうします

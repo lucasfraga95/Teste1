@@ -83,3 +83,12 @@ A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sak
 | N2_L04_img2_ler-x-ouvir | sim | まんがを よみます / おんがくを ききます | [imagem](https://www.canva.com/M/MAHZ9Sfe1ts) |
 | N2_L05_img1_lista-no-caderno | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9Q-ITZo) · pasta [N2_L05](https://www.canva.com/folder/FAHZ9UtkA70) |
 | N2_L05_img2_vendo-a-sakurajima | não | さくらじまを みます！ | [imagem](https://www.canva.com/M/MAHZ9bMWB5w) |
+| N2_L06_img1_meu-quarto | não | わたしの へやです。どうぞ！ | [imagem](https://www.canva.com/M/MAHZ9QK2Ovs) · pasta [N2_L06](https://www.canva.com/folder/FAHZ9cet06s) |
+| N2_L06_img2_cafe-da-sakurajima | não | マリアさん、あの カフェです！ / わあ、さくらじまの カフェですね！ | [imagem](https://www.canva.com/M/MAHZ9ayAGZc) |
+| N2_L07_img1_sala-comum-a-noite | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9fhj064) · pasta [N2_L07](https://www.canva.com/folder/FAHZ9aQFH5Y) |
+| N2_L07_img2_haru-na-cafeteria | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9caQ4iw) |
+| N2_L08_img1_entrevista | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9Rkt_VA) · pasta [N2_L08](https://www.canva.com/folder/FAHZ9ajj8RQ) |
+| N2_L08_img2_joga-ou-nao-joga | sim | はい、します！ / いいえ、しません。 | [imagem](https://www.canva.com/M/MAHZ9WmA0rM) |
+| N2_L09_exQ5_abordando-na-rua | não | sem texto, sem relógios | [imagem](https://www.canva.com/M/MAHZ9QJSCc8) · pasta [N2_L09](https://www.canva.com/folder/FAHZ9Wr-QVE) |
+| N2_L09_img1_mural-de-horarios | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9RPfUZY) |
+| N2_L09_img2_que-horas-sao | não | すみません、いま なんじですか。 | [imagem](https://www.canva.com/M/MAHZ9fDDk4I) |

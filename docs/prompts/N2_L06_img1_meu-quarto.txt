@@ -1,0 +1,13 @@
+CENA:
+Pequeno quarto de dormitório estudantil japonês, simples e aconchegante: cama arrumada com colcha clara, escrivaninha de madeira com luminária, prateleira com alguns livros e uma plantinha, e uma janela por onde se vê o Sakurajima ao longe. Na porta, a viajante abre o braço convidando a Haru a entrar, sorridente. A Haru espia o quarto com curiosidade.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- Haru: japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado e cheio de energia.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e suave de tarde entrando pela janela. Clima acolhedor.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em livros, cartazes e na porta. EXCEÇÃO ÚNICA: o balão de fala da viajante, com exatamente estes caracteres, em fonte grande:
+わたしの へやです。どうぞ！

@@ -1,0 +1,14 @@
+CENA:
+Corredor da escola de idiomas, com janelas para o pátio. A viajante conta animada um plano, com os olhos brilhando; a Haru, ao lado, junta as mãos em sinal de entusiasmo, reagindo com alegria. Pela janela, o Sakurajima ao longe.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- Haru: japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado e cheio de energia.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e quente de manhã. Clima alegre.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em quadros de aviso e portas. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da viajante: あした さくらじまに いきます。
+- balão da Haru: いいですね！

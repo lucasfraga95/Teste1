@@ -1,0 +1,13 @@
+CENA:
+Calçada de uma avenida de Kagoshima com palmeiras e trilhos de bonde elétrico; ao fundo, um bonde passando e o Sakurajima ao longe. A viajante, educada, aborda um senhor japonês que caminha com uma pasta. Ele olha para o relógio de pulso para responder.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- O senhor: japonês de cerca de 55 anos, cabelo grisalho, camisa social azul-clara e calça cinza, relógio de pulso.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara de fim de manhã. Clima cotidiano.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive no bonde, nas placas e no relógio de pulso. EXCEÇÃO ÚNICA: o balão de fala da viajante, com exatamente estes caracteres, em fonte grande:
+すみません、いま なんじですか。

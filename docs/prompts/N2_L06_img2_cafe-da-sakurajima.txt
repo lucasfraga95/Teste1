@@ -1,0 +1,14 @@
+CENA:
+Rua tranquila à beira da baía de Kagoshima. À frente, um café charmoso de fachada de madeira, com vasos de plantas, mesinhas na calçada e uma grande janela de vidro voltada para o mar. Do outro lado da baía, o vulcão Sakurajima. A Haru aponta animada para o café; a viajante, ao lado dela, olha encantada para a vista.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- Haru: japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado e cheio de energia.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e quente de fim de manhã, céu azul. Clima leve e alegre.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive na fachada, toldo e cardápio do café. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da Haru: マリアさん、あの カフェです！
+- balão da viajante: わあ、さくらじまの カフェですね！

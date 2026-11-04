@@ -1,0 +1,12 @@
+CENA:
+Quarto do dormitório de manhã cedo. Um despertador analógico redondo, sobre a mesinha de cabeceira, toca com pequenas linhas de vibração; seus ponteiros marcam exatamente sete horas (ponteiro pequeno no 7, ponteiro grande no 12), mas o mostrador NÃO tem números, apenas tracinhos. A viajante, ainda na cama, estende a mão para desligá-lo, sonolenta. Pela janela, o céu clareando.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, pijama claro de estampa discreta.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e dourada do amanhecer. Clima de começo de dia.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive no mostrador do relógio, que tem apenas tracinhos. EXCEÇÃO ÚNICA: o balão de fala da viajante, com exatamente estes caracteres, em fonte grande:
+しちじに おきます…
