@@ -76,3 +76,6 @@ A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sak
 | N2_L01_img3_manha-meio-dia-noite | sim (3 partes) | sem texto | [imagem](https://www.canva.com/M/MAHZ9Xgr3so) |
 | N2_L02_img1_haru-na-porta | não | おはよう！ | [imagem](https://www.canva.com/M/MAHZ9ZJDBS0) · pasta [N2_L02](https://www.canva.com/folder/FAHZ9cZV2Tk) |
 | N2_L02_img2_acordar-x-dormir | sim | あさ おきます / よる ねます | [imagem](https://www.canva.com/M/MAHZ9SQ6yhQ) |
+| N2_L03_img1_refeitorio-de-manha | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9TnyT3Q) · pasta [N2_L03](https://www.canva.com/folder/FAHZ9e8e6AE) |
+| N2_L03_img2_cha-e-agua | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9a-rqzk) |
+| N2_L03_img3_shirokuma | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9aBkXuU) |
