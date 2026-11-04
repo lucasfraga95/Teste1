@@ -1,0 +1,17 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas na sala comum do dormitório, com sofás, almofadas e plantas.
+
+CENA DA ESQUERDA: a viajante, sentada no sofá com as pernas cruzadas, lê um mangá com expressão concentrada e divertida. Um balão de fala sai dela.
+CENA DA DIREITA: a Haru, sentada perto da janela, ouve música com fones de ouvido grandes, de olhos fechados e balançando levemente a cabeça. Um balão de fala sai dela.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- Haru: japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado e cheio de energia.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de tarde entrando pela janela.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive na capa do mangá, que deve ter só cores e formas abstratas, sem personagens reconhecíveis. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: まんがを よみます
+- balão da direita: おんがくを ききます

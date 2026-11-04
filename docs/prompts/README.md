@@ -79,3 +79,5 @@ A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sak
 | N2_L03_img1_refeitorio-de-manha | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9TnyT3Q) · pasta [N2_L03](https://www.canva.com/folder/FAHZ9e8e6AE) |
 | N2_L03_img2_cha-e-agua | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9a-rqzk) |
 | N2_L03_img3_shirokuma | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9aBkXuU) |
+| N2_L04_img1_tenmonkan | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9c2pzdw) · pasta [N2_L04](https://www.canva.com/folder/FAHZ9Qg2zOc) |
+| N2_L04_img2_ler-x-ouvir | sim | まんがを よみます / おんがくを ききます | [imagem](https://www.canva.com/M/MAHZ9Sfe1ts) |
