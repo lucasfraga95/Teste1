@@ -106,3 +106,15 @@ A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sak
 | N2_L16_final_img1_jantar-de-sexta | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-QJnx3A) · pasta [N2_L16](https://www.canva.com/folder/FAHZ9YbZnV4) |
 | N2_L16_final_img2_balsa-para-sakurajima | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-c28A5Q) |
 | N2_L16_final_img3_redacao-meu-dia | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-foIz-E) |
+
+## Nível 3 — Miyazaki
+
+Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hinata (pai, mãe, Aoi, Sota). Estilo e predefinições iguais.
+
+| Código | Dividida | Textos | Canva |
+|---|---|---|---|
+| N3_L01_exQ1_nadando-no-mar | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-7Y0yu8) · pasta [N3_L01](https://www.canva.com/folder/FAHZ--MUVCs) |
+| N3_L01_exQ4_tirando-foto | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-6YibxM) |
+| N3_L01_img1_chegada-a-miyazaki | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-0lqfNc) |
+| N3_L01_img2_praia-de-aoshima | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-3PEjts) |
+| N3_L01_img3_desfiladeiro-de-takachiho | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-4ST43A) |

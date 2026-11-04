@@ -19,3 +19,5 @@ a mão aberta levantada na vertical, dedos apontando para cima, posicionada bem 
 PERSONAGEM FIXO — Riku: sempre acrescentar "sem óculos" na descrição (o gerador às vezes coloca óculos nele).
 
 PERSONAGEM FIXO — Haru (N2): japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado.
+
+PERSONAGENS FIXOS — família Hinata (N3): pai ~50 anos, cabelo preto com fios grisalhos, óculos de armação escura, polo azul-marinho; mãe ~48 anos, cabelo preto na altura do queixo, blusa amarelo-clara e calça bege; Aoi ~20 anos, cabelo preto longo e liso solto, presilha de flor amarela, camiseta branca e saia jeans; Sota ~16 anos, cabelo preto curto, camiseta verde-escura, tímido.

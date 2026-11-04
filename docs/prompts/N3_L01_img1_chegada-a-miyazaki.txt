@@ -1,0 +1,15 @@
+CENA:
+Em frente à estação de trem de Miyazaki, numa avenida ladeada por palmeiras altas e esguias, sob um céu azul muito ensolarado. A viajante, recém-chegada com sua mala, é recebida por uma família japonesa de quatro pessoas. Os pais fazem uma leve reverência de boas-vindas; a filha acena animada; o filho adolescente sorri de forma um pouco tímida. A viajante retribui com uma reverência e um sorriso.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena e mala de rodinhas cor terracota.
+- O pai (família Hinata): japonês de cerca de 50 anos, cabelo curto preto com fios grisalhos, óculos de armação escura, camisa polo azul-marinho.
+- A mãe (família Hinata): japonesa de cerca de 48 anos, cabelo preto na altura do queixo, blusa amarelo-clara e calça bege, sorriso caloroso.
+- Aoi (filha, família Hinata): japonesa de cerca de 20 anos, universitária, cabelo preto longo e liso, solto, com uma presilha de flor amarela de um lado, camiseta branca e saia jeans.
+- Sota (filho, família Hinata): japonês de cerca de 16 anos, cabelo preto curto, camiseta verde-escura, jeito um pouco tímido.
+
+ILUMINAÇÃO E ATMOSFERA:
+Sol forte e claro do meio da manhã. Clima de boas-vindas.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala. A fachada da estação deve estar sem nome.
