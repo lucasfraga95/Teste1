@@ -44,3 +44,5 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L08_img2_professor-de-matematica_OPCIONAL | não | すうがくの せんせいです | [imagem](https://www.canva.com/M/MAHZ9GO5HnU) |
 | N1_L09_img1_check-in-pousada | não | plaquinha da chave: 305 | [imagem](https://www.canva.com/M/MAHZ9Iu0X_w) · pasta [N1_L09](https://www.canva.com/folder/FAHZ9O9nMvQ) |
 | N1_L09_img2_dia-da-maioridade | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9DU1B6s) |
+| N1_L10_exQ1_placa-canoa | não | placa: カヌー | [imagem](https://www.canva.com/M/MAHZ9NyTHoY) · pasta [N1_L10](https://www.canva.com/folder/FAHZ9OQtUA8) |
+| N1_L10_img1_canoa-no-manguezal_OPCIONAL | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9NN2rHw) |
