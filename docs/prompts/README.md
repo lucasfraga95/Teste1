@@ -46,3 +46,6 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L09_img2_dia-da-maioridade | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9DU1B6s) |
 | N1_L10_exQ1_placa-canoa | não | placa: カヌー | [imagem](https://www.canva.com/M/MAHZ9NyTHoY) · pasta [N1_L10](https://www.canva.com/folder/FAHZ9OQtUA8) |
 | N1_L10_img1_canoa-no-manguezal_OPCIONAL | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9NN2rHw) |
+| N1_L11_exQ1_brasileira-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9OWff4c) · pasta [N1_L11](https://www.canva.com/folder/FAHZ9HUpZX4) |
+| N1_L11_img1_turma-internacional | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9RwGQI8) |
+| N1_L11_img2_brasileira | não | ブラジルじんですか？ / はい、ブラジルじんです！ | [imagem](https://www.canva.com/M/MAHZ9XULq-I) |
