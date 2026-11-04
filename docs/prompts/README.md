@@ -124,3 +124,7 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L03_exQ1_chave-do-onsen | não | plaquinha: 七 | [imagem](https://www.canva.com/M/MAHZ-8e2l9k) · pasta [N3_L03](https://www.canva.com/folder/FAHZ-30KX28) |
 | N3_L03_img1_aoi-e-o-pincel | não | papel: 一 | [imagem](https://www.canva.com/M/MAHZ-0DIfbU) |
 | N3_L03_img2_monge-copiando | não | sem texto legível | [imagem](https://www.canva.com/M/MAHZ-71dRSw) |
+| N3_L04_exQ4_foto-antiga | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-zjsAO0) · pasta [N3_L04](https://www.canva.com/folder/FAHZ-_92_zU) |
+| N3_L04_img1_diario-de-viagem | não | sem texto | [imagem](https://www.canva.com/M/MAHZ--aOk48) |
+| N3_L04_img2_festival-de-verao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-wwv5q0) |
+| N3_L04_img3_album-do-pai | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-zF3rww) |
