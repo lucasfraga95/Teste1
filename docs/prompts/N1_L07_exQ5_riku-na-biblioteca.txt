@@ -2,7 +2,7 @@ CENA:
 Biblioteca universitária aconchegante, com estantes de madeira e janelas amplas mostrando céu tropical e palmeiras. O rapaz jovem estuda sozinho numa mesa, concentrado, com cadernos abertos cheios de rabiscos e gráficos ilegíveis.
 
 PERSONAGENS:
-- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, camiseta listrada azul e branca.
+- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, sem óculos, camiseta listrada azul e branca.
 
 ILUMINAÇÃO E ATMOSFERA:
 Luz suave e dourada de tarde. Clima tranquilo de estudo.

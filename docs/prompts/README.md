@@ -29,14 +29,14 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | Código | Dividida | Textos | Canva |
 |---|---|---|---|
 | N1_L05_exQ1_pessoa-errada-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9KbCgVo) · pasta [N1_L05](https://www.canva.com/folder/FAHZ9F0jGcY) |
-| N1_L05_exQ3_gesto-de-nao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9DT44KA) (v1: gesto saiu errado, mão no queixo) |
+| N1_L05_exQ3_gesto-de-nao | não | sem texto | [imagem v2](https://www.canva.com/M/MAHZ9LbfG6Q) (v1 com gesto errado: MAHZ9DT44KA) |
 | N1_L05_img1_sim-ou-nao | sim | はい、そうです / いいえ | [imagem](https://www.canva.com/M/MAHZ9Jq8n8A) |
 | N1_L05_img2_pessoa-errada | não | たなか (plaquinha), たなかさんですか？ / いいえ、たなかじゃないです | [imagem](https://www.canva.com/M/MAHZ9MBpAVQ) |
 | N1_L06_exQ1_placa-taxi-sem-carros | não | placa: タクシー | [imagem](https://www.canva.com/M/MAHZ9MX7klU) · pasta [N1_L06](https://www.canva.com/folder/FAHZ9DzYEG0) |
 | N1_L06_img1_shisa-no-telhado | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9OntnoY) |
 | N1_L06_img2_ponto-de-taxi | não | placa: タクシー | [imagem](https://www.canva.com/M/MAHZ9IsyFgE) |
 | N1_L07_exQ1_medica | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9GRF8jw) · pasta [N1_L07](https://www.canva.com/folder/FAHZ9OjcfoA) |
-| N1_L07_exQ5_riku-na-biblioteca | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9A0vStA) (Riku saiu de óculos) |
+| N1_L07_exQ5_riku-na-biblioteca | não | sem texto | [imagem v2](https://www.canva.com/M/MAHZ9G7CeM4) (v1 com óculos: MAHZ9A0vStA) |
 | N1_L07_img1_escritorio-x-clinica | sim | かいしゃいんです / いしゃです | [imagem](https://www.canva.com/M/MAHZ9FAlwaI) |
 | N1_L07_img2_biblioteca | não | せんこうは すうがくですか？ / はい、そうです！ | [imagem](https://www.canva.com/M/MAHZ9O102yI) |
 | N1_L08_exQ1_bolo-da-maria | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9B9DlAk) · pasta [N1_L08](https://www.canva.com/folder/FAHZ9PMdP6c) |
