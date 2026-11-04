@@ -1,5 +1,7 @@
 # Prompts das ilustrações
 
+Nomeação: prompts novos são salvos com o código da lição (ex.: `N1_L05_exQ1_...txt`). No Canva, as imagens de cada lição ficam numa pasta com o código da lição (ex.: `N1_L05`).
+
 Cada prompt final = `_estilo-base.txt` + (se a imagem for dividida) `_divisao.txt` + o arquivo da cena.
 
 Predefinições fixas (ver também `../estilo-visual.md`):
@@ -21,3 +23,9 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | 10-yoroshiku.txt | sim | どうぞ よろしく おねがいします / よろしく！ |
 | 11-sala-yamada-sensei.txt | não | やまだせんせい、おはようございます！ |
 | 12-corredor-informal.txt | não | sem texto |
+
+## Por lição
+
+| Código | Dividida | Textos | Canva |
+|---|---|---|---|
+| N1_L05_exQ1_pessoa-errada-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9KbCgVo) · pasta [N1_L05](https://www.canva.com/folder/FAHZ9F0jGcY) |
