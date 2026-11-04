@@ -1,0 +1,17 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas na sala de aula da escola de japonês, com janelas mostrando céu tropical ao fundo. Nas duas metades, a viajante responde a uma pergunta do rapaz jovem, que aparece de lado ou parcialmente de costas.
+
+CENA DA ESQUERDA (sim): a viajante sorri e assente com a cabeça, com expressão confiante e simpática. Um balão de fala sai da viajante.
+CENA DA DIREITA (não): a viajante sorri de forma simpática enquanto faz o gesto japonês para "não": a mão aberta levantada na vertical, dedos apontando para cima, posicionada bem na frente do rosto, cobrindo o nariz e o centro do rosto, com a borda da mão (lado do dedo mindinho) virada para quem está à frente e a palma virada para o lado, não para a frente. Pequenos arcos de movimento dos dois lados da mão indicam que ela balança de um lado para o outro. A mão NÃO fica embaixo do queixo, NÃO apoia o rosto e NÃO parece um aceno de tchau ou olá. Um balão de fala sai da viajante.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, camiseta listrada azul e branca.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de manhã. Clima leve e descontraído.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em lousas, cadernos e cartazes. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: はい、そうです
+- balão da direita: いいえ

@@ -30,3 +30,4 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 |---|---|---|---|
 | N1_L05_exQ1_pessoa-errada-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9KbCgVo) · pasta [N1_L05](https://www.canva.com/folder/FAHZ9F0jGcY) |
 | N1_L05_exQ3_gesto-de-nao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9DT44KA) (v1: gesto saiu errado, mão no queixo) |
+| N1_L05_img1_sim-ou-nao | sim | はい、そうです / いいえ | [imagem](https://www.canva.com/M/MAHZ9Jq8n8A) |
