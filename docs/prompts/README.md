@@ -92,3 +92,17 @@ A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sak
 | N2_L09_exQ5_abordando-na-rua | não | sem texto, sem relógios | [imagem](https://www.canva.com/M/MAHZ9QJSCc8) · pasta [N2_L09](https://www.canva.com/folder/FAHZ9Wr-QVE) |
 | N2_L09_img1_mural-de-horarios | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9RPfUZY) |
 | N2_L09_img2_que-horas-sao | não | すみません、いま なんじですか。 | [imagem](https://www.canva.com/M/MAHZ9fDDk4I) |
+| N2_L10_img1_agenda-da-haru | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9QlSB7c) · pasta [N2_L10](https://www.canva.com/folder/FAHZ9W-J2vw) |
+| N2_L10_img2_sete-elementos | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9R4D40s) |
+| N2_L11_img1_acordo-as-sete | não | しちじに おきます… | [imagem](https://www.canva.com/M/MAHZ9ZzHYc8) · pasta [N2_L11](https://www.canva.com/folder/FAHZ9bzr9KY) |
+| N2_L12_img1_ramen-no-sabado | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9cPJlBY) · pasta [N2_L12](https://www.canva.com/folder/FAHZ9Z0EDjA) |
+| N2_L12_img2_para-x-na-biblioteca | sim | としょかんに いきます / としょかんで べんきょうします | [imagem](https://www.canva.com/M/MAHZ9VtQxxc) |
+| N2_L13_img1_etto | não | えっと… | [imagem](https://www.canva.com/M/MAHZ9bUZhNI) · pasta [N2_L13](https://www.canva.com/folder/FAHZ9VJc8Zo) |
+| N2_L13_img2_iidesu-ne | não | あした さくらじまに いきます。/ いいですね！ | [imagem](https://www.canva.com/M/MAHZ9V8_MBc) |
+| N2_L14_img1_silencio-constrangido | não | só reticências | [imagem](https://www.canva.com/M/MAHZ9WNrsZs) · pasta [N2_L14](https://www.canva.com/folder/FAHZ9UecCOQ) |
+| N2_L14_img2_horror-nao | não | ホラーは ちょっと… | [imagem](https://www.canva.com/M/MAHZ9YJsHK0) |
+| N2_L15_img1_teste-do-celular | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9eL8snM) · pasta [N2_L15](https://www.canva.com/folder/FAHZ9VOnWO0) |
+| N2_L15_img2_cafe-da-manha-no-cafe | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9bxk9TE) |
+| N2_L16_final_img1_jantar-de-sexta | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-QJnx3A) · pasta [N2_L16](https://www.canva.com/folder/FAHZ9YbZnV4) |
+| N2_L16_final_img2_balsa-para-sakurajima | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-c28A5Q) |
+| N2_L16_final_img3_redacao-meu-dia | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-foIz-E) |
