@@ -56,3 +56,5 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L13_exQ5_riku-mangas-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9dFt9f8) · pasta [N1_L13](https://www.canva.com/folder/FAHZ9QQqwIY) |
 | N1_L13_img1_riku-e-os-mangas | não | まんがが だいすきです！ | [imagem](https://www.canva.com/M/MAHZ9SvJOT4) |
 | N1_L13_img2_sanshin-na-varanda | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9dBsbKw) |
+| N1_L14_exQ5_cardapio-ramen | não | placa: ラーメン | [imagem](https://www.canva.com/M/MAHZ9RLwDaE) · pasta [N1_L14](https://www.canva.com/folder/FAHZ9RvqeUY) |
+| N1_L14_img1_faixa-mensore_OPCIONAL | não | faixa: メンソーレ | [imagem](https://www.canva.com/M/MAHZ9aox8KI) |

@@ -1,0 +1,10 @@
+CENA:
+Close de uma placa de cardápio de madeira pendurada na parede de um pequeno restaurante, com moldura simples. A placa ocupa quase toda a imagem e mostra uma única palavra pintada à mão, centralizada. Ao redor, apenas a parede de madeira e a luz suave de uma luminária.
+
+IMPORTANTE: a imagem não pode conter nenhuma comida, tigela, hashi, vapor, cortina de restaurante, desenho, ícone ou objeto que dê pista do significado da palavra. Apenas a placa com a palavra.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz quente e acolhedora.
+
+REGRA DE TEXTO:
+Sem nenhum outro texto, letra, número ou preço na placa ou na cena. Sem balões de fala. EXCEÇÃO ÚNICA: a placa deve conter exatamente a palavra ラーメン, pintada em letras grandes, de forma limpa e legível.
