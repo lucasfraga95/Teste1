@@ -32,3 +32,4 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L05_exQ3_gesto-de-nao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9DT44KA) (v1: gesto saiu errado, mão no queixo) |
 | N1_L05_img1_sim-ou-nao | sim | はい、そうです / いいえ | [imagem](https://www.canva.com/M/MAHZ9Jq8n8A) |
 | N1_L05_img2_pessoa-errada | não | たなか (plaquinha), たなかさんですか？ / いいえ、たなかじゃないです | [imagem](https://www.canva.com/M/MAHZ9MBpAVQ) |
+| N1_L06_exQ1_placa-taxi-sem-carros | não | placa: タクシー | [imagem](https://www.canva.com/M/MAHZ9MX7klU) · pasta [N1_L06](https://www.canva.com/folder/FAHZ9DzYEG0) |

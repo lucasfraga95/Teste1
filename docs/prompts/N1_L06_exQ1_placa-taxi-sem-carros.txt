@@ -1,0 +1,10 @@
+CENA:
+Close de uma placa retangular presa a um poste metálico, na área externa de um aeroporto, com céu azul e palmeiras ao fundo, desfocados. A placa ocupa boa parte da imagem e mostra uma única palavra.
+
+IMPORTANTE: a imagem não pode conter nenhum veículo, carro, ícone, símbolo ou objeto que dê pista do significado da palavra. Sem táxis, sem carros, sem desenhos de carro, sem filas de pessoas. Apenas a placa, o poste e o fundo de céu e palmeiras.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara de dia.
+
+REGRA DE TEXTO:
+Sem nenhum outro texto, letra, número ou ícone na placa ou na cena. Sem balões de fala. EXCEÇÃO ÚNICA: a placa deve conter exatamente a palavra タクシー, em letras grandes, limpas e legíveis.
