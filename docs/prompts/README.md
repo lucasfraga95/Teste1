@@ -39,3 +39,6 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L07_exQ5_riku-na-biblioteca | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9A0vStA) (Riku saiu de óculos) |
 | N1_L07_img1_escritorio-x-clinica | sim | かいしゃいんです / いしゃです | [imagem](https://www.canva.com/M/MAHZ9FAlwaI) |
 | N1_L07_img2_biblioteca | não | せんこうは すうがくですか？ / はい、そうです！ | [imagem](https://www.canva.com/M/MAHZ9O102yI) |
+| N1_L08_exQ1_bolo-da-maria | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9B9DlAk) · pasta [N1_L08](https://www.canva.com/folder/FAHZ9PMdP6c) |
+| N1_L08_img1_meu-bolo-seu-bolo | sim | わたしの ケーキ！ / ぼくの ケーキ！ | [imagem](https://www.canva.com/M/MAHZ9Dvx98Y) |
+| N1_L08_img2_professor-de-matematica_OPCIONAL | não | すうがくの せんせいです | [imagem](https://www.canva.com/M/MAHZ9GO5HnU) |

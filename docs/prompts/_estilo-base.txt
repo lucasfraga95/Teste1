@@ -15,3 +15,5 @@ NÃO USE: textura de papel, aspecto de rascunho, traço tremido ou esboçado, re
 
 GESTO JAPONÊS DE "NÃO" (descrição que funcionou — usar sempre que a cena tiver esse gesto):
 a mão aberta levantada na vertical, dedos apontando para cima, posicionada bem na frente do rosto, cobrindo o nariz e o centro do rosto, com a borda da mão (lado do dedo mindinho) virada para quem está à frente e a palma virada para o lado, não para a frente. Pequenos arcos de movimento dos dois lados da mão indicam que ela balança de um lado para o outro. A mão NÃO fica embaixo do queixo, NÃO apoia o rosto e NÃO parece um aceno de tchau ou olá.
+
+PERSONAGEM FIXO — Riku: sempre acrescentar "sem óculos" na descrição (o gerador às vezes coloca óculos nele).

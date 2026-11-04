@@ -1,0 +1,17 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas na mesma mesa de um café aconchegante em Okinawa, com janelas mostrando palmeiras ao fundo.
+
+CENA DA ESQUERDA: a viajante, rindo de forma brincalhona, puxa para perto de si um prato com uma fatia de bolo, protegendo-o com as duas mãos. Um balão de fala sai dela.
+CENA DA DIREITA: o rapaz jovem, também rindo, faz exatamente o mesmo gesto com o prato de bolo dele. Um balão de fala sai dele.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, sem óculos, camiseta listrada azul e branca.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de tarde. Clima divertido e descontraído entre amigos.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em cardápios, xícaras e placas. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: わたしの ケーキ！
+- balão da direita: ぼくの ケーキ！
