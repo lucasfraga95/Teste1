@@ -81,3 +81,5 @@ A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sak
 | N2_L03_img3_shirokuma | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9aBkXuU) |
 | N2_L04_img1_tenmonkan | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9c2pzdw) · pasta [N2_L04](https://www.canva.com/folder/FAHZ9Qg2zOc) |
 | N2_L04_img2_ler-x-ouvir | sim | まんがを よみます / おんがくを ききます | [imagem](https://www.canva.com/M/MAHZ9Sfe1ts) |
+| N2_L05_img1_lista-no-caderno | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9Q-ITZo) · pasta [N2_L05](https://www.canva.com/folder/FAHZ9UtkA70) |
+| N2_L05_img2_vendo-a-sakurajima | não | さくらじまを みます！ | [imagem](https://www.canva.com/M/MAHZ9bMWB5w) |
