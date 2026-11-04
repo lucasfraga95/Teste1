@@ -64,3 +64,13 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L15_img2_entediados-no-sofa | não | ぼくは スポーツが すきじゃないです / わたしも！ | [imagem](https://www.canva.com/M/MAHZ9X8CjcA) |
 | N1_L16_cultural_img1_eisa | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9eMFplM) · pasta [N1_L16](https://www.canva.com/folder/FAHZ9dQ-gTQ) |
 | N1_L16_cultural_img2_par-de-shisa_OPCIONAL | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9cTN_rc) |
+
+## Nível 2 — Kagoshima
+
+A partir do N2, os cenários são da província de Kagoshima (baía, vulcão Sakurajima). Estilo visual e predefinições continuam os mesmos.
+
+| Código | Dividida | Textos | Canva |
+|---|---|---|---|
+| N2_L01_img1_chegada-de-navio | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9QDbZak) · pasta [N2_L01](https://www.canva.com/folder/FAHZ9ej4MPw) |
+| N2_L01_img2_cinzas-e-varal | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9erbRGY) |
+| N2_L01_img3_manha-meio-dia-noite | sim (3 partes) | sem texto | [imagem](https://www.canva.com/M/MAHZ9Xgr3so) |
