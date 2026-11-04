@@ -1,0 +1,16 @@
+CENA:
+COMPOSIÇÃO E ÂNGULO (MUITO IMPORTANTE): a cena é vista de LADO, como se a câmera estivesse na parede lateral da sala. O sofá fica no lado ESQUERDO da imagem, virado para a direita. A TV fica no lado DIREITO da imagem, sobre um móvel baixo, com a TELA VIRADA PARA A ESQUERDA, ou seja, de frente para o sofá e para os personagens. Quem olha a imagem vê a TV de perfil, em ângulo, com parte da tela visível. Os dois personagens olham para a TV, e seus rostos aparecem de perfil ou três quartos, com as expressões bem visíveis.
+
+Sala de estar aconchegante de uma pousada em Okinawa. A viajante e o rapaz jovem estão sentados lado a lado no sofá, assistindo a uma partida de futebol na TV (na parte visível da tela, apenas o gramado verde e jogadores pequenos e genéricos). Os dois fazem cara de tédio exagerada e cômica, com o queixo apoiado nas mãos e os olhos semicerrados.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, sem óculos, camiseta listrada azul e branca.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave do fim de tarde entrando por uma janela ao fundo. Clima bem-humorado.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive na tela da TV (sem placar, sem logotipos, sem números nas camisas). EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão do rapaz: ぼくは スポーツが すきじゃないです
+- balão da viajante: わたしも！

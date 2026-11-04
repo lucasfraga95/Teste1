@@ -58,3 +58,7 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L13_img2_sanshin-na-varanda | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9dBsbKw) |
 | N1_L14_exQ5_cardapio-ramen | não | placa: ラーメン | [imagem](https://www.canva.com/M/MAHZ9RLwDaE) · pasta [N1_L14](https://www.canva.com/folder/FAHZ9RvqeUY) |
 | N1_L14_img1_faixa-mensore_OPCIONAL | não | faixa: メンソーレ | [imagem](https://www.canva.com/M/MAHZ9aox8KI) |
+| N1_L15_exQ1_antes-do-high-five | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9ft-coM) · pasta [N1_L15](https://www.canva.com/folder/FAHZ9d6fsk4) |
+| N1_L15_exQ5_entediados-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9ePHTEs) |
+| N1_L15_img1_eu-tambem | não | わたしも！ | [imagem](https://www.canva.com/M/MAHZ9Z9Mx4M) |
+| N1_L15_img2_entediados-no-sofa | não | ぼくは スポーツが すきじゃないです / わたしも！ | [imagem](https://www.canva.com/M/MAHZ9X8CjcA) |
