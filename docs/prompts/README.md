@@ -42,3 +42,5 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L08_exQ1_bolo-da-maria | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9B9DlAk) · pasta [N1_L08](https://www.canva.com/folder/FAHZ9PMdP6c) |
 | N1_L08_img1_meu-bolo-seu-bolo | sim | わたしの ケーキ！ / ぼくの ケーキ！ | [imagem](https://www.canva.com/M/MAHZ9Dvx98Y) |
 | N1_L08_img2_professor-de-matematica_OPCIONAL | não | すうがくの せんせいです | [imagem](https://www.canva.com/M/MAHZ9GO5HnU) |
+| N1_L09_img1_check-in-pousada | não | plaquinha da chave: 305 | [imagem](https://www.canva.com/M/MAHZ9Iu0X_w) · pasta [N1_L09](https://www.canva.com/folder/FAHZ9O9nMvQ) |
+| N1_L09_img2_dia-da-maioridade | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9DU1B6s) |
