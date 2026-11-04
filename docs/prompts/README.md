@@ -128,3 +128,7 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L04_img1_diario-de-viagem | não | sem texto | [imagem](https://www.canva.com/M/MAHZ--aOk48) |
 | N3_L04_img2_festival-de-verao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-wwv5q0) |
 | N3_L04_img3_album-do-pai | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-zF3rww) |
+| N3_L05_exQ1_pedalando-com-a-aoi | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-xXCLbI) · pasta [N3_L05](https://www.canva.com/folder/FAHZ-_uevCA) |
+| N3_L05_exQ4_sozinha-no-mirante | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-wkGTHY) |
+| N3_L05_img1_pedalando-juntas | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-5O0nxo) |
+| N3_L05_img2_juntas-x-sozinha | sim | sem texto | [imagem](https://www.canva.com/M/MAHZ-4PBnNE) |
