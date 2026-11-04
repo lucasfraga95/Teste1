@@ -62,3 +62,5 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L15_exQ5_entediados-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9ePHTEs) |
 | N1_L15_img1_eu-tambem | não | わたしも！ | [imagem](https://www.canva.com/M/MAHZ9Z9Mx4M) |
 | N1_L15_img2_entediados-no-sofa | não | ぼくは スポーツが すきじゃないです / わたしも！ | [imagem](https://www.canva.com/M/MAHZ9X8CjcA) |
+| N1_L16_cultural_img1_eisa | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9eMFplM) · pasta [N1_L16](https://www.canva.com/folder/FAHZ9dQ-gTQ) |
+| N1_L16_cultural_img2_par-de-shisa_OPCIONAL | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9cTN_rc) |
