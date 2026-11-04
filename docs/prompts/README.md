@@ -53,3 +53,6 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L12_exQ5_professora-chegando | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9b3yApY) |
 | N1_L12_img1_quem-e-a-professora | não | にほんごの せんせいは だれですか？ / やまだせんせいです！ | [imagem](https://www.canva.com/M/MAHZ9XfQZ-o) |
 | N1_L12_img2_onde-fica-o-banheiro | não | すみません、トイレは どこですか？ | [imagem](https://www.canva.com/M/MAHZ9V4VSQs) |
+| N1_L13_exQ5_riku-mangas-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9dFt9f8) · pasta [N1_L13](https://www.canva.com/folder/FAHZ9QQqwIY) |
+| N1_L13_img1_riku-e-os-mangas | não | まんがが だいすきです！ | [imagem](https://www.canva.com/M/MAHZ9SvJOT4) |
+| N1_L13_img2_sanshin-na-varanda | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9dBsbKw) |
