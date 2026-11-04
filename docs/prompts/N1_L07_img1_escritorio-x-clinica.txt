@@ -1,0 +1,13 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado.
+
+CENA DA ESQUERDA: escritório moderno e iluminado, com mesas, computadores e plantas. Um homem japonês de cerca de 35 anos, cabelo preto curto, terno azul-marinho e gravata, se apresenta com uma leve reverência e expressão cordial. Um balão de fala sai dele.
+CENA DA DIREITA: consultório clínico claro e limpo, com uma maca e armários brancos ao fundo. Uma médica japonesa de cerca de 40 anos, cabelo preto preso, jaleco branco e estetoscópio no pescoço, sorri de forma acolhedora. Um balão de fala sai dela.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e natural de manhã. Clima profissional mas amigável.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em telas de computador, crachás, documentos e placas. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: かいしゃいんです
+- balão da direita: いしゃです

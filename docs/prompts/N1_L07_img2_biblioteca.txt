@@ -1,0 +1,14 @@
+CENA:
+Biblioteca universitária aconchegante, com estantes de madeira e janelas amplas mostrando céu tropical e palmeiras. O rapaz jovem está sentado numa mesa estudando, cercado de cadernos abertos cheios de rabiscos e gráficos ilegíveis. A viajante se aproxima por trás dele, inclinando-se com curiosidade para olhar os cadernos. Ele levanta o rosto e sorri para ela.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, camiseta listrada azul e branca.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e dourada de tarde entrando pelas janelas. Clima tranquilo de estudo.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem. Os cadernos devem ter apenas rabiscos e desenhos de gráficos, sem números ou letras legíveis, e as lombadas dos livros devem ficar sem escrita. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da viajante: せんこうは すうがくですか？
+- balão do rapaz: はい、そうです！

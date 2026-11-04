@@ -35,3 +35,7 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L06_exQ1_placa-taxi-sem-carros | não | placa: タクシー | [imagem](https://www.canva.com/M/MAHZ9MX7klU) · pasta [N1_L06](https://www.canva.com/folder/FAHZ9DzYEG0) |
 | N1_L06_img1_shisa-no-telhado | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9OntnoY) |
 | N1_L06_img2_ponto-de-taxi | não | placa: タクシー | [imagem](https://www.canva.com/M/MAHZ9IsyFgE) |
+| N1_L07_exQ1_medica | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9GRF8jw) · pasta [N1_L07](https://www.canva.com/folder/FAHZ9OjcfoA) |
+| N1_L07_exQ5_riku-na-biblioteca | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9A0vStA) (Riku saiu de óculos) |
+| N1_L07_img1_escritorio-x-clinica | sim | かいしゃいんです / いしゃです | [imagem](https://www.canva.com/M/MAHZ9FAlwaI) |
+| N1_L07_img2_biblioteca | não | せんこうは すうがくですか？ / はい、そうです！ | [imagem](https://www.canva.com/M/MAHZ9O102yI) |
