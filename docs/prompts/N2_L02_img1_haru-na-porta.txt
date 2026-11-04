@@ -1,0 +1,13 @@
+CENA:
+Corredor de um dormitório estudantil japonês, com piso de madeira clara, portas numeradas lisas e plantas em vasos. A porta de um quarto está aberta: a viajante, ainda de pijama e com o cabelo um pouco bagunçado, aparece sonolenta e sorridente. Do lado de fora, a Haru, animada, acena com uma das mãos. Pela janela do fim do corredor, aparece o vulcão Sakurajima ao longe.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, pijama claro de estampa discreta.
+- Haru: japonesa de cerca de 20 anos, estudante universitária, cabelo preto curto na altura do queixo, com franja reta, camiseta cor mostarda clara e calça jeans, bolsa de lona a tiracolo, sorriso animado e cheio de energia.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e dourada do começo da manhã entrando pela janela. Clima alegre e acolhedor.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive nas portas, que devem estar sem números. EXCEÇÃO ÚNICA: o balão de fala da Haru, com exatamente estes caracteres, em fonte grande:
+おはよう！

@@ -1,0 +1,16 @@
+CENA:
+Imagem dividida verticalmente ao meio, com duas cenas lado a lado, ambas no mesmo quarto do dormitório da viajante (cama simples, escrivaninha, plantinha na janela).
+
+CENA DA ESQUERDA (de manhã): a viajante sentada na cama, se espreguiçando com os braços para cima, sorrindo. Pela janela, o céu claro da manhã. Um balão de fala sai dela.
+CENA DA DIREITA (à noite): a viajante, de pijama, deitada na cama puxando o cobertor, com a luminária ainda acesa. Pela janela, o céu escuro com a lua. Um balão de fala sai dela.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, pijama claro de estampa discreta.
+
+ILUMINAÇÃO E ATMOSFERA:
+À esquerda, luz clara e dourada da manhã; à direita, luz amarelada e suave da luminária contrastando com o azul da noite.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em relógios, livros e objetos do quarto. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da esquerda: あさ おきます
+- balão da direita: よる ねます
