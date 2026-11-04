@@ -137,3 +137,5 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L06_img2_familia-brasileira | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-zm9FQo) |
 | N3_L07_exQ1_cafe-sim-cha-nao | sim | sem texto | [imagem](https://www.canva.com/M/MAHZ-68E-Cs) · pasta [N3_L07](https://www.canva.com/folder/FAHZ-wFaTH0) |
 | N3_L07_img1_cozinha-dos-hinata | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-7E-1u0) |
+| N3_L08_exQ1_aoi-e-o-pai | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-3waLqU) · pasta [N3_L08](https://www.canva.com/folder/FAHZ-x_AEiU) |
+| N3_L08_img1_vizinha-no-portao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-78R454) |
