@@ -1,0 +1,15 @@
+CENA:
+Entrada da escola de japonês em Okinawa, com piso de madeira, plantas tropicais e janelas abertas para um jardim. Em primeiro plano, a viajante faz uma pergunta ao rapaz jovem, com expressão curiosa. Ele aponta, sorrindo, para o fundo do corredor, de onde vem chegando a professora com alguns livros nas mãos.
+
+PERSONAGENS:
+- A viajante: mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+- O rapaz (Riku): japonês de cerca de 20 anos, cabelo preto curto e levemente bagunçado, sem óculos, camiseta listrada azul e branca.
+- A professora (Yamada): mulher japonesa de cerca de 40 anos, cabelo preto preso num coque baixo, óculos de armação fina, cardigã verde-claro sobre blusa branca.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave e quente de manhã. Clima acolhedor.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em quadros de aviso, portas e capas de livros. EXCEÇÃO ÚNICA: os dois balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da viajante: にほんごの せんせいは だれですか？
+- balão do rapaz: やまだせんせいです！

@@ -49,3 +49,7 @@ Predefinições fixas (ver também `../estilo-visual.md`):
 | N1_L11_exQ1_brasileira-sem-balao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9OWff4c) · pasta [N1_L11](https://www.canva.com/folder/FAHZ9HUpZX4) |
 | N1_L11_img1_turma-internacional | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9RwGQI8) |
 | N1_L11_img2_brasileira | não | ブラジルじんですか？ / はい、ブラジルじんです！ | [imagem](https://www.canva.com/M/MAHZ9XULq-I) |
+| N1_L12_exQ1_funcionaria-ouvindo | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9fZyb_Y) · pasta [N1_L12](https://www.canva.com/folder/FAHZ9dRsw4k) |
+| N1_L12_exQ5_professora-chegando | não | sem texto | [imagem](https://www.canva.com/M/MAHZ9b3yApY) |
+| N1_L12_img1_quem-e-a-professora | não | にほんごの せんせいは だれですか？ / やまだせんせいです！ | [imagem](https://www.canva.com/M/MAHZ9XfQZ-o) |
+| N1_L12_img2_onde-fica-o-banheiro | não | すみません、トイレは どこですか？ | [imagem](https://www.canva.com/M/MAHZ9V4VSQs) |
