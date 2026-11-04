@@ -118,3 +118,6 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L01_img1_chegada-a-miyazaki | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-0lqfNc) |
 | N3_L01_img2_praia-de-aoshima | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-3PEjts) |
 | N3_L01_img3_desfiladeiro-de-takachiho | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-4ST43A) |
+| N3_L02_exQ4_bicicleta-na-costa | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-_uQ2-w) · pasta [N3_L02](https://www.canva.com/folder/FAHZ-4aXZf0) |
+| N3_L02_img1_primeiro-jantar | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-7B7Vok) |
+| N3_L02_img2_fotos-de-kagoshima | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-6Isb_M) |
