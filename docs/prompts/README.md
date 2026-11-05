@@ -202,3 +202,9 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L12_exQ1_jogo-de-futebol | não | sem texto | [imagem](https://www.canva.com/M/MAHaC32N4SE) · pasta [N5_L12](https://www.canva.com/folder/FAHaC8yXKPc) |
 | N5_L12_img1_taiko-no-parque | não | sem texto | [imagem](https://www.canva.com/M/MAHaC5b293c) |
 | N5_L12_img2_o-convite | não | よかったら、きませんか？ | [imagem](https://www.canva.com/M/MAHaC-Sqo5s) |
+| N5_L13_exQ1_chuva-pela-janela | não | sem texto | [imagem](https://www.canva.com/M/MAHaC14ZNZ4) · pasta [N5_L13](https://www.canva.com/folder/FAHaC3DEVpM) |
+| N5_L13_img1_conversa-depois-do-show | não | sem texto | [imagem](https://www.canva.com/M/MAHaC46BJZY) |
+| N5_L13_img2_recusando-com-jeitinho | não | sem texto | [imagem](https://www.canva.com/M/MAHaC8XtQDk) |
+| N5_L14_exQ1_conversando-com-o-taichi | não | sem texto | [imagem](https://www.canva.com/M/MAHaCxdNr4Y) · pasta [N5_L14](https://www.canva.com/folder/FAHaC54XjT4) |
+| N5_L14_img1_fotos-da-viagem | não | sem texto | [imagem](https://www.canva.com/M/MAHaC0EOW9U) |
+| N5_L14_img2_golfinhos-em-amakusa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCx5RnjE) |
