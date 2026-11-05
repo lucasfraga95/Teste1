@@ -178,3 +178,5 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L03_img2_ouvindo-os-passaros | não | sem texto (♪) | [imagem](https://www.canva.com/M/MAHaC428v_w) |
 | N5_L04_img1_lojinha-da-estacao | não | sem texto | [imagem](https://www.canva.com/M/MAHaCz_mQaY) · pasta [N5_L04](https://www.canva.com/folder/FAHaC6JtMYw) |
 | N5_L04_img2_jardim-suizenji | não | なんという こうえんですか？ | [imagem](https://www.canva.com/M/MAHaCzdB3R8) |
+| N5_L05_exQ1_campos-de-arroz | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1IYuu4) · pasta [N5_L05](https://www.canva.com/folder/FAHaC7fHKTY) |
+| N5_L05_img1_do-desenho-ao-kanji | sim (3 quadros) | 山 / 川 / 田 | [imagem](https://www.canva.com/M/MAHaC-y4eDM) |
