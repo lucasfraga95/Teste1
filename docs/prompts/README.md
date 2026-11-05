@@ -176,3 +176,5 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L03_exQ1_rua-barulhenta | não | sem texto | [imagem](https://www.canva.com/M/MAHaCxS1F4g) · pasta [N5_L03](https://www.canva.com/folder/FAHaCxSV0Do) |
 | N5_L03_img1_pradarias-do-aso | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1a40cY) |
 | N5_L03_img2_ouvindo-os-passaros | não | sem texto (♪) | [imagem](https://www.canva.com/M/MAHaC428v_w) |
+| N5_L04_img1_lojinha-da-estacao | não | sem texto | [imagem](https://www.canva.com/M/MAHaCz_mQaY) · pasta [N5_L04](https://www.canva.com/folder/FAHaC6JtMYw) |
+| N5_L04_img2_jardim-suizenji | não | なんという こうえんですか？ | [imagem](https://www.canva.com/M/MAHaCzdB3R8) |
