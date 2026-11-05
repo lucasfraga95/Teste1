@@ -151,3 +151,6 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L13_exQ1_estendendo-a-roupa | não | sem texto | [imagem](https://www.canva.com/M/MAHaAEAAwF4) · pasta [N3_L13](https://www.canva.com/folder/FAHaAMB5IXg) |
 | N3_L13_img1_tarefas-da-casa | não | sem texto | [imagem](https://www.canva.com/M/MAHaALX94QI) |
 | N3_L13_img2_banheiro-japones | não | sem texto | [imagem](https://www.canva.com/M/MAHaAMeetmY) |
+| N3_L14_exQ1_dois-ingressos | não | sem texto | [imagem](https://www.canva.com/M/MAHaAJgLZ4U) · pasta [N3_L14](https://www.canva.com/folder/FAHaAFvXG1I) |
+| N3_L14_img1_fotos-de-takachiho | não | sem texto | [imagem](https://www.canva.com/M/MAHaACUjL1s) |
+| N3_L14_img2_aceitar-x-recusar | sim | いいですね。ぜひ！ / すみません、土曜日は ちょっと… | [imagem](https://www.canva.com/M/MAHaAJNxCEk) |
