@@ -144,3 +144,5 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L10_exQ1_pagina-do-calendario | não | calendário: 九月 | [imagem](https://www.canva.com/M/MAHZ-0a03WI) · pasta [N3_L10](https://www.canva.com/folder/FAHZ-7GtZ6I) |
 | N3_L10_img1_calendario-da-cozinha | não | calendário: 七月 | [imagem](https://www.canva.com/M/MAHaABrtJoU) |
 | N3_L10_img2_do-desenho-ao-kanji | não | 月 / 人 / 子 | [imagem](https://www.canva.com/M/MAHaAOo0px8) |
+| N3_L11_img1_mercado-de-miyazaki | não | sem texto | [imagem](https://www.canva.com/M/MAHaALd20Xk) · pasta [N3_L11](https://www.canva.com/folder/FAHaAE3eD8g) |
+| N3_L11_img2_chicken-nanban | não | sem texto | [imagem](https://www.canva.com/M/MAHaADFpoZE) |
