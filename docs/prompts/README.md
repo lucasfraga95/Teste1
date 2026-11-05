@@ -148,3 +148,6 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L11_img2_chicken-nanban | não | sem texto | [imagem](https://www.canva.com/M/MAHaADFpoZE) |
 | N3_L12_exQ1_mesa-cheia-de-compras | não | sem texto | [imagem](https://www.canva.com/M/MAHaAKfQEIk) · pasta [N3_L12](https://www.canva.com/folder/FAHaAEz9I-Y) |
 | N3_L12_img1_desembrulhando-as-compras | não | sem texto | [imagem](https://www.canva.com/M/MAHaALPKuTg) |
+| N3_L13_exQ1_estendendo-a-roupa | não | sem texto | [imagem](https://www.canva.com/M/MAHaAEAAwF4) · pasta [N3_L13](https://www.canva.com/folder/FAHaAMB5IXg) |
+| N3_L13_img1_tarefas-da-casa | não | sem texto | [imagem](https://www.canva.com/M/MAHaALX94QI) |
+| N3_L13_img2_banheiro-japones | não | sem texto | [imagem](https://www.canva.com/M/MAHaAMeetmY) |
