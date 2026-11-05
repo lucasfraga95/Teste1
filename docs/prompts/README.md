@@ -191,3 +191,8 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L08_exQ4_o-hotel-e-ali | não | sem texto | [imagem](https://www.canva.com/M/MAHaC50B8lw) |
 | N5_L08_img1_onde-esta-o-chaveiro | não | sem texto | [imagem](https://www.canva.com/M/MAHaC8fZj_4) |
 | N5_L08_img2_achamos | não | あっ！ / えっ！ | [imagem](https://www.canva.com/M/MAHaC35V3EI) |
+| N5_L09_exQ1_bola-na-caixa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCyvyhh8) · pasta [N5_L09](https://www.canva.com/folder/FAHaCy6Rw78) |
+| N5_L09_img1_placas-da-estacao | não | só pictogramas | [imagem](https://www.canva.com/M/MAHaCwMnBFc) |
+| N5_L10_exQ1_bolo-de-aniversario | não | sem texto | [imagem](https://www.canva.com/M/MAHaCwDqHdI) · pasta [N5_L10](https://www.canva.com/folder/FAHaC7IUpQk) |
+| N5_L10_img1_o-convite-do-taichi | não | sem texto | [imagem](https://www.canva.com/M/MAHaC26mYyM) |
+| N5_L10_img2_dia-dezesseis | não | わたしの たんじょうびです！ | [imagem](https://www.canva.com/M/MAHaC0LT7tU) |
