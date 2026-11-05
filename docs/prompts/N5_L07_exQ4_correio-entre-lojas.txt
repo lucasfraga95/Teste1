@@ -1,0 +1,11 @@
+CENA:
+Fachadas de três lojas lado a lado numa rua japonesa, vistas de frente, em linha reta, como numa ilustração de livro infantil:
+- à ESQUERDA: um banco, com caixas eletrônicos visíveis pela porta de vidro e um cofrinho/ícone de moeda dourada desenhado na fachada;
+- no MEIO: uma pequena agência de correios, com uma caixa de correio vermelha cilíndrica tradicional na calçada em frente;
+- à DIREITA: uma loja de conveniência bem iluminada, com prateleiras de lanches, bebidas e onigiri visíveis pela vitrine.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara do meio-dia, céu azul. Clima cotidiano.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala. Os logotipos devem ser apenas formas de cor lisas, sem letras.

@@ -159,3 +159,14 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L16_final_img1_barco-em-takachiho | não | わあ！ 滝ですね！ | [imagem](https://www.canva.com/M/MAHaAO1Oo2Q) · pasta [N3_L16](https://www.canva.com/folder/FAHaACcZOR0) |
 | N3_L16_final_img2_almoco-em-takachiho | não | sem texto | [imagem](https://www.canva.com/M/MAHaAOJ7D80) |
 | N3_L16_final_img3_cozinhando-juntas | não | sem texto | [imagem](https://www.canva.com/M/MAHaAHlEfu4) |
+
+## Nível 5 — Kumamoto
+
+Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa de hóspedes), Aso (shiba inu) e os dois gatos da casa. Fichas em `_estilo-base.txt`.
+
+| Código | Dividida | Textos | Canva |
+|---|---|---|---|
+| N5_L01_exQ1_santuario | não | sem texto | [imagem](https://www.canva.com/M/MAHaC4_vQVo) · pasta [N5_L01](https://www.canva.com/folder/FAHaCwMbrhE) |
+| N5_L01_exQ4_pacote-para-o-brasil | não | sem texto | [imagem](https://www.canva.com/M/MAHaC679TUA) |
+| N5_L01_img1_chegada-a-kumamoto | não | sem texto | [imagem](https://www.canva.com/M/MAHaCydQuAw) |
+| N5_L01_img2_rua-de-servicos | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1kZM-w) |

@@ -1,0 +1,11 @@
+CENA:
+Uma rua comercial japonesa tranquila, vista em perspectiva. Lado a lado: uma loja de conveniência bem iluminada (com prateleiras de lanches e bebidas visíveis pela vitrine), um banco com caixas eletrônicos visíveis pelo vidro, uma pequena agência de correios com uma caixa de correio vermelha, cilíndrica e tradicional na calçada em frente, e uma floricultura com baldes de flores coloridas na calçada. Algumas pessoas passam a pé e de bicicleta. A viajante caminha pela calçada olhando as lojas com curiosidade.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave do meio da tarde. Clima cotidiano e agradável.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala. Os logotipos das lojas devem ser apenas formas de cor lisas, sem letras.

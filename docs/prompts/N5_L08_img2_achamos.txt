@@ -1,0 +1,15 @@
+CENA:
+Casa de hóspedes da Mori-san, em Kumamoto: casa japonesa antiga e reformada, de dois andares, com madeira clara, portas de correr de papel, plantas em vasos e uma sala de estar aconchegante com sofá bege, mesa baixa de madeira e uma janela grande. Na sala, a Mori-san está agachada, apontando para baixo do sofá; a viajante, ao lado dela, leva as mãos ao rosto, surpresa. Embaixo do sofá, aparece o cachorrinho Aso, com ar culpado, segurando na boca um pequeno chaveiro em forma de lanterna de papel dourada.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara (em casa, sem mochila).
+- Mori-san (dona da casa de hóspedes): japonesa de cerca de 62 anos, cabelo grisalho curto e levemente ondulado, óculos redondos de armação fina dourada, blusa creme e avental de linho verde-sálvia, sorriso acolhedor.
+- Aso (o cachorro da casa): cachorro pequeno da raça shiba inu, pelagem caramelo com peito e focinho creme, rabo enrolado, expressão esperta.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz quente da noite. Clima engraçado.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas e no chaveiro. EXCEÇÃO ÚNICA: os balões de fala, com exatamente estes caracteres, em fonte grande:
+- balão da Mori-san: あっ！
+- balão da viajante: えっ！

@@ -1,0 +1,11 @@
+CENA:
+Interior de uma estação de trem japonesa moderna e clara: duas escadas rolantes lado a lado, uma subindo e outra descendo, com setas grandes no chão; uma escada fixa que desce para o subsolo; placas penduradas no teto apenas com pictogramas (setas, ícone de saída, ícone de banheiro, ícone de ônibus). A viajante, com a mochila, olha para as placas, tentando se orientar.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, camiseta clara, mochila pequena.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz clara e branca do interior da estação. Clima de movimento.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala. As placas só podem ter pictogramas e setas.

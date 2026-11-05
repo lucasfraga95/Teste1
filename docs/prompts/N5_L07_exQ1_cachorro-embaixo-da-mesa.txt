@@ -1,0 +1,13 @@
+CENA:
+Um quarto com uma escrivaninha de madeira e uma cadeira. O cachorrinho Aso está deitado EMBAIXO da escrivaninha, entre as pernas da mesa, com a cabeça apoiada nas patas. Em cima da escrivaninha há apenas uma luminária e alguns livros.
+
+IMPORTANTE: o cachorro deve estar claramente embaixo da mesa, nunca em cima, atrás ou ao lado.
+
+PERSONAGENS:
+- Aso (o cachorro da casa): cachorro pequeno da raça shiba inu, pelagem caramelo com peito e focinho creme, rabo enrolado, expressão esperta.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave da tarde. Clima sossegado.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala.

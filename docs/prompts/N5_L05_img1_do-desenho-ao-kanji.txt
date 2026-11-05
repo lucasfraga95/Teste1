@@ -1,0 +1,12 @@
+CENA:
+Três quadros lado a lado, em estilo de página de livro ilustrado. Em cada quadro, à esquerda, um pequeno desenho da natureza e, à direita, uma seta suave apontando para o kanji correspondente, escrito com pincel em tinta marrom-escura:
+1) três picos de montanha → 山
+2) água correndo em três linhas onduladas → 川
+3) um campo de arroz quadrado, visto de cima, dividido em quatro partes → 田
+
+ILUMINAÇÃO E ATMOSFERA:
+Fundo creme claro e limpo, luz suave. Clima didático e delicado.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem. EXCEÇÃO ÚNICA: os três kanji, exatamente estes caracteres, um em cada quadro, em fonte grande:
+山　川　田
