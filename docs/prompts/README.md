@@ -180,3 +180,7 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L04_img2_jardim-suizenji | não | なんという こうえんですか？ | [imagem](https://www.canva.com/M/MAHaCzdB3R8) |
 | N5_L05_exQ1_campos-de-arroz | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1IYuu4) · pasta [N5_L05](https://www.canva.com/folder/FAHaC7fHKTY) |
 | N5_L05_img1_do-desenho-ao-kanji | sim (3 quadros) | 山 / 川 / 田 | [imagem](https://www.canva.com/M/MAHaC-y4eDM) |
+| N5_L06_exQ1_cozinha | não | sem texto | [imagem](https://www.canva.com/M/MAHaCz2Zalw) · pasta [N5_L06](https://www.canva.com/folder/FAHaCxhOik4) |
+| N5_L06_exQ4_chinelos-do-banheiro | não | sem texto | [imagem](https://www.canva.com/M/MAHaC84OUtA) |
+| N5_L06_img1_conhecendo-a-casa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCwMVv_s) |
+| N5_L06_img2_o-quarto-da-viajante | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1t0p6A) |
