@@ -170,3 +170,6 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L01_exQ4_pacote-para-o-brasil | não | sem texto | [imagem](https://www.canva.com/M/MAHaC679TUA) |
 | N5_L01_img1_chegada-a-kumamoto | não | sem texto | [imagem](https://www.canva.com/M/MAHaCydQuAw) |
 | N5_L01_img2_rua-de-servicos | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1kZM-w) |
+| N5_L02_exQ1_cachorro-no-parque | não | sem texto | [imagem](https://www.canva.com/M/MAHaC2JrtXc) · pasta [N5_L02](https://www.canva.com/folder/FAHaC2r8IhM) |
+| N5_L02_img1_castelo-de-kumamoto | não | sem texto | [imagem](https://www.canva.com/M/MAHaC_Yut-g) |
+| N5_L02_img2_o-que-tem-em-kumamoto | não | なにが ありますか？ / おしろが ありますよ！ | [imagem](https://www.canva.com/M/MAHaC4-rlEM) |
