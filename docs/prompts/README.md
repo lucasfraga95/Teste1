@@ -208,3 +208,9 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L14_exQ1_conversando-com-o-taichi | não | sem texto | [imagem](https://www.canva.com/M/MAHaCxdNr4Y) · pasta [N5_L14](https://www.canva.com/folder/FAHaC54XjT4) |
 | N5_L14_img1_fotos-da-viagem | não | sem texto | [imagem](https://www.canva.com/M/MAHaC0EOW9U) |
 | N5_L14_img2_golfinhos-em-amakusa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCx5RnjE) |
+| N5_L15_exQ1_quarto-claro | não | sem texto | [imagem](https://www.canva.com/M/MAHaC6kBfw0) · pasta [N5_L15](https://www.canva.com/folder/FAHaC2k3-QY) |
+| N5_L15_img1_planejando-a-semana | não | sem texto (relógio sem números) | [imagem](https://www.canva.com/M/MAHaCzB7Om4) |
+| N5_L15_img2_kanji-com-o-sol | sim (3 quadros) | 日 / 時 / 間 / 明 | [imagem v2](https://www.canva.com/M/MAHaC1SIcqs) (v1 com pessoas e paisagens: MAHaC_xRvjQ) |
+| N5_L16_final_img1_danca-das-lanternas | não | sem texto | [imagem](https://www.canva.com/M/MAHaC7EXHoQ) · pasta [N5_L16](https://www.canva.com/folder/FAHaC_hhBPU) |
+| N5_L16_final_img2_presente-surpresa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCy2C5OI) |
+| N5_L16_final_img3_ultima-noite | não | sem texto | [imagem](https://www.canva.com/M/MAHaC5NtV60) |
