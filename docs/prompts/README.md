@@ -173,3 +173,6 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L02_exQ1_cachorro-no-parque | não | sem texto | [imagem](https://www.canva.com/M/MAHaC2JrtXc) · pasta [N5_L02](https://www.canva.com/folder/FAHaC2r8IhM) |
 | N5_L02_img1_castelo-de-kumamoto | não | sem texto | [imagem](https://www.canva.com/M/MAHaC_Yut-g) |
 | N5_L02_img2_o-que-tem-em-kumamoto | não | なにが ありますか？ / おしろが ありますよ！ | [imagem](https://www.canva.com/M/MAHaC4-rlEM) |
+| N5_L03_exQ1_rua-barulhenta | não | sem texto | [imagem](https://www.canva.com/M/MAHaCxS1F4g) · pasta [N5_L03](https://www.canva.com/folder/FAHaCxSV0Do) |
+| N5_L03_img1_pradarias-do-aso | não | sem texto | [imagem](https://www.canva.com/M/MAHaC1a40cY) |
+| N5_L03_img2_ouvindo-os-passaros | não | sem texto (♪) | [imagem](https://www.canva.com/M/MAHaC428v_w) |
