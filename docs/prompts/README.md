@@ -141,3 +141,6 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L08_img1_vizinha-no-portao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-78R454) |
 | N3_L09_exQ1_funcionario-da-estacao | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-ydR2YE) · pasta [N3_L09](https://www.canva.com/folder/FAHZ-5-jzao) |
 | N3_L09_img1_perguntas-do-sota | não | sem texto | [imagem](https://www.canva.com/M/MAHZ-_FG76g) |
+| N3_L10_exQ1_pagina-do-calendario | não | calendário: 九月 | [imagem](https://www.canva.com/M/MAHZ-0a03WI) · pasta [N3_L10](https://www.canva.com/folder/FAHZ-7GtZ6I) |
+| N3_L10_img1_calendario-da-cozinha | não | calendário: 七月 | [imagem](https://www.canva.com/M/MAHaABrtJoU) |
+| N3_L10_img2_do-desenho-ao-kanji | não | 月 / 人 / 子 | [imagem](https://www.canva.com/M/MAHaAOo0px8) |
