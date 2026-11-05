@@ -196,3 +196,9 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L10_exQ1_bolo-de-aniversario | não | sem texto | [imagem](https://www.canva.com/M/MAHaCwDqHdI) · pasta [N5_L10](https://www.canva.com/folder/FAHaC7IUpQk) |
 | N5_L10_img1_o-convite-do-taichi | não | sem texto | [imagem](https://www.canva.com/M/MAHaC26mYyM) |
 | N5_L10_img2_dia-dezesseis | não | わたしの たんじょうびです！ | [imagem](https://www.canva.com/M/MAHaC0LT7tU) |
+| N5_L11_exQ1_aquario | não | sem texto (3 peixes) | [imagem](https://www.canva.com/M/MAHaC6Vjra4) · pasta [N5_L11](https://www.canva.com/folder/FAHaC_5VOgM) |
+| N5_L11_img1_os-gatos-da-casa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCy21uwY) |
+| N5_L11_img2_andares-da-loja | não | sem texto | [imagem](https://www.canva.com/M/MAHaC82ovHo) |
+| N5_L12_exQ1_jogo-de-futebol | não | sem texto | [imagem](https://www.canva.com/M/MAHaC32N4SE) · pasta [N5_L12](https://www.canva.com/folder/FAHaC8yXKPc) |
+| N5_L12_img1_taiko-no-parque | não | sem texto | [imagem](https://www.canva.com/M/MAHaC5b293c) |
+| N5_L12_img2_o-convite | não | よかったら、きませんか？ | [imagem](https://www.canva.com/M/MAHaC-Sqo5s) |
