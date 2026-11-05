@@ -187,3 +187,7 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L07_exQ1_cachorro-embaixo-da-mesa | não | sem texto | [imagem](https://www.canva.com/M/MAHaC9dXeXk) · pasta [N5_L07](https://www.canva.com/folder/FAHaC5BcQk4) |
 | N5_L07_exQ4_correio-entre-lojas | não | sem texto (símbolo 〒 na agência) | [imagem](https://www.canva.com/M/MAHaC9zE3tc) |
 | N5_L07_img1_arrumando-o-quarto | não | sem texto | [imagem v2](https://www.canva.com/M/MAHaCzxBg20) (v1 com a mala aberta no chão: MAHaC5Kombw) |
+| N5_L08_exQ1_cachorro-embaixo-da-mesa-de-jantar | não | sem texto | [imagem](https://www.canva.com/M/MAHaCz6U5w4) · pasta [N5_L08](https://www.canva.com/folder/FAHaC8FQ7Oc) |
+| N5_L08_exQ4_o-hotel-e-ali | não | sem texto | [imagem](https://www.canva.com/M/MAHaC50B8lw) |
+| N5_L08_img1_onde-esta-o-chaveiro | não | sem texto | [imagem](https://www.canva.com/M/MAHaC8fZj_4) |
+| N5_L08_img2_achamos | não | あっ！ / えっ！ | [imagem](https://www.canva.com/M/MAHaC35V3EI) |
