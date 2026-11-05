@@ -154,3 +154,5 @@ Cenários da província de Miyazaki (Aoshima, Takachiho). Família anfitriã: Hi
 | N3_L14_exQ1_dois-ingressos | não | sem texto | [imagem](https://www.canva.com/M/MAHaAJgLZ4U) · pasta [N3_L14](https://www.canva.com/folder/FAHaAFvXG1I) |
 | N3_L14_img1_fotos-de-takachiho | não | sem texto | [imagem](https://www.canva.com/M/MAHaACUjL1s) |
 | N3_L14_img2_aceitar-x-recusar | sim | いいですね。ぜひ！ / すみません、土曜日は ちょっと… | [imagem](https://www.canva.com/M/MAHaAJNxCEk) |
+| N3_L15_img1_planejando-na-varanda | não | sem texto | [imagem](https://www.canva.com/M/MAHaAC6iA9A) · pasta [N3_L15](https://www.canva.com/folder/FAHaAMG10_w) |
+| N3_L15_img2_encontro-na-estacao | não | sem texto (relógio 11h) | [imagem](https://www.canva.com/M/MAHaABe9YsA) |
