@@ -1,0 +1,12 @@
+CENA:
+A viajante, sentada à mesa com cadernos abertos, fala ao celular com um sorriso sem graça, coçando a cabeça com a outra mão, num gesto de quem recusa um convite com delicadeza.
+
+PERSONAGENS:
+- A viajante (Maria): mulher brasileira de cerca de 28 anos, cabelo castanho ondulado na altura dos ombros, suéter claro (dentro de casa, sem casaco).
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz quente de luminária. Clima leve.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive nos cadernos e na tela. EXCEÇÃO ÚNICA: o balão de fala da viajante, com exatamente estes caracteres, em fonte grande:
+きょうは ちょっと…

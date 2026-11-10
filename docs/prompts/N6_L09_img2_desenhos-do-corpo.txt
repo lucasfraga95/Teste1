@@ -1,0 +1,14 @@
+CENA:
+Cinco pequenos quadros em fileira, em estilo de página de livro ilustrado. Em cada um, em cima, um desenho simples de uma parte do corpo e, embaixo, o kanji correspondente escrito com pincel em tinta marrom-escura:
+1) uma boca → 口
+2) um olho → 目
+3) uma orelha → 耳
+4) uma mão com os dedos abertos → 手
+5) uma perna com o pé → 足
+
+ILUMINAÇÃO E ATMOSFERA:
+Fundo creme claro e limpo, luz suave. Clima didático e delicado.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem. EXCEÇÃO ÚNICA: os cinco kanji, exatamente estes caracteres, um em cada quadro, em fonte grande:
+口　目　耳　手　足

@@ -214,3 +214,14 @@ Personagens: a viajante (Maria), Taichi (universitário), Mori-san (dona da casa
 | N5_L16_final_img1_danca-das-lanternas | não | sem texto | [imagem](https://www.canva.com/M/MAHaC7EXHoQ) · pasta [N5_L16](https://www.canva.com/folder/FAHaC_hhBPU) |
 | N5_L16_final_img2_presente-surpresa | não | sem texto | [imagem](https://www.canva.com/M/MAHaCy2C5OI) |
 | N5_L16_final_img3_ultima-noite | não | sem texto | [imagem](https://www.canva.com/M/MAHaC5NtV60) |
+
+## Nível 6 — Nagasaki
+
+Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 1, exercício Q1 · `L16-P1` = texto final, Parte 1. No Canva: pasta `N6 Nagasaki` › `Lição XX` › uma pasta com o nome de cada imagem.
+
+| Nome | Código do prompt | Textos | Canva |
+|---|---|---|---|
+| L1-S1 | N6_L01_img1_chegada-a-nagasaki | sem texto | [imagem](https://www.canva.com/M/MAHaiDEs8fo) |
+| L1-S4 | N6_L01_img2_ajudando-na-loja | sem texto | [imagem](https://www.canva.com/M/MAHaiBgMJ38) |
+| L1-Q1 | N6_L01_exQ1_esperando-o-bonde | sem texto | [imagem](https://www.canva.com/M/MAHaiBGknJU) |
+| L1-Q4 | N6_L01_exQ4_escovando-os-dentes | sem texto | [imagem](https://www.canva.com/M/MAHaiH9wzp8) |

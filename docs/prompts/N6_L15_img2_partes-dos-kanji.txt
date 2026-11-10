@@ -1,0 +1,12 @@
+CENA:
+Três quadros lado a lado, em estilo de página de livro ilustrado, mostrando como partes conhecidas formam novos kanji, escritos com pincel em tinta marrom-escura:
+1) o kanji 目 com duas perninhas desenhadas embaixo, andando → 見
+2) o kanji 言 ao lado de um sinal de "+" → 語
+3) uma árvore desenhada com a raiz destacada em cor → 本
+
+ILUMINAÇÃO E ATMOSFERA:
+Fundo creme claro e limpo, luz suave. Clima didático e delicado.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem. EXCEÇÃO ÚNICA: os kanji indicados na cena, exatamente estes caracteres, em fonte grande:
+目　見　言　語　本
