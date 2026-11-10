@@ -259,3 +259,9 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L11-S3 | N6_L11_img2_estamos-aqui | sem texto | [imagem](https://www.canva.com/M/MAHaiKNcJLc) |
 | L11-Q1 | N6_L11_exQ1_mulher-de-chapeu | sem texto | [imagem](https://www.canva.com/M/MAHaiBUMeS4) |
 | L11-Q4 | N6_L11_exQ4_homem-de-gravata | sem texto | [imagem](https://www.canva.com/M/MAHaiByiXSY) |
+| L12-S1 | N6_L12_img1_album-da-familia | sem texto | [imagem](https://www.canva.com/M/MAHaiGSvzOU) |
+| L12-S4 | N6_L12_img2_mio-guia | sem texto | [imagem](https://www.canva.com/M/MAHaiLA7FVo) |
+| L12-Q1 | N6_L12_exQ1_gato-gordo-e-magro | sem texto | [imagem](https://www.canva.com/M/MAHaiMDmTHE) |
+| L13-S1 | N6_L13_img1_a-lista-da-mio | sem texto | [imagem](https://www.canva.com/M/MAHaiKlBKTk) |
+| L13-S3 | N6_L13_img2_foto-nao-enviada | sem texto | [imagem](https://www.canva.com/M/MAHaiAxXmws) |
+| L13-Q1 | N6_L13_exQ1_tigela-vazia | sem texto | [imagem](https://www.canva.com/M/MAHaiOwuS38) |
