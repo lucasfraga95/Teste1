@@ -245,3 +245,9 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L7-S4 | N6_L07_img2_rabo-longo-rabo-curto | sem texto — v2 (v1 de costas: MAHaiHRGwNg) | [imagem](https://www.canva.com/M/MAHaiOoQXRY) |
 | L7-Q1 | N6_L07_exQ1_seta-na-orelha | sem texto (seta) | [imagem](https://www.canva.com/M/MAHaiJJQ4s8) |
 | L7-Q4 | N6_L07_exQ4_alto-e-baixo | sem texto — v2 (v1 com pouca diferença de altura: MAHaiD9OD1k) | [imagem](https://www.canva.com/M/MAHaiCy4NB4) |
+| L8-S1 | N6_L08_img1_gatos-na-escadaria | sem texto | [imagem](https://www.canva.com/M/MAHaiNjeZoc) |
+| L8-S4 | N6_L08_img2_rabo-em-gancho | sem texto — v2 (v1 sem o rabo visível: MAHaiK30xRY) | [imagem](https://www.canva.com/M/MAHaiH6RGEQ) |
+| L8-Q1 | N6_L08_exQ1_gato-orelhudo | sem texto | [imagem](https://www.canva.com/M/MAHaiFz4UHM) |
+| L9-S1 | N6_L09_img1_entrada-e-saida | 入口 / 出口 | [imagem](https://www.canva.com/M/MAHaiNtq-Ck) |
+| L9-S2 | N6_L09_img2_desenhos-do-corpo | 口 目 耳 手 足 (5 quadros) | [imagem](https://www.canva.com/M/MAHaiBogTpM) |
+| L9-Q1 | N6_L09_exQ1_mao-aberta | sem texto | [imagem](https://www.canva.com/M/MAHaiFpP1Ks) |
