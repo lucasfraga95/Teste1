@@ -225,3 +225,9 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L1-S4 | N6_L01_img2_ajudando-na-loja | sem texto | [imagem](https://www.canva.com/M/MAHaiBgMJ38) |
 | L1-Q1 | N6_L01_exQ1_esperando-o-bonde | sem texto | [imagem](https://www.canva.com/M/MAHaiBGknJU) |
 | L1-Q4 | N6_L01_exQ4_escovando-os-dentes | sem texto | [imagem](https://www.canva.com/M/MAHaiH9wzp8) |
+| L2-S1 | N6_L02_img1_primeira-manha-na-loja | sem texto | [imagem](https://www.canva.com/M/MAHaiFFdpXQ) |
+| L2-S5 | N6_L02_img2_experimente | たべて ください！ | [imagem](https://www.canva.com/M/MAHaiHKDPfo) |
+| L2-Q1 | N6_L02_exQ1_sente-se-aqui | sem texto | [imagem](https://www.canva.com/M/MAHaiOkSP4E) |
+| L3-S1 | N6_L03_img1_lendo-o-mapa | sem texto | [imagem](https://www.canva.com/M/MAHaiJNQNcQ) |
+| L3-S4 | N6_L03_img2_ponte-dos-oculos | sem texto | [imagem](https://www.canva.com/M/MAHaiFWMW7c) |
+| L3-Q1 | N6_L03_exQ1_depressa | sem texto | [imagem](https://www.canva.com/M/MAHaiHz9vzk) |
