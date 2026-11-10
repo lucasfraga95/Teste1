@@ -251,3 +251,11 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L9-S1 | N6_L09_img1_entrada-e-saida | 入口 / 出口 | [imagem](https://www.canva.com/M/MAHaiNtq-Ck) |
 | L9-S2 | N6_L09_img2_desenhos-do-corpo | 口 目 耳 手 足 (5 quadros) | [imagem](https://www.canva.com/M/MAHaiBogTpM) |
 | L9-Q1 | N6_L09_exQ1_mao-aberta | sem texto | [imagem](https://www.canva.com/M/MAHaiFpP1Ks) |
+| L10-S1 | N6_L10_img1_compras-em-chinatown | sem texto | [imagem](https://www.canva.com/M/MAHaiIocSTg) |
+| L10-S4 | N6_L10_img2_as-cores | sem texto | [imagem](https://www.canva.com/M/MAHaiAgyydE) |
+| L10-Q1 | N6_L10_exQ1_gorro-amarelo | sem texto | [imagem](https://www.canva.com/M/MAHaiH62ukQ) |
+| L10-Q4 | N6_L10_exQ4_bolsa-roxa | sem texto | [imagem](https://www.canva.com/M/MAHaiPaV1PA) |
+| L11-S1 | N6_L11_img1_multidao-no-festival | sem texto | [imagem](https://www.canva.com/M/MAHaiH0HX1k) |
+| L11-S3 | N6_L11_img2_estamos-aqui | sem texto | [imagem](https://www.canva.com/M/MAHaiKNcJLc) |
+| L11-Q1 | N6_L11_exQ1_mulher-de-chapeu | sem texto | [imagem](https://www.canva.com/M/MAHaiBUMeS4) |
+| L11-Q4 | N6_L11_exQ4_homem-de-gravata | sem texto | [imagem](https://www.canva.com/M/MAHaiByiXSY) |
