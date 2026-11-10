@@ -231,3 +231,9 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L3-S1 | N6_L03_img1_lendo-o-mapa | sem texto | [imagem](https://www.canva.com/M/MAHaiJNQNcQ) |
 | L3-S4 | N6_L03_img2_ponte-dos-oculos | sem texto | [imagem](https://www.canva.com/M/MAHaiFWMW7c) |
 | L3-Q1 | N6_L03_exQ1_depressa | sem texto | [imagem](https://www.canva.com/M/MAHaiHz9vzk) |
+| L4-S1 | N6_L04_img1_planejando-o-dia | sem texto | [imagem](https://www.canva.com/M/MAHaiBzA9sQ) |
+| L4-S4 | N6_L04_img2_estudar-e-depois-academia | sem texto (2 quadros) | [imagem](https://www.canva.com/M/MAHaiPsI8y0) |
+| L4-Q1 | N6_L04_exQ1_escovar-e-dormir | sem texto (2 quadros) | [imagem](https://www.canva.com/M/MAHaiFCw8wI) |
+| L5-S1 | N6_L05_img1_restaurantes-de-chinatown | 食 (noren) | [imagem](https://www.canva.com/M/MAHaiCmu10M) |
+| L5-S5 | N6_L05_img2_ir-e-vir | 行 / 来 (2 quadros) | [imagem](https://www.canva.com/M/MAHaiBeQXVM) |
+| L5-Q1 | N6_L05_exQ1_tomando-cha | sem texto | [imagem](https://www.canva.com/M/MAHaiL4tN_s) |
