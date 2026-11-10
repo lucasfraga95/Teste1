@@ -237,3 +237,11 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L5-S1 | N6_L05_img1_restaurantes-de-chinatown | 食 (noren) | [imagem](https://www.canva.com/M/MAHaiCmu10M) |
 | L5-S5 | N6_L05_img2_ir-e-vir | 行 / 来 (2 quadros) | [imagem](https://www.canva.com/M/MAHaiBeQXVM) |
 | L5-Q1 | N6_L05_exQ1_tomando-cha | sem texto | [imagem](https://www.canva.com/M/MAHaiL4tN_s) |
+| L6-S1 | N6_L06_img1_no-jardim-glover | sem texto | [imagem](https://www.canva.com/M/MAHaiKwD6Xk) |
+| L6-S4 | N6_L06_img2_hoje-e-meio-complicado | きょうは ちょっと… | [imagem](https://www.canva.com/M/MAHaiPGhTT4) |
+| L6-Q1 | N6_L06_exQ1_fazendo-castella | sem texto | [imagem](https://www.canva.com/M/MAHaiCOfafA) |
+| L6-Q4 | N6_L06_exQ4_fazendo-a-licao | sem texto | [imagem](https://www.canva.com/M/MAHaiEiy9QI) |
+| L7-S1 | N6_L07_img1_fotos-de-gatos | sem texto | [imagem](https://www.canva.com/M/MAHaiGf8mg4) |
+| L7-S4 | N6_L07_img2_rabo-longo-rabo-curto | sem texto — v2 (v1 de costas: MAHaiHRGwNg) | [imagem](https://www.canva.com/M/MAHaiOoQXRY) |
+| L7-Q1 | N6_L07_exQ1_seta-na-orelha | sem texto (seta) | [imagem](https://www.canva.com/M/MAHaiJJQ4s8) |
+| L7-Q4 | N6_L07_exQ4_alto-e-baixo | sem texto — v2 (v1 com pouca diferença de altura: MAHaiD9OD1k) | [imagem](https://www.canva.com/M/MAHaiCy4NB4) |

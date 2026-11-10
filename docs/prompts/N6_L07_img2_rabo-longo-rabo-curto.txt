@@ -1,6 +1,8 @@
 CENA:
 Dois gatos sentados lado a lado num degrau de pedra, vistos de lado: o da esquerda, cinza, com um rabo longo e reto; o da direita, laranja, com um rabo bem curtinho. Os dois olham para o espectador.
 
+IMPORTANTE: os dois gatos estão de PERFIL (vistos de lado, nunca de costas), com os rabos inteiramente visíveis contra o fundo: o rabo do gato cinza é bem comprido, maior que o corpo, estendido no degrau; o do gato laranja é um toquinho bem curto. A diferença de tamanho dos rabos deve ser o destaque da imagem.
+
 ILUMINAÇÃO E ATMOSFERA:
 Luz suave de sol de inverno. Clima fofo.
 
