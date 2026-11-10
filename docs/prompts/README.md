@@ -265,3 +265,12 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L13-S1 | N6_L13_img1_a-lista-da-mio | sem texto | [imagem](https://www.canva.com/M/MAHaiKlBKTk) |
 | L13-S3 | N6_L13_img2_foto-nao-enviada | sem texto | [imagem](https://www.canva.com/M/MAHaiAxXmws) |
 | L13-Q1 | N6_L13_exQ1_tigela-vazia | sem texto | [imagem](https://www.canva.com/M/MAHaiOwuS38) |
+| L14-S1 | N6_L14_img1_castella-de-madrugada | sem texto | [imagem](https://www.canva.com/M/MAHaiHFOt1A) |
+| L14-S4 | N6_L14_img2_mio-com-turistas | sem texto | [imagem](https://www.canva.com/M/MAHaiA3ztko) |
+| L14-Q1 | N6_L14_exQ1_tres-refeicoes | sem texto (3 quadros) | [imagem](https://www.canva.com/M/MAHaiPR9fuE) |
+| L15-S1 | N6_L15_img1_fazendo-a-mala | sem texto | [imagem](https://www.canva.com/M/MAHaiCaPQB4) |
+| L15-S2 | N6_L15_img2_partes-dos-kanji | 目 見 言 語 本 (3 quadros) — v2 (v1 com pessoas e paisagens: MAHaiFo7VMo) | [imagem](https://www.canva.com/M/MAHaiMWOZHs) |
+| L15-Q1 | N6_L15_exQ1_levando-a-mala | sem texto | [imagem](https://www.canva.com/M/MAHaiMBPCf4) |
+| L16-P1 | N6_L16_final_img1_desfile-do-imperador | sem texto | [imagem](https://www.canva.com/M/MAHaiO_SgOY) |
+| L16-P2 | N6_L16_final_img2_segundo-lugar | sem texto | [imagem](https://www.canva.com/M/MAHaiOel-kA) |
+| L16-P3 | N6_L16_final_img3_caderno-no-trem | sem texto | [imagem](https://www.canva.com/M/MAHaiPuTMJw) |
