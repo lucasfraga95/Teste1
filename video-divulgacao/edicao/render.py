@@ -293,6 +293,8 @@ def music(path, dur):
 
     def add(sig, t, pan=0.0):
         i = int(t * sr)
+        if i >= N:
+            return
         j = min(N, i + len(sig))
         out[i:j, 0] += sig[: j - i] * (1 - pan) / 1.4
         out[i:j, 1] += sig[: j - i] * (1 + pan) / 1.4

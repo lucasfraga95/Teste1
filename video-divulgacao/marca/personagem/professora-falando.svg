@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+  <!-- cabelo de trás -->
+  <path d="M318,330 C300,470 292,640 292,770 C292,812 330,840 376,836 C400,834 416,826 424,812 L420,600 L600,600 L600,800 C612,826 640,836 666,830 C700,822 712,796 708,770 C704,640 698,470 684,330 C640,220 360,220 318,330 Z"
+        fill="#1e1b22" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M640,640 C646,700 652,760 664,812" stroke="#3a3646" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- pescoço -->
+  <path d="M440,640 L440,760 Q500,792 560,760 L560,640 Z" fill="#e8bba3" stroke="#3a2c2a" stroke-width="5"/>
+  <!-- tronco / blusa -->
+  <path d="M130,1200 C140,980 210,880 330,850 Q400,832 446,760 Q500,812 554,760 Q600,832 670,850 C790,880 860,980 870,1200 Z"
+        fill="#4f8370" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M446,760 Q500,880 554,760 Q500,812 446,760 Z" fill="#e8bba3" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M300,1200 C300,1060 290,980 270,930" stroke="#43705f" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M700,1200 C700,1060 710,980 730,930" stroke="#43705f" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- estampa de bolinhas creme -->
+  <g fill="#fef7f1" opacity="0.85">
+    <circle cx="250" cy="980" r="5"/><circle cx="320" cy="1040" r="5"/><circle cx="210" cy="1100" r="5"/><circle cx="380" cy="960" r="5"/>
+    <circle cx="420" cy="1080" r="5"/><circle cx="560" cy="1000" r="5"/><circle cx="620" cy="1090" r="5"/><circle cx="700" cy="990" r="5"/>
+    <circle cx="760" cy="1070" r="5"/><circle cx="480" cy="1150" r="5"/><circle cx="660" cy="1170" r="5"/><circle cx="300" cy="1160" r="5"/>
+    <circle cx="790" cy="1160" r="5"/><circle cx="190" cy="1020" r="5"/>
+  </g>
+  <!-- colar: cordão + pingente oval dourado -->
+  <path d="M452,770 Q470,900 500,960 Q530,900 548,770" stroke="#4a3328" stroke-width="4" fill="none"/>
+  <ellipse cx="500" cy="985" rx="20" ry="28" fill="#d9a441" stroke="#3a2c2a" stroke-width="4"/>
+  <ellipse cx="500" cy="985" rx="11" ry="17" fill="none" stroke="#f3d48a" stroke-width="3"/>
+  <!-- orelha direita (do observador) com argola -->
+  <path d="M660,470 C690,456 700,500 690,526 C684,542 670,548 658,540" fill="#f4d3bd" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="684" cy="572" r="26" fill="none" stroke="#d9a441" stroke-width="7"/>
+  <!-- rosto -->
+  <path d="M500,262 C610,262 668,340 668,450 C668,560 640,640 590,676 C560,698 530,708 500,708 C470,708 440,698 410,676 C360,640 332,560 332,450 C332,340 390,262 500,262 Z"
+        fill="#f4d3bd" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M360,430 C400,400 440,380 480,372 C440,400 405,430 380,470 Z" fill="#e8bba3" opacity="0.6"/>
+  <!-- bochechas -->
+  <ellipse cx="400" cy="575" rx="44" ry="24" fill="#f0876e" opacity="0.32"/>
+  <ellipse cx="600" cy="575" rx="44" ry="24" fill="#f0876e" opacity="0.32"/>
+  <!-- olhos -->
+  
+    <clipPath id="olho-1abertos"><path d="M374,496 Q416,442.7 470,494 Q426,515.6 374,496 Z"/></clipPath>
+    <path d="M374,496 Q416,442.7 470,494 Q426,515.6 374,496 Z" fill="#ffffff"/>
+    <g clip-path="url(#olho-1abertos)">
+      <circle cx="420" cy="492" r="24" fill="#5a3d2b"/>
+      <circle cx="420" cy="492" r="18.72" fill="#3b261b"/>
+      <circle cx="420" cy="492" r="10.8" fill="#160f0f"/>
+      <circle cx="429" cy="483" r="7.5" fill="#ffffff"/>
+      <circle cx="412" cy="501" r="3.2" fill="#ffffff" opacity="0.85"/>
+    </g>
+    <path d="M371,498 Q416,440.54 472,493" stroke="#3a2c2a" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M376,488 q-12,-6 -20,-16" stroke="#3a2c2a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M388.4,508.85 Q422,518.3 453.2,507.5" stroke="#3a2c2a" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.5"/>
+    
+  
+    <clipPath id="olho1abertos"><path d="M532,496 Q574,442.7 628,494 Q584,515.6 532,496 Z"/></clipPath>
+    <path d="M532,496 Q574,442.7 628,494 Q584,515.6 532,496 Z" fill="#ffffff"/>
+    <g clip-path="url(#olho1abertos)">
+      <circle cx="582" cy="492" r="24" fill="#5a3d2b"/>
+      <circle cx="582" cy="492" r="18.72" fill="#3b261b"/>
+      <circle cx="582" cy="492" r="10.8" fill="#160f0f"/>
+      <circle cx="591" cy="483" r="7.5" fill="#ffffff"/>
+      <circle cx="574" cy="501" r="3.2" fill="#ffffff" opacity="0.85"/>
+    </g>
+    <path d="M529,498 Q574,440.54 630,493" stroke="#3a2c2a" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M626,488 q12,-6 20,-16" stroke="#3a2c2a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M546.4,508.85 Q580,518.3 611.2,507.5" stroke="#3a2c2a" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.5"/>
+    
+  <!-- sobrancelhas -->
+  <path d="M370,424 Q418,396 468,414" stroke="#1e1b22" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M534,414 Q584,396 632,424" stroke="#1e1b22" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- nariz -->
+  <path d="M506,520 Q514,556 498,566 Q490,570 484,564" stroke="#3a2c2a" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <!-- boca -->
+  
+    <path d="M452,612 Q500,622 548,612 Q528.8,666 500,668 Q471.2,666 452,612 Z" fill="#7b2f30" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M461.6,615 Q500,624 538.4,615 L533.6,622 Q500,630 466.4,622 Z" fill="#ffffff"/>
+    <ellipse cx="500" cy="658" rx="21.6" ry="13.88" fill="#e2867c"/>
+    
+  <!-- franja: risca à direita, mecha varrendo para a esquerda -->
+  <path d="M580,250 C470,236 370,280 336,370 C322,410 318,460 326,520 C304,600 298,690 302,780 C304,820 330,846 366,842 C380,840 390,832 394,822 C374,800 366,760 364,720 C360,640 364,580 372,530 C390,468 428,420 474,392 C522,364 566,340 596,300 C610,330 640,360 668,380 C672,330 650,276 580,250 Z"
+        fill="#1e1b22" stroke="#3a2c2a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M470,300 C430,330 392,380 374,440" stroke="#3a3646" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M352,600 C346,670 348,740 360,800" stroke="#3a3646" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <!-- brilhos do cabelo -->
+  <path d="M410,300 C450,280 500,276 540,282" stroke="#3a3646" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M338,560 C334,630 334,700 338,770" stroke="#3a3646" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- presilha de flor de ume -->
+  <g><circle cx="635.9" cy="299.7" r="17.0" fill="#c94e48"/><circle cx="650.6" cy="316.0" r="17.0" fill="#c94e48"/><circle cx="639.6" cy="335.1" r="17.0" fill="#c94e48"/><circle cx="618.1" cy="330.5" r="17.0" fill="#c94e48"/><circle cx="615.8" cy="308.6" r="17.0" fill="#c94e48"/><line x1="632" y1="318" x2="656.0" y2="296.4" stroke="#e89232" stroke-width="2.2" stroke-linecap="round"/><line x1="632" y1="318" x2="660.0" y2="334.1" stroke="#e89232" stroke-width="2.2" stroke-linecap="round"/><line x1="632" y1="318" x2="625.3" y2="349.6" stroke="#e89232" stroke-width="2.2" stroke-linecap="round"/><line x1="632" y1="318" x2="599.9" y2="321.4" stroke="#e89232" stroke-width="2.2" stroke-linecap="round"/><line x1="632" y1="318" x2="618.9" y2="288.5" stroke="#e89232" stroke-width="2.2" stroke-linecap="round"/><circle cx="632" cy="318" r="6.8" fill="#e89232"/></g>
+</svg>
