@@ -1,160 +1,236 @@
-"""Personagem "Sensei" da AOI em SVG — estilo fofo (chibi), traço limpo, compatível com a identidade AOI.
+"""Personagem "Sensei" da AOI em SVG — estilo fofo (chibi/anime), traço limpo, compatível com a identidade AOI.
 
-Referência: cabelo longo, ondulado, risca no meio; olhos grandes e redondos com brilho;
-sorriso aberto; bochechas rosadas; blusa creme com estampa de cruzinhas; brincos dourados;
+Referência aprovada: cabelo longo e ondulado com risca no meio, olhos grandes e brilhantes,
+sorriso aberto, bochechas rosadas, blusa creme com cruzinhas, brincos dourados,
 cordão preto com pingente dourado oval.
 
-personagem_svg(boca, olhos, sobrancelha) -> str
+personagem_svg(boca, olhos, sobrancelha, pose, aceno) -> str
   boca:        "fechada" | "media" | "aberta" | "o"
   olhos:       "abertos" | "fechados" | "surpresa" | "felizes"
   sobrancelha: "normal" | "alta"
+  pose:        "neutra" | "acenando"
+  aceno:       ângulo da mão (graus) quando acenando
 """
-import math
 
-LINHA = "#2e2224"
-PELE = "#f7d6c1"
-PELE_SOMBRA = "#ecbfa6"
-CABELO = "#1c171b"
-CABELO_LUZ = "#3b3440"
-BLUSA = "#fbf3ea"
-BLUSA_SOMBRA = "#e9dccd"
-ESTAMPA = "#8b8597"
-BLUSH = "#f2948a"
-OURO = "#e0a63c"
-OURO_CLARO = "#f6d27a"
-BOCA_DENTRO = "#8a2f33"
-LINGUA = "#ec8a80"
-IRIS = "#2b1a14"
-IRIS_LUZ = "#6a4330"
+LINHA = "#3a2526"        # contorno externo (marrom-escuro quente)
+LINHA_FINA = "#5a3a36"   # traços internos
+PELE = "#fadbc8"
+PELE_SOMBRA = "#efc0a8"
+PELE_SOMBRA2 = "#e6ac93"
+CABELO_A = "#2c2532"     # topo
+CABELO_B = "#141017"     # pontas
+CABELO_DENTRO = "#0d0a0e"
+CABELO_LUZ = "#5b5470"
+BLUSA = "#fcf5ec"
+BLUSA_SOMBRA = "#eadbc9"
+ESTAMPA = "#8e88a0"
+BLUSH = "#f4938a"
+OURO = "#e3a83c"
+OURO_ESC = "#b9802a"
+OURO_CLARO = "#f8dc8e"
+BOCA_DENTRO = "#8c2e35"
+LINGUA = "#ef8c84"
 
-SW = 5
+SW = 6      # contorno externo
+SWI = 4     # contorno interno
 
 
-def _onda(x0, y0, x1, y1, amp, n):
-    """Pontos de uma linha ondulada entre (x0,y0) e (x1,y1)."""
-    pts = []
-    for i in range(n + 1):
-        t = i / n
-        x = x0 + (x1 - x0) * t + amp * math.sin(t * n * math.pi)
-        y = y0 + (y1 - y0) * t
-        pts.append((x, y))
-    return pts
+DEFS = f'''
+<defs>
+  <linearGradient id="gCabelo" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="{CABELO_A}"/><stop offset="1" stop-color="{CABELO_B}"/>
+  </linearGradient>
+  <radialGradient id="gIris" cx="0.5" cy="0.72" r="0.7">
+    <stop offset="0" stop-color="#9a6243"/><stop offset="0.55" stop-color="#4a2c20"/><stop offset="1" stop-color="#1a0f0d"/>
+  </radialGradient>
+  <linearGradient id="gOuro" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="{OURO_CLARO}"/><stop offset="0.5" stop-color="{OURO}"/><stop offset="1" stop-color="{OURO_ESC}"/>
+  </linearGradient>
+  <radialGradient id="gBlush" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="{BLUSH}" stop-opacity="0.75"/><stop offset="1" stop-color="{BLUSH}" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="cRosto"><path d="{{ROSTO}}"/></clipPath>
+  <clipPath id="cCorpo"><path d="{{CORPO}}"/></clipPath>
+</defs>'''
+
+ROSTO = ("M500,264 C640,264 704,362 702,478 C700,592 652,676 566,708 C542,716 520,720 500,720 "
+         "C480,720 458,716 434,708 C348,676 300,592 298,478 C296,362 360,264 500,264 Z")
+CORPO = ("M206,1200 C210,1040 248,944 330,904 C382,880 430,862 456,792 L500,884 L544,792 "
+         "C570,862 618,880 670,904 C752,944 790,1040 794,1200 Z")
 
 
 def _olho(cx, cy, estado, lado):
     if estado == "fechados":
-        return f'<path d="M{cx - 38},{cy - 2} Q{cx},{cy + 22} {cx + 38},{cy - 2}" stroke="{LINHA}" stroke-width="8" fill="none" stroke-linecap="round"/>'
+        return (f'<path d="M{cx - 40},{cy + 2} Q{cx},{cy + 24} {cx + 40},{cy + 2}" stroke="{LINHA}" stroke-width="9" fill="none" stroke-linecap="round"/>'
+                f'<path d="M{cx + lado * 40},{cy + 2} l{lado * 12},-6" stroke="{LINHA}" stroke-width="6" stroke-linecap="round"/>')
     if estado == "felizes":
-        return f'<path d="M{cx - 38},{cy + 8} Q{cx},{cy - 30} {cx + 38},{cy + 8}" stroke="{LINHA}" stroke-width="9" fill="none" stroke-linecap="round"/>'
-    rx, ry = (36, 41) if estado == "surpresa" else (34, 38)
-    flick = f'<path d="M{cx + lado * 40},{cy - 18} q{lado * 10},-4 {lado * 16},-14" stroke="{LINHA}" stroke-width="6" fill="none" stroke-linecap="round"/>'
+        return f'<path d="M{cx - 40},{cy + 10} Q{cx},{cy - 32} {cx + 40},{cy + 10}" stroke="{LINHA}" stroke-width="10" fill="none" stroke-linecap="round"/>'
+    big = estado == "surpresa"
+    rx, ry = (40, 40) if big else (40, 36)
+    irx, iry = (30, 37) if big else (29, 35)
+    clip = f"cOlho{lado}{estado}"
+    branco = f"M{cx - rx},{cy + 4} C{cx - rx},{cy - ry} {cx + rx},{cy - ry - 6} {cx + rx},{cy} C{cx + rx},{cy + ry * 0.9} {cx - rx},{cy + ry * 0.95} {cx - rx},{cy + 4} Z"
     return f'''
-    <ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="{IRIS}"/>
-    <ellipse cx="{cx}" cy="{cy + ry * 0.35}" rx="{rx * 0.72}" ry="{ry * 0.5}" fill="{IRIS_LUZ}" opacity="0.75"/>
-    <ellipse cx="{cx}" cy="{cy + 2}" rx="{rx * 0.42}" ry="{ry * 0.45}" fill="#120b0b"/>
-    <circle cx="{cx + 11}" cy="{cy - 13}" r="10" fill="#ffffff"/>
-    <circle cx="{cx - 12}" cy="{cy + 14}" r="4.5" fill="#ffffff" opacity="0.9"/>
-    <path d="M{cx - rx - 8},{cy - 4} Q{cx - 4},{cy - ry - 22} {cx + rx + 8},{cy - 8}" stroke="{LINHA}" stroke-width="9" fill="none" stroke-linecap="round"/>
-    {flick}
+    <clipPath id="{clip}"><path d="{branco}"/></clipPath>
+    <path d="{branco}" fill="#ffffff"/>
+    <g clip-path="url(#{clip})">
+      <ellipse cx="{cx + lado * 2}" cy="{cy + 3}" rx="{irx}" ry="{iry}" fill="url(#gIris)"/>
+      <ellipse cx="{cx + lado * 2}" cy="{cy + 4}" rx="{irx * 0.42}" ry="{iry * 0.48}" fill="#120a0a"/>
+      <path d="M{cx - rx},{cy - ry * 0.5} C{cx - 10},{cy - ry - 4} {cx + 20},{cy - ry - 6} {cx + rx},{cy - ry * 0.4} L{cx + rx},{cy - ry * 0.1} C{cx + 10},{cy - ry * 0.55} {cx - 10},{cy - ry * 0.5} {cx - rx},{cy - ry * 0.2} Z" fill="#2a1a18" opacity="0.35"/>
+      <ellipse cx="{cx + 12}" cy="{cy - 12}" rx="11" ry="12" fill="#ffffff"/>
+      <circle cx="{cx - 13}" cy="{cy + 17}" r="5" fill="#ffffff" opacity="0.95"/>
+      <circle cx="{cx + 16}" cy="{cy + 14}" r="2.6" fill="#ffffff" opacity="0.8"/>
+    </g>
+    <path d="M{cx - rx - 6},{cy + 2} C{cx - rx + 2},{cy - ry - 4} {cx + rx - 4},{cy - ry - 10} {cx + rx + 8},{cy - 6}" stroke="{LINHA}" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M{cx + lado * (rx + 4)},{cy - 8 if lado > 0 else cy - 2} q{lado * 10},-4 {lado * 18},-16 M{cx + lado * (rx - 6)},{cy - ry * 0.55} q{lado * 8},-6 {lado * 12},-18" stroke="{LINHA}" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M{cx - rx + 8},{cy - ry - 14} C{cx - 6},{cy - ry - 26} {cx + 18},{cy - ry - 26} {cx + rx - 4},{cy - ry - 12}" stroke="{LINHA_FINA}" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M{cx - rx * 0.35},{cy + ry * 0.92} Q{cx + rx * 0.2},{cy + ry} {cx + rx * 0.7},{cy + ry * 0.7}" stroke="{LINHA_FINA}" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/>
     '''
 
 
 def _boca(estado):
-    cx, cy = 500, 618
+    cx, cy = 500, 624
     if estado == "fechada":
-        return (f'<path d="M{cx - 34},{cy - 4} Q{cx},{cy + 24} {cx + 34},{cy - 4}" stroke="{LINHA}" stroke-width="6" fill="none" stroke-linecap="round"/>')
+        return (f'<path d="M{cx - 30},{cy - 4} Q{cx - 15},{cy + 14} {cx},{cy + 4} Q{cx + 15},{cy + 14} {cx + 30},{cy - 4}" stroke="{LINHA}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
     if estado == "o":
-        return (f'<ellipse cx="{cx}" cy="{cy + 8}" rx="18" ry="22" fill="{BOCA_DENTRO}" stroke="{LINHA}" stroke-width="5"/>'
-                f'<ellipse cx="{cx}" cy="{cy + 20}" rx="10" ry="7" fill="{LINGUA}"/>')
-    w, h = (30, 22) if estado == "media" else (46, 46)
+        return (f'<ellipse cx="{cx}" cy="{cy + 8}" rx="17" ry="21" fill="{BOCA_DENTRO}" stroke="{LINHA}" stroke-width="5"/>'
+                f'<ellipse cx="{cx}" cy="{cy + 19}" rx="9" ry="6" fill="{LINGUA}"/>')
+    w, h = (28, 22) if estado == "media" else (42, 44)
+    forma = f"M{cx - w},{cy - 6} Q{cx},{cy + 2} {cx + w},{cy - 6} Q{cx + w * 0.86},{cy + h} {cx},{cy + h + 4} Q{cx - w * 0.86},{cy + h} {cx - w},{cy - 6} Z"
     return f'''
-    <clipPath id="boca{estado}"><path d="M{cx - w},{cy - 6} Q{cx},{cy + 2} {cx + w},{cy - 6} Q{cx + w * 0.85},{cy + h} {cx},{cy + h + 4} Q{cx - w * 0.85},{cy + h} {cx - w},{cy - 6} Z"/></clipPath>
-    <path d="M{cx - w},{cy - 6} Q{cx},{cy + 2} {cx + w},{cy - 6} Q{cx + w * 0.85},{cy + h} {cx},{cy + h + 4} Q{cx - w * 0.85},{cy + h} {cx - w},{cy - 6} Z" fill="{BOCA_DENTRO}"/>
-    <g clip-path="url(#boca{estado})">
-      <rect x="{cx - w}" y="{cy - 10}" width="{2 * w}" height="{h * 0.32 + 6}" fill="#ffffff"/>
-      <ellipse cx="{cx}" cy="{cy + h + 2}" rx="{w * 0.62}" ry="{h * 0.42}" fill="{LINGUA}"/>
+    <clipPath id="cBoca{estado}"><path d="{forma}"/></clipPath>
+    <path d="{forma}" fill="{BOCA_DENTRO}"/>
+    <g clip-path="url(#cBoca{estado})">
+      <rect x="{cx - w}" y="{cy - 10}" width="{2 * w}" height="{h * 0.3 + 6}" fill="#ffffff"/>
+      <ellipse cx="{cx}" cy="{cy + h + 4}" rx="{w * 0.62}" ry="{h * 0.45}" fill="{LINGUA}"/>
     </g>
-    <path d="M{cx - w},{cy - 6} Q{cx},{cy + 2} {cx + w},{cy - 6} Q{cx + w * 0.85},{cy + h} {cx},{cy + h + 4} Q{cx - w * 0.85},{cy + h} {cx - w},{cy - 6} Z" fill="none" stroke="{LINHA}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="{forma}" fill="none" stroke="{LINHA}" stroke-width="5" stroke-linejoin="round"/>
     '''
 
 
 def _estampa():
-    """Cruzinhas da blusa (como na referência)."""
     out = []
-    for row in range(9):
-        for col in range(12):
-            x = 150 + col * 62 + (31 if row % 2 else 0)
-            y = 880 + row * 44
-            out.append(f'<path d="M{x - 7},{y} h14 M{x},{y - 7} v14" stroke="{ESTAMPA}" stroke-width="4" stroke-linecap="round"/>')
+    for row in range(8):
+        for col in range(11):
+            x = 170 + col * 64 + (32 if row % 2 else 0)
+            y = 916 + row * 42
+            out.append(f'<path d="M{x - 6},{y} h12 M{x},{y - 6} v12" stroke="{ESTAMPA}" stroke-width="3.6" stroke-linecap="round"/>')
     return "".join(out)
 
 
 def _brinco(x, y):
-    return (f'<circle cx="{x}" cy="{y}" r="7" fill="{OURO}" stroke="{LINHA}" stroke-width="2.5"/>'
-            f'<path d="M{x},{y + 7} q-9,14 0,24 q9,-10 0,-24 Z" fill="{OURO}" stroke="{LINHA}" stroke-width="2.5"/>'
-            f'<circle cx="{x - 2}" cy="{y - 2}" r="2.2" fill="{OURO_CLARO}"/>')
+    return (f'<circle cx="{x}" cy="{y}" r="7" fill="url(#gOuro)" stroke="{LINHA}" stroke-width="2.5"/>'
+            f'<path d="M{x},{y + 7} C{x - 10},{y + 18} {x - 7},{y + 30} {x},{y + 32} C{x + 7},{y + 30} {x + 10},{y + 18} {x},{y + 7} Z" fill="url(#gOuro)" stroke="{LINHA}" stroke-width="2.5"/>'
+            f'<circle cx="{x - 2}" cy="{y + 20}" r="2.4" fill="#fff6d8"/>')
 
 
-def personagem_svg(boca="fechada", olhos="abertos", sobrancelha="normal", w=1000, h=1200):
+def _cabelo_tras():
+    # silhueta com volume e mechas onduladas terminando em pontas
+    return f'''<path d="M500,206 C340,206 240,318 238,458
+        C236,540 222,600 232,666 C242,730 208,780 214,852 C220,918 188,964 200,1024
+        C208,1066 238,1090 276,1100 C262,1072 270,1046 290,1040 C300,1070 330,1086 360,1086
+        C352,1070 356,1060 372,1060 L628,1060 C644,1060 648,1070 640,1086
+        C670,1086 700,1070 710,1040 C730,1046 738,1072 724,1100
+        C762,1090 792,1066 800,1024 C812,964 780,918 786,852 C792,780 758,730 768,666
+        C778,600 764,540 762,458 C760,318 660,206 500,206 Z"
+        fill="url(#gCabelo)" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
+      <path d="M300,500 C292,600 300,700 290,800 M710,500 C718,600 700,700 712,800" stroke="{CABELO_DENTRO}" stroke-width="40" fill="none" stroke-linecap="round" opacity="0.55"/>'''
+
+
+def _cabelo_frente():
+    esq = ("M500,262 C452,266 402,290 370,336 C338,380 316,444 312,512 C306,582 314,640 300,702 "
+           "C288,760 302,812 290,872 C282,924 292,972 318,1008 C324,974 334,944 338,912 "
+           "C346,862 330,822 340,772 C350,722 334,682 340,632 C346,560 340,480 364,420 "
+           "C386,362 432,308 500,282 Z")
+    dir_ = ("M500,262 C548,266 598,290 630,336 C662,380 684,444 688,512 C694,582 686,640 700,702 "
+            "C712,760 698,812 710,872 C718,924 708,972 682,1008 C676,974 666,944 662,912 "
+            "C654,862 670,822 660,772 C650,722 666,682 660,632 C654,560 660,480 636,420 "
+            "C614,362 568,308 500,282 Z")
+    return f'''
+    <path d="{esq}" fill="url(#gCabelo)" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
+    <path d="{dir_}" fill="url(#gCabelo)" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
+    <!-- mechas internas -->
+    <path d="M470,286 C420,320 384,380 370,460 M330,560 C322,640 330,720 318,800 C310,860 318,920 316,970"
+          stroke="{CABELO_DENTRO}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M530,286 C580,320 616,380 630,460 M670,560 C678,640 670,720 682,800 C690,860 682,920 684,970"
+          stroke="{CABELO_DENTRO}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <!-- brilho "anel" -->
+    <path d="M408,300 C430,282 458,272 484,270" stroke="{CABELO_LUZ}" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M592,300 C570,282 542,272 516,270" stroke="{CABELO_LUZ}" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M300,330 C290,350 282,372 278,392 M700,330 C710,350 718,372 722,392" stroke="{CABELO_LUZ}" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M306,720 C298,760 302,790 296,820 M694,720 C702,760 698,790 704,820" stroke="{CABELO_LUZ}" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <!-- risca -->
+    <path d="M500,256 L500,290" stroke="{CABELO_DENTRO}" stroke-width="4" stroke-linecap="round"/>
+    '''
+
+
+def _braco_acenando(ang):
+    """Manga larga + mão grande acenando (lado esquerdo do observador). ang gira a mão no pulso."""
+    px, py = 222, 690
+    manga = (f'<path d="M232,1200 C246,1010 232,860 176,744 C196,700 262,684 292,706 C350,800 392,960 388,1200 Z" '
+             f'fill="{BLUSA}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>'
+             f'<path d="M186,742 C214,712 262,702 290,716" stroke="{BLUSA_SOMBRA}" stroke-width="10" fill="none" stroke-linecap="round"/>'
+             f'<path d="M260,820 C300,860 330,900 350,950" stroke="{BLUSA_SOMBRA}" stroke-width="8" fill="none" stroke-linecap="round"/>')
+    dedos = ""
+    for k, (dx, l) in enumerate([(-36, 60), (-13, 74), (11, 72), (33, 58)]):
+        dedos += (f'<rect x="{dx - 12}" y="{-64 - l}" width="24" height="{l + 30}" rx="12" fill="{PELE}" '
+                  f'stroke="{LINHA}" stroke-width="5" transform="rotate({(k - 1.5) * 8}, {dx}, -54)"/>')
+    mao = f'''
+    <g transform="translate({px},{py}) rotate({ang}) scale(1.45)">
+      {dedos}
+      <path d="M30,-52 C66,-74 80,-44 50,-24" fill="{PELE}" stroke="{LINHA}" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-40" rx="47" ry="42" fill="{PELE}" stroke="{LINHA}" stroke-width="5"/>
+      <path d="M-32,-64 h64" stroke="{PELE}" stroke-width="14" stroke-linecap="round"/>
+      <path d="M-18,-22 q18,10 36,0" stroke="{PELE_SOMBRA2}" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>'''
+    return mao + manga
+
+
+def personagem_svg(boca="fechada", olhos="abertos", sobrancelha="normal", pose="neutra", aceno=0, w=1000, h=1200):
     dy = -16 if sobrancelha == "alta" else 0
-    corpo = "M190,1200 C200,1010 250,912 352,880 Q420,860 454,770 L500,872 L546,770 Q580,860 648,880 C750,912 800,1010 810,1200 Z"
-    # cabelo de trás, ondulado e longo
-    esq = _onda(236, 470, 226, 1070, 24, 7)
-    dir_ = _onda(764, 470, 774, 1070, -24, 7)
-    p = "M500,200 C322,200 232,330 236,470 "
-    for (x, y) in esq[1:]:
-        p += f"L{x:.1f},{y:.1f} "
-    p += "C320,1120 680,1120 774,1070 "
-    for (x, y) in reversed(dir_[:-1]):
-        p += f"L{x:.1f},{y:.1f} "
-    p += "C768,330 678,200 500,200 Z"
+    defs = DEFS.replace("{ROSTO}", ROSTO).replace("{CORPO}", CORPO)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 1000 1200">
-  <defs><clipPath id="corpo"><path d="{corpo}"/></clipPath></defs>
-  <path d="{p}" fill="{CABELO}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
-  <!-- pescoço -->
-  <path d="M452,650 L452,770 Q500,800 548,770 L548,650 Z" fill="{PELE_SOMBRA}" stroke="{LINHA}" stroke-width="{SW}"/>
-  <!-- blusa creme com cruzinhas e decote em V -->
-  <path d="{corpo}" fill="{BLUSA}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
-  <g clip-path="url(#corpo)">{_estampa()}
-    <path d="M300,1200 C300,1060 292,990 276,940" stroke="{BLUSA_SOMBRA}" stroke-width="10" fill="none" stroke-linecap="round"/>
-    <path d="M700,1200 C700,1060 708,990 724,940" stroke="{BLUSA_SOMBRA}" stroke-width="10" fill="none" stroke-linecap="round"/>
+  {defs}
+  {_cabelo_tras()}
+  <!-- pescoço com sombra do queixo -->
+  <path d="M454,660 L454,786 Q500,814 546,786 L546,660 Z" fill="{PELE}" stroke="{LINHA}" stroke-width="{SW}"/>
+  <path d="M454,690 Q500,744 546,690 L546,660 L454,660 Z" fill="{PELE_SOMBRA2}"/>
+  <!-- blusa -->
+  <path d="{CORPO}" fill="{BLUSA}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
+  <g clip-path="url(#cCorpo)">
+    {_estampa()}
+    <path d="M206,1200 C210,1040 248,944 330,904 C300,980 286,1080 290,1200 Z" fill="{BLUSA_SOMBRA}" opacity="0.8"/>
+    <path d="M794,1200 C790,1040 752,944 670,904 C700,980 714,1080 710,1200 Z" fill="{BLUSA_SOMBRA}" opacity="0.8"/>
+    <path d="M500,884 L500,1200" stroke="{BLUSA_SOMBRA}" stroke-width="5"/>
   </g>
-  <path d="M454,770 L500,872 L546,770 Q500,800 454,770 Z" fill="{PELE_SOMBRA}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
-  <path d="M440,790 L500,900 L560,790" stroke="{BLUSA_SOMBRA}" stroke-width="6" fill="none"/>
-  <!-- cordão preto + pingente dourado -->
-  <path d="M458,772 Q470,880 500,950 Q530,880 542,772" stroke="#141014" stroke-width="5" fill="none"/>
-  <ellipse cx="500" cy="978" rx="22" ry="30" fill="{OURO}" stroke="{LINHA}" stroke-width="4"/>
-  <ellipse cx="500" cy="978" rx="12" ry="18" fill="none" stroke="{OURO_CLARO}" stroke-width="3.5"/>
-  <!-- rosto redondinho -->
-  <path d="M500,252 C642,252 712,352 712,480 C712,608 638,706 500,720 C362,706 288,608 288,480 C288,352 358,252 500,252 Z"
-        fill="{PELE}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
-  <!-- bochechas -->
-  <ellipse cx="380" cy="594" rx="40" ry="24" fill="{BLUSH}" opacity="0.5"/>
-  <ellipse cx="620" cy="594" rx="40" ry="24" fill="{BLUSH}" opacity="0.5"/>
-  <!-- olhos grandes -->
-  {_olho(408, 516, olhos, -1)}
-  {_olho(592, 516, olhos, 1)}
-  <!-- sobrancelhas finas -->
-  <path d="M372,{432 + dy} Q412,{410 + dy} 452,{424 + dy}" stroke="{CABELO}" stroke-width="8" fill="none" stroke-linecap="round"/>
-  <path d="M548,{424 + dy} Q588,{410 + dy} 628,{432 + dy}" stroke="{CABELO}" stroke-width="8" fill="none" stroke-linecap="round"/>
-  <!-- nariz -->
-  <path d="M496,566 Q502,574 508,566" stroke="{LINHA}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M456,792 L500,884 L544,792 Q500,822 456,792 Z" fill="{PELE}" stroke="{LINHA}" stroke-width="{SWI}" stroke-linejoin="round"/>
+  <path d="M440,800 L500,912 L560,800" stroke="{LINHA_FINA}" stroke-width="{SWI}" fill="none" stroke-linejoin="round" opacity="0.7"/>
+  <circle cx="500" cy="1040" r="6" fill="{BLUSA}" stroke="{LINHA_FINA}" stroke-width="3"/>
+  <circle cx="500" cy="1110" r="6" fill="{BLUSA}" stroke="{LINHA_FINA}" stroke-width="3"/>
+  <!-- cordão + pingente -->
+  <path d="M460,790 Q470,890 500,956 Q530,890 540,790" stroke="#141014" stroke-width="5" fill="none"/>
+  <ellipse cx="500" cy="984" rx="23" ry="31" fill="url(#gOuro)" stroke="{LINHA}" stroke-width="4"/>
+  <ellipse cx="500" cy="984" rx="13" ry="19" fill="none" stroke="#fff1c4" stroke-width="3" opacity="0.8"/>
+  <!-- rosto -->
+  <path d="{ROSTO}" fill="{PELE}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
+  <g clip-path="url(#cRosto)">
+    <path d="M330,640 C380,700 440,724 500,724 C560,724 620,700 670,640 C640,700 580,740 500,740 C420,740 360,700 330,640 Z" fill="{PELE_SOMBRA}" opacity="0.6"/>
+  </g>
+  <!-- bochechas com tracinhos -->
+  <ellipse cx="378" cy="598" rx="50" ry="30" fill="url(#gBlush)"/>
+  <ellipse cx="622" cy="598" rx="50" ry="30" fill="url(#gBlush)"/>
+  <path d="M362,596 l10,-12 M380,598 l10,-12 M398,600 l10,-12 M604,600 l10,-12 M622,598 l10,-12 M640,596 l10,-12"
+        stroke="{BLUSH}" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+  {_olho(410, 520, olhos, -1)}
+  {_olho(590, 520, olhos, 1)}
+  <path d="M368,{440 + dy} Q410,{418 + dy} 452,{432 + dy}" stroke="{CABELO_B}" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M548,{432 + dy} Q590,{418 + dy} 632,{440 + dy}" stroke="{CABELO_B}" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M494,574 Q501,582 508,574" stroke="{LINHA_FINA}" stroke-width="4" fill="none" stroke-linecap="round"/>
   {_boca(boca)}
-  <!-- cabelo da frente: risca no meio, cortinas onduladas emoldurando o rosto -->
-  <path d="M500,252 C428,254 356,292 326,372 C300,440 292,520 296,600 C290,660 268,704 274,764 C280,824 256,866 262,926 C268,986 292,1020 326,1040 C342,1008 330,968 342,926 C354,876 334,836 344,786 C352,736 326,694 332,644 C338,566 326,476 356,396 C380,330 438,282 500,266 Z"
-        fill="{CABELO}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
-  <path d="M500,252 C572,254 644,292 674,372 C700,440 708,520 704,600 C710,660 732,704 726,764 C720,824 744,866 738,926 C732,986 708,1020 674,1040 C658,1008 670,968 658,926 C646,876 666,836 656,786 C648,736 674,694 668,644 C662,566 674,476 644,396 C620,330 562,282 500,266 Z"
-        fill="{CABELO}" stroke="{LINHA}" stroke-width="{SW}" stroke-linejoin="round"/>
-  <!-- fios ondulados e brilho -->
-  <path d="M470,268 C416,294 374,346 352,420" stroke="{CABELO_LUZ}" stroke-width="7" fill="none" stroke-linecap="round"/>
-  <path d="M530,268 C584,294 626,346 648,420" stroke="{CABELO_LUZ}" stroke-width="7" fill="none" stroke-linecap="round"/>
-  <path d="M310,660 C292,710 312,750 300,800 C290,850 312,890 300,950" stroke="{CABELO_LUZ}" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <path d="M690,660 C708,710 688,750 700,800 C710,850 688,890 700,950" stroke="{CABELO_LUZ}" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <path d="M258,600 C240,660 262,720 248,790 C236,850 258,910 250,980" stroke="{CABELO_LUZ}" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <path d="M742,600 C760,660 738,720 752,790 C764,850 742,910 750,980" stroke="{CABELO_LUZ}" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <!-- brincos dourados -->
-  {_brinco(312, 640)}
-  {_brinco(688, 640)}
+  {_cabelo_frente()}
+  {_brinco(326, 650)}
+  {_brinco(674, 650)}
+  {_braco_acenando(aceno) if pose == "acenando" else ""}
 </svg>'''
 
 

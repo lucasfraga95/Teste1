@@ -64,7 +64,7 @@ def silences(x, thr_db=-35, min_d=0.30):
 def build_audio():
     clean = decode(AUDIO, "highpass=f=85,afftdn=nf=-28:nr=12,lowpass=f=12000")
     sil = silences(clean)
-    keep_pad = 0.11
+    keep_pad = 0.09   # pausas finais de ~0,18 s (guia: máx. 0,2 s)
     # intervalos mantidos
     cuts = []
     for s, e in sil:
@@ -357,14 +357,120 @@ def caption_img(chunk, active_idx, t, chunk_t0):
 PSIZE = 900
 
 
+ACENOS = (-14, -7, 0, 7, 14)
+
+
 def character_cache():
     cache = {}
     for boca in ("fechada", "media", "aberta", "o"):
         for olhos in ("abertos", "fechados", "surpresa", "felizes"):
             for sob in ("normal", "alta"):
                 png = cairosvg.svg2png(bytestring=personagem_svg(boca, olhos, sob).encode(), output_width=PSIZE)
-                cache[(boca, olhos, sob)] = Image.open(io.BytesIO(png)).convert("RGBA")
+                cache[(boca, olhos, sob, None)] = Image.open(io.BytesIO(png)).convert("RGBA")
+            for a in ACENOS:
+                png = cairosvg.svg2png(bytestring=personagem_svg(boca, olhos, "normal", "acenando", a).encode(), output_width=PSIZE)
+                cache[(boca, olhos, "normal", a)] = Image.open(io.BytesIO(png)).convert("RGBA")
     return cache
+
+
+# ======================================================== 5b. animações extras (guia EDIT IA PRO)
+def carimbo(text="PEDIDO FEITO!"):
+    f = R.jfont(700, 74)
+    tw = f.getlength(text)
+    w, h = int(tw + 90), 150
+    im = Image.new("RGBA", (w + 40, h + 40), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((20, 20, 20 + w, 20 + h), radius=22, outline=C["vermelho_ume"], width=11)
+    d.rounded_rectangle((34, 34, 6 + w, 6 + h), radius=14, outline=C["vermelho_ume"], width=3)
+    d.text((20 + w / 2, 20 + h / 2 + 4), text, font=f, fill=C["vermelho_ume"], anchor="mm")
+    # textura de tinta (falhas)
+    rng = np.random.default_rng(5)
+    a = np.array(im.getchannel("A"), dtype=np.float32)
+    a *= (rng.random(a.shape) > 0.07)
+    im.putalpha(Image.fromarray(a.astype(np.uint8)))
+    return im.rotate(8, resample=Image.BICUBIC, expand=True)
+
+
+def comentario(typed, done_t):
+    """Caixa de comentário genérica com o texto sendo digitado."""
+    w, h = 820, 150
+    im = Image.new("RGBA", (w + 60, h + 60), (0, 0, 0, 0))
+    shd = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(shd).rounded_rectangle((30, 40, 30 + w, 40 + h), radius=36, fill=(60, 40, 30, 70))
+    im.alpha_composite(shd.filter(ImageFilter.GaussianBlur(14)))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((30, 30, 30 + w, 30 + h), radius=36, fill="#ffffff", outline=C["salvia"], width=4)
+    # avatar
+    d.ellipse((58, 58, 152, 152), fill=C["verde_aoi"])
+    leaf = R.fit(Image.open(os.path.join(R.MARCA, "logos", "aoi-folha-branco.png")).convert("RGBA"), 58)
+    im.alpha_composite(leaf, (105 - leaf.width // 2, 105 - leaf.height // 2))
+    f = R.jfont(600, 56)
+    if typed:
+        d.text((180, 108), typed, font=f, fill=TEXT, anchor="lm")
+        cx = 180 + f.getlength(typed) + 6
+        if done_t is None or int(done_t * 4) % 2 == 0:
+            d.line((cx, 80, cx, 136), fill=C["verde_aoi"], width=4)
+    else:
+        d.text((180, 108), "Adicione um comentário…", font=R.jfont(400, 44), fill="#a8a0a0", anchor="lm")
+    # botão enviar
+    on = done_t is not None
+    pulse = 1 + (0.12 * math.sin(done_t * 2 * math.pi * 2.2) if on else 0)
+    r = 40 * pulse
+    bx, by = 30 + w - 70, 105
+    d.ellipse((bx - r, by - r, bx + r, by + r), fill=C["vermelho_ume"] if on else "#d9d2cc")
+    d.polygon([(bx - 14, by - 18), (bx + 20, by), (bx - 14, by + 18), (bx - 8, by)], fill="#ffffff")
+    return im
+
+
+# ======================================================== 5c. efeitos sonoros (sintetizados)
+def _env(n, a, d):
+    t = np.arange(n) / SR
+    return np.minimum(1, t / max(a, 1e-4)) * np.exp(-t / d)
+
+
+def sfx_pop():
+    n = int(0.09 * SR); t = np.arange(n) / SR
+    f = 950 * np.exp(-t * 22) + 260
+    return 0.38 * np.sin(2 * np.pi * np.cumsum(f) / SR) * _env(n, 0.002, 0.03)
+
+
+def sfx_whoosh(dur=0.42):
+    n = int(dur * SR); rng = np.random.default_rng(1)
+    x = rng.normal(0, 1, n); y = np.zeros(n); k = np.linspace(0.02, 0.35, n) ** 1.3
+    for i in range(1, n):
+        y[i] = y[i - 1] + k[i] * (x[i] - y[i - 1])
+    env = np.sin(np.pi * np.linspace(0, 1, n)) ** 2
+    return 0.22 * y / (np.abs(y).max() + 1e-9) * env
+
+
+def sfx_ding():
+    n = int(1.3 * SR); t = np.arange(n) / SR
+    s = np.sin(2 * np.pi * 1568 * t) + 0.45 * np.sin(2 * np.pi * 3136 * t) * np.exp(-t * 3) + 0.2 * np.sin(2 * np.pi * 4704 * t) * np.exp(-t * 6)
+    return 0.2 * s * _env(n, 0.003, 0.45)
+
+
+def sfx_carimbo():
+    n = int(0.22 * SR); t = np.arange(n) / SR; rng = np.random.default_rng(2)
+    thump = np.sin(2 * np.pi * (70 + 60 * np.exp(-t * 40)) * t) * np.exp(-t * 18)
+    slap = rng.normal(0, 1, n) * np.exp(-t * 90)
+    return 0.55 * thump + 0.18 * slap
+
+
+def sfx_alerta():
+    n = int(0.28 * SR); t = np.arange(n) / SR
+    f = np.where(t < 0.12, 520, 390)
+    return 0.16 * np.tanh(2.5 * np.sin(2 * np.pi * f * t)) * _env(n, 0.004, 0.12)
+
+
+def sfx_tecla(seed):
+    n = int(0.018 * SR); rng = np.random.default_rng(seed)
+    x = rng.normal(0, 1, n); x = x - np.convolve(x, np.ones(5) / 5, "same")
+    return 0.09 * x * np.exp(-np.arange(n) / SR * 260)
+
+
+def sfx_clique():
+    n = int(0.03 * SR); t = np.arange(n) / SR
+    return 0.22 * np.sin(2 * np.pi * 2100 * t) * np.exp(-t * 160)
 
 
 def mouth_track(voice_wav, nframes):
@@ -444,8 +550,34 @@ def main():
         (jp_card("daijoubu desu", sub="não, obrigado", warn=True), wt(iEle), wt(iSalva) - 0.05, 470),
         (text_card(["sem sacola"], size=60, seed=11, icon=emoji("🛍", 64)), wt(iAi), wt(iSalva) - 0.05, 840),
         (text_card(["salva pra sua viagem"], size=60, seed=15, icon=emoji("📌", 64)), wt(iSalva), wt(iSegue) - 0.05, 440),
-        (text_card(["comenta “parte 2”"], size=60, seed=17, icon=emoji("💬", 64)), wt(iComenta), wt(iSegue) - 0.05, 640),
     ]
+    iPronto = find("pronto")
+    stamp = carimbo()
+    typed_text = "parte 2!!"
+    type_t0 = wt(iComenta) + 0.25
+    type_done = type_t0 + len(typed_text) * 0.05
+    intro_wave = (0.35, 2.4)
+
+    # ---- efeitos sonoros (um por animação, nunca dois a menos de 0,6 s)
+    evs = [(0.02, sfx_whoosh()), (wt(iS1), sfx_pop()), (wt(iEla), sfx_pop()), (wt(iPara2), sfx_pop()), (wt(iAte), sfx_pop()),
+           (wt(iTres), sfx_whoosh()), (wt(iDica), sfx_whoosh()), (wt(iKore), sfx_pop()), (wt(iPronto) + 0.05, sfx_carimbo()),
+           (wt(iE_cuid), sfx_alerta()), (wt(iDai), sfx_pop()), (wt(iEle), sfx_alerta()), (wt(iAi), sfx_pop()),
+           (wt(iSalva), sfx_pop()), (wt(iComenta), sfx_whoosh(0.3)), (type_done + 0.05, sfx_clique()), (wt(iSegue), sfx_ding())]
+    evs.sort(key=lambda e: e[0])
+    kept, last = [], -9
+    for tt, snd in evs:
+        if tt - last >= 0.6:
+            kept.append((tt, snd)); last = tt
+    sfx = np.zeros(int((total + 2) * SR))
+    for tt, snd in kept:
+        i = int(tt * SR); sfx[i:i + len(snd)] += snd[: len(sfx) - i]
+    for k in range(len(typed_text)):                       # teclado durante a digitação
+        tt = type_t0 + k * 0.05; snd = sfx_tecla(k); i = int(tt * SR); sfx[i:i + len(snd)] += snd
+    sfx_path = f"{WORK}/ra/sfx.wav"
+    with wave.open(sfx_path, "wb") as wv:
+        wv.setnchannels(1); wv.setsampwidth(2); wv.setframerate(SR)
+        wv.writeframes((np.clip(sfx, -1, 1) * 32767).astype("<i2").tobytes())
+    print(f"efeitos sonoros: {len(kept)} + teclado")
     # kore kudasai: dedinho apontando
     point = emoji("👉", 110)
 
@@ -483,7 +615,13 @@ def main():
         olhos = "fechados" if fi in blinks and not sur else ("surpresa" if sur else "abertos")
         if t >= wt(iSegue) - 0.2 and not sur:
             olhos = "felizes"
-        im = chars[(boca, olhos, "alta" if sur else "normal")]
+        waving = (intro_wave[0] <= t <= intro_wave[1]) or t >= wt(iSegue)
+        if waving and not sur:
+            raw = 14 * math.sin(t * 2 * math.pi * 1.6)
+            acen = min(ACENOS, key=lambda v: abs(v - raw))
+            im = chars[(boca, olhos, "normal", acen)]
+        else:
+            im = chars[(boca, olhos, "alta" if sur else "normal", None)]
         e = float(energy[fi]) if fi < len(energy) else 0
         bob = 6 * math.sin(t * 2 * math.pi * 0.55) + 4 * min(e, 1.5)
         ang = 1.4 * math.sin(t * 2 * math.pi * 0.31) + (0.8 * math.sin(t * 9) * min(e, 1) if e > 0.3 else 0)
@@ -512,6 +650,28 @@ def main():
                 p = point.copy()
                 p.putalpha(p.getchannel("A").point(lambda v: int(v * a)))
                 fr.alpha_composite(p, (int(80 + wig), 420))
+
+        # carimbo "PEDIDO FEITO!"
+        if wt(iPronto) <= t <= wt(iE_cuid) - 0.05:
+            p = (t - wt(iPronto)) / 0.18
+            sc = 1.6 - 0.65 * ease(p) if p < 1 else 0.95 + 0.05 * ease((t - wt(iPronto) - 0.18) / 0.1)
+            st = stamp.resize((int(stamp.width * sc), int(stamp.height * sc)), Image.BILINEAR)
+            jit = 3 if 0.18 <= t - wt(iPronto) <= 0.3 else 0
+            fr.alpha_composite(st, ((W - st.width) // 2 + jit, int(830 - st.height / 2)))
+        # comentário sendo digitado
+        if wt(iComenta) <= t <= wt(iSegue) - 0.05 + 0.2:
+            n = int(max(0, (t - type_t0) / 0.05)) if t >= type_t0 else 0
+            txt = typed_text[:min(n, len(typed_text))]
+            done = (t - type_done) if t >= type_done else None
+            cb = comentario(txt, done)
+            pin = back((t - wt(iComenta)) / 0.35)
+            t1 = wt(iSegue) - 0.05
+            a = ease((t - wt(iComenta)) / 0.18) * (1 - ease((t - t1) / 0.2) if t > t1 else 1)
+            sc = 0.82 + 0.18 * pin
+            cb = cb.resize((int(cb.width * sc), int(cb.height * sc)), Image.BILINEAR)
+            if a < 1:
+                cb.putalpha(cb.getchannel("A").point(lambda v: int(v * a)))
+            fr.alpha_composite(cb, ((W - cb.width) // 2, int(650 - cb.height / 2)))
 
         # ---- final: botão Siga + logo + matrículas
         if t >= wt(iSegue):
@@ -557,10 +717,11 @@ def main():
     mpath = f"{WORK}/ra/musica.wav"
     R.music(mpath, total)
     final = f"{WORK}/ra/aoi-reels-sumimasen.mp4"
-    sh(["ffmpeg", "-v", "error", "-y", "-i", out, "-i", voice_wav, "-i", mpath, "-filter_complex",
+    sh(["ffmpeg", "-v", "error", "-y", "-i", out, "-i", voice_wav, "-i", mpath, "-i", sfx_path, "-filter_complex",
         f"[1:a]apad=whole_dur={total},asplit=2[v1][v2];"
         "[2:a]volume=0.22[m];[m][v2]sidechaincompress=threshold=0.02:ratio=6:attack=20:release=400[md];"
-        "[v1][md]amix=inputs=2:normalize=0,aresample=48000,"
+        f"[3:a]atrim=0:{total},volume=0.9[fx];"
+        "[v1][md][fx]amix=inputs=3:normalize=0,aresample=48000,"
         "loudnorm=I=-14:TP=-1.5:LRA=9,alimiter=limit=0.84:attack=0.5:release=40:level=disabled[a]",
         "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ac", "2",
         "-movflags", "+faststart", "-shortest", final])
