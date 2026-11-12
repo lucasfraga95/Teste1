@@ -274,3 +274,14 @@ Nome = onde a imagem entra: `L1-S1` = Lição 1, Seção 1 · `L1-Q1` = Lição 
 | L16-P1 | N6_L16_final_img1_desfile-do-imperador | sem texto | [imagem](https://www.canva.com/M/MAHaiO_SgOY) |
 | L16-P2 | N6_L16_final_img2_segundo-lugar | sem texto | [imagem](https://www.canva.com/M/MAHaiOel-kA) |
 | L16-P3 | N6_L16_final_img3_caderno-no-trem | sem texto | [imagem](https://www.canva.com/M/MAHaiPuTMJw) |
+
+## Nível 7 — Saga
+
+Os prompts já vêm com o nome do lugar: `N7-L1-S1` = Lição 1, Seção 1 · `N7-L1-Q1` = exercício Q1 · `N7-L16-P1` = texto final, Parte 1. No Canva: pasta `N7 Saga` › `Lição XX` › uma pasta com o nome de cada imagem.
+
+| Nome | Textos | Canva |
+|---|---|---|
+| N7-L1-S1 | sem texto | [imagem](https://www.canva.com/M/MAHauKg4QGY) |
+| N7-L1-S4 | sem texto | [imagem](https://www.canva.com/M/MAHauGPuQdg) |
+| N7-L1-Q1 | sem texto | [imagem](https://www.canva.com/M/MAHauGXW-2Y) |
+| N7-L1-Q4 | sem texto | [imagem](https://www.canva.com/M/MAHauG85nMs) |
