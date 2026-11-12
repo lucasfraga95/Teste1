@@ -4,7 +4,7 @@
 Os áudios têm erros e repetições. O script escolhe os melhores trechos de cada um:
   a1 (áudio longo, bruto) .... corpo da aula + 3ª tentativa do convite final + despedida
   a2 (regravação curta) ...... "para não esquecer dessas cinco frases... salva... manda..."
-e corta: respiração, o "desu" que escapou em "eu quero dois desu", tentativas travadas e pausas longas.
+e corta: respiração, tentativas travadas e pausas longas (a frase "eu quero dois desse, por favor" fica inteira).
 
 Uso:
   A1=bruto.m4a A2=regravacao.m4a WORK=/tmp/p2 FONTS=/fonts/ttf python3 reels_parte2.py [frames t1 t2 ...]
@@ -41,8 +41,7 @@ PIECES = [  # (fonte, 1ª palavra, última palavra, opções)  — índices das 
     ("a1", 47, 61, {}),                     # nanmei-sama desu ka
     ("a1", 62, 69, {"hold": 0.35}),         # futari desu
     ("a1", 70, 83, {}),                     # kore o onegaishimasu
-    ("a1", 84, 100, {"b": 39.045}),         # kore o futatsu onegaishimasu, eu quero dois   (corta o "desu")
-    ("a1", 102, 103, {"a": 39.50}),         # ..., por favor
+    ("a1", 84, 103, {}),                    # kore o futatsu onegaishimasu, eu quero dois desse, por favor (sem cortes)
     ("a1", 104, 121, {}),                   # okaikei onegaishimasu
     ("a2", 1, 23, {"a": 0.50}),             # regravação: "para não esquecer... salva... manda..." (sem a respiração do "E")
     ("a1", 153, 168, {}),                   # 3ª tentativa: "E não esquece de seguir a página do espaço Aoi..."
@@ -477,7 +476,7 @@ def main():
     K2 = Block([["こ", "れ", "を", "ふ", "た", "つ"], ["お", "ね", "が", "い", "し", "ま", "す"]], 118, 132, 150,
                ["KO.RE.O  FU.TA.TSU", "O.NE.GA.I.SHI.MA.SU"], hi={3, 4, 5})
     badge4, badge4b = badge("FRASE 4/5"), badge("FRASE 4/5 · VARIAÇÃO")
-    chip_isso, chip_dois = chip("ISSO, POR FAVOR"), chip("EU QUERO DOIS, POR FAVOR")
+    chip_isso, chip_dois = chip("ISSO, POR FAVOR"), chip("EU QUERO DOIS DESSE, POR FAVOR")
     pill_ft = pill("FU.TA.TSU = 2", 52, C["creme_fundo"], C["vermelho_ume"])
     s4 = T("a1", 70) + 0.14
     tB, tC, tD, tE = T("a1", 81), T("a1", 88), T("a1", 94), T("a1", 98)
