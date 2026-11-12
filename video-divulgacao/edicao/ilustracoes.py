@@ -110,3 +110,70 @@ def balao(texto_svg_w=420):
     """Balão de fala vazio (o texto é escrito por cima)."""
     w = texto_svg_w
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w + 40} 210"><path d="M30,20 h{w - 20} a30,30 0 0 1 30,30 v80 a30,30 0 0 1 -30,30 h-{w - 140} l-50,44 l6,-44 h-{70} a30,30 0 0 1 -30,-30 v-80 a30,30 0 0 1 30,-30 Z" fill="{CREME}" stroke="{TEXTO}" stroke-width="7"/></svg>'
+
+
+def cardapio():
+    """Cardápio japonês (sem preços) com 3 pratos."""
+    return _wrap(f'''
+    <rect x="70" y="40" width="460" height="520" rx="26" fill="#000" opacity="0.07" transform="translate(10,12)"/>
+    <rect x="70" y="40" width="460" height="520" rx="26" fill="{CREME}" stroke="{MADEIRA}" stroke-width="10"/>
+    <rect x="70" y="40" width="460" height="96" rx="26" fill="{VERMELHO}"/>
+    <rect x="70" y="100" width="460" height="36" fill="{VERMELHO}"/>
+    <g transform="translate(0,0)">
+      <path d="M110,200 h90 a45,40 0 0 1 -90,0 Z" fill="{VERMELHO}"/><ellipse cx="155" cy="200" rx="45" ry="9" fill="#f6d27a"/>
+      <rect x="230" y="186" width="250" height="16" rx="8" fill="{SALVIA}"/><rect x="230" y="216" width="170" height="14" rx="7" fill="{PESSEGO}"/>
+      <path d="M155,300 l42,70 h-84 Z" fill="{CREME}" stroke="{TEXTO}" stroke-width="6" stroke-linejoin="round"/><rect x="128" y="338" width="54" height="32" fill="{TEXTO}"/>
+      <rect x="230" y="318" width="250" height="16" rx="8" fill="{SALVIA}"/><rect x="230" y="348" width="190" height="14" rx="7" fill="{PESSEGO}"/>
+      <rect x="152" y="420" width="6" height="110" rx="3" fill="{MADEIRA}"/>
+      <circle cx="155" cy="440" r="20" fill="{CORAL}"/><circle cx="155" cy="476" r="20" fill="{CREME}" stroke="{TEXTO}" stroke-width="4"/><circle cx="155" cy="512" r="20" fill="{SALVIA}"/>
+      <rect x="230" y="456" width="250" height="16" rx="8" fill="{SALVIA}"/><rect x="230" y="486" width="150" height="14" rx="7" fill="{PESSEGO}"/>
+    </g>''')
+
+
+def dedo():
+    """Mão com indicador apontando para a esquerda."""
+    return _wrap(f'''
+    <rect x="70" y="40" width="150" height="34" rx="17" fill="{PELE}"/>
+    <rect x="150" y="30" width="120" height="110" rx="44" fill="{PELE}"/>
+    <rect x="160" y="90" width="80" height="26" rx="13" fill="{PELE2}" opacity="0.5"/>
+    <rect x="250" y="44" width="90" height="84" rx="16" fill="{VERDE}"/>''', vb="0 0 360 170")
+
+
+def sacola():
+    return _wrap(f'''
+    <path d="M180,180 q0,-110 120,-110 q120,0 120,110" fill="none" stroke="{VERDE_ESC}" stroke-width="26" stroke-linecap="round"/>
+    <path d="M110,180 h380 l-30,360 h-320 Z" fill="{SALVIA}"/>
+    <path d="M110,180 h380 l-6,70 h-368 Z" fill="#b3cbb6"/>
+    <circle cx="300" cy="380" r="56" fill="{CREME}"/><circle cx="300" cy="380" r="30" fill="{VERMELHO}"/>''')
+
+
+def itens_na_mao():
+    """Compras equilibradas nos braços, sem sacola."""
+    return _wrap(f'''
+    <ellipse cx="300" cy="570" rx="220" ry="18" fill="#000" opacity="0.08"/>
+    <rect x="160" y="300" width="280" height="190" rx="18" fill="{LARANJA}"/>
+    <rect x="160" y="300" width="280" height="44" rx="18" fill="#cf7d22"/>
+    <rect x="370" y="120" width="70" height="190" rx="22" fill="#8fc1e8"/><rect x="384" y="86" width="42" height="44" rx="10" fill="{VERMELHO}"/>
+    <rect x="374" y="190" width="62" height="56" fill="{CREME}"/>
+    <path d="M250,170 l70,120 h-140 Z" fill="{CREME}" stroke="{TEXTO}" stroke-width="7" stroke-linejoin="round"/><rect x="214" y="246" width="72" height="44" fill="{TEXTO}"/>
+    <circle cx="130" cy="250" r="44" fill="{VERMELHO}"/><path d="M130,206 q6,-26 24,-30" stroke="{MADEIRA}" stroke-width="8" fill="none"/>
+    <path d="M150,212 q24,-18 40,-4 q-20,16 -40,4 Z" fill="{VERDE}"/>
+    <rect x="96" y="440" width="150" height="60" rx="30" fill="{PELE}"/><rect x="354" y="440" width="150" height="60" rx="30" fill="{PELE}"/>
+    <g fill="#8fc1e8"><path d="M520,170 q-16,26 0,40 q16,-14 0,-40 Z"/><path d="M80,120 q-12,20 0,30 q12,-10 0,-30 Z"/></g>
+    <g stroke="{LARANJA}" stroke-width="9" stroke-linecap="round"><path d="M70,330 l-30,-8"/><path d="M530,320 l30,-10"/></g>''')
+
+
+def marcador():
+    return _wrap(f'''<path d="M170,60 h260 a30,30 0 0 1 30,30 v450 l-160,-110 l-160,110 v-450 a30,30 0 0 1 30,-30 Z" fill="{OURO_IL}"/>
+    <path d="M300,170 l26,54 l58,8 l-42,40 l10,58 l-52,-28 l-52,28 l10,-58 l-42,-40 l58,-8 Z" fill="{CREME}"/>''')
+
+
+def aviao():
+    return _wrap(f'''<g transform="rotate(-20 300 300)">
+    <path d="M60,300 q0,-40 60,-40 h340 q90,0 90,40 q0,40 -90,40 h-340 q-60,0 -60,-40 Z" fill="{CREME}"/>
+    <path d="M300,262 l-90,-170 h60 l130,170 Z" fill="{CREME}"/><path d="M300,338 l-90,170 h60 l130,-170 Z" fill="#e9dccd"/>
+    <path d="M100,262 l-40,-90 h44 l60,90 Z" fill="{CREME}"/>
+    <g fill="{VERMELHO}"><circle cx="380" cy="300" r="12"/><circle cx="330" cy="300" r="12"/><circle cx="280" cy="300" r="12"/></g></g>''')
+
+
+OURO_IL = "#f6d27a"
