@@ -360,7 +360,7 @@ PSIZE = 900
 def character_cache():
     cache = {}
     for boca in ("fechada", "media", "aberta", "o"):
-        for olhos in ("abertos", "fechados", "surpresa"):
+        for olhos in ("abertos", "fechados", "surpresa", "felizes"):
             for sob in ("normal", "alta"):
                 png = cairosvg.svg2png(bytestring=personagem_svg(boca, olhos, sob).encode(), output_width=PSIZE)
                 cache[(boca, olhos, sob)] = Image.open(io.BytesIO(png)).convert("RGBA")
@@ -481,6 +481,8 @@ def main():
         if sur and boca == "fechada":
             boca = "o"
         olhos = "fechados" if fi in blinks and not sur else ("surpresa" if sur else "abertos")
+        if t >= wt(iSegue) - 0.2 and not sur:
+            olhos = "felizes"
         im = chars[(boca, olhos, "alta" if sur else "normal")]
         e = float(energy[fi]) if fi < len(energy) else 0
         bob = 6 * math.sin(t * 2 * math.pi * 0.55) + 4 * min(e, 1.5)
