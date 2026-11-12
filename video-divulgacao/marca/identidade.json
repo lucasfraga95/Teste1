@@ -1,0 +1,28 @@
+{
+  "escola": "Espaço AOI (葵)",
+  "instagram": "@espacoaoi",
+  "slogan_jp": ["日本語を学ぶ", "好奇心、規律、興味"],
+  "fonte_canva": ["Cópia de COMPARTILHADO - AOI stories/ reels/ IGTV (DAFWnaVki00)", "Cópia de COMPARTILHADO - AOI posts (DAE7VAAtY7Y)"],
+  "cores": {
+    "creme_fundo": "#fef7f1",
+    "pessego": "#fae8d4",
+    "salvia": "#c6dac8",
+    "verde_aoi": "#4f8370",
+    "laranja": "#e89232",
+    "coral": "#f0876e",
+    "vermelho_ume": "#c94e48",
+    "texto": "#000000"
+  },
+  "fontes": {
+    "observacao": "Canva só expõe IDs internos (YAEx5Zogyi4 = japonês, YADWjoIs6hY / YADWjiavVFk = latim). Nomes abaixo são aproximações visuais, a confirmar.",
+    "japones": "gótica arredondada fina (candidatas: Kosugi Maru, M PLUS Rounded 1c Light)",
+    "latim": "Josefin Sans (Regular / SemiBold), letter-spacing 0.05–0.1em"
+  },
+  "elementos": [
+    "flor de ume vermelha com raios laranja",
+    "folha de aoi (malva) em verde",
+    "nuvens, ondas seigaiha, asanoha, shippo, crisântemos",
+    "bolha orgânica creme (opacidade 95%) como caixa de texto sobre foto/vídeo"
+  ],
+  "layout_reels": "1080x1920; texto em bolha creme centralizada ou em arco creme na base; @espacoaoi pequeno no topo"
+}
