@@ -339,3 +339,4 @@ Os prompts já vêm com o nome do lugar: `N7-L1-S1` = Lição 1, Seção 1 · `N
 | Nome | Textos | Canva |
 |---|---|---|
 | N8-L1-S1 | sem texto | [imagem](https://www.canva.com/M/MAHaz_oE0aU) |
+| N8-L1-S4 | sem texto | [imagem](https://www.canva.com/M/MAHazxF8yNY) |
