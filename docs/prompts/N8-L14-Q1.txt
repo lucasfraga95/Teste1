@@ -1,0 +1,13 @@
+CENA:
+A biblioteca da universidade. A Nanami, sentada diante de um notebook aberto, olha para cima, pensativa, com a caneta nos lábios; ao lado, um caderno aberto.
+
+PERSONAGENS:
+- Nanami: japonesa de cerca de 20 anos, universitária, cabelo castanho-escuro em duas tranças baixas com franja lateral, jaqueta jeans sobre camiseta listrada de cinza.
+
+ILUMINAÇÃO E ATMOSFERA:
+Luz suave da tarde entrando pelas janelas.
+
+REGRA DE TEXTO:
+Sem nenhum texto, letra ou número na imagem, inclusive em placas, painéis, letreiros, cardápios, telas, embalagens e roupas. Sem balões de fala.
+
+IMPORTANTE: a tela do notebook de costas, sem texto visível; o caderno com rabiscos indistintos.
